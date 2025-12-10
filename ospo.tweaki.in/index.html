@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product — Premium Landing</title>
+  <meta name="description" content="Premium-looking landing page built with Tailwind CSS CDN." />
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config: enable forms & aspect-ratio plugin if you want them locally via build.
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#7c3aed',
+            accent: '#06b6d4'
+          },
+          backgroundImage: {
+            'hero-grad': 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.08))'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    /* subtle glassy card */
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(6px); }
+  </style>
+</head>
+<body class="antialiased text-slate-800 bg-white">
+
+  <!-- NAV -->
+  <header class="fixed w-full z-40">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a class="flex items-center gap-3" href="#">
+        <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white font-bold">P</div>
+        <div class="hidden md:block">
+          <div class="text-sm font-semibold">Premium</div>
+          <div class="text-xs text-slate-500">Components & SaaS</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#features" class="hover:text-primary">Features</a>
+        <a href="#pricing" class="hover:text-primary">Pricing</a>
+        <a href="#testimonials" class="hover:text-primary">Testimonials</a>
+        <a href="#" class="px-4 py-2 rounded-md border border-slate-200 hover:bg-slate-50">Docs</a>
+        <a href="#cta" class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg shadow">Get Started</a>
+      </nav>
+
+      <button class="md:hidden p-2 rounded-lg border border-slate-200 bg-white" aria-label="menu">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="pt-28">
+    <section class="relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 grid gap-12 md:grid-cols-2 items-center py-20">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Launch faster with beautiful components<br class="hidden sm:inline">and a premium design system.</h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl">A ready-to-use landing page & UI kit built with Tailwind CDN. Clean markup, modern interactions, and pixel-perfect layout so you can ship faster.</p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#cta" class="inline-flex items-center gap-3 bg-primary text-white px-5 py-3 rounded-lg font-semibold shadow-lg transform hover:-translate-y-0.5 transition">Start free trial <span class="opacity-80 text-sm">— no credit card</span></a>
+            <a href="#features" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-slate-200">View features</a>
+          </div>
+
+          <ul class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-slate-600">
+            <li class="flex items-center gap-3"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 120+ components</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 8v4l3 3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Fast setup</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7h18M3 12h18M3 17h18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Clean code</li>
+          </ul>
+
+          <div class="mt-6 text-xs text-slate-500">Trusted by teams at <span class="font-semibold">Acme</span>, <span class="font-semibold">Orbit</span>, and <span class="font-semibold">Lumen</span>.</div>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-2xl shadow-2xl p-6 glass border border-white/50">
+            <div class="bg-hero-grad rounded-xl p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-xs text-slate-500">Analytics</div>
+                  <div class="text-2xl font-bold">$12.4k</div>
+                </div>
+                <div class="text-sm text-slate-500">Monthly</div>
+              </div>
+
+              <div class="mt-6 h-36 rounded-lg overflow-hidden bg-white/60 flex items-end">
+                <!-- simple chart lines -->
+                <svg viewBox="0 0 200 80" class="w-full">
+                  <polyline fill="none" stroke="#7c3aed" stroke-width="4" points="0,60 30,48 60,30 90,40 120,20 150,12 180,18 200,8" />
+                </svg>
+              </div>
+
+              <div class="mt-4 flex items-center justify-between text-sm">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-full bg-white/80 flex items-center justify-center text-primary font-semibold">A</div>
+                  <div class="text-slate-700">Acme — Growth</div>
+                </div>
+                <div class="text-slate-500">+12% this month</div>
+              </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <div class="p-3 rounded-lg bg-white">
+                <div class="text-xs text-slate-500">Active users</div>
+                <div class="font-semibold">8,421</div>
+              </div>
+              <div class="p-3 rounded-lg bg-white">
+                <div class="text-xs text-slate-500">Conversion</div>
+                <div class="font-semibold">7.4%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -right-8 -bottom-6 hidden md:block opacity-80">
+            <div class="w-36 h-36 rounded-xl bg-gradient-to-tr from-primary/30 to-accent/20 blur-lg"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h3 class="text-center text-lg font-semibold text-primary">Features</h3>
+        <h2 class="text-center text-3xl sm:text-4xl font-extrabold mt-3">Everything you need to build fast</h2>
+        <p class="text-center mt-4 text-slate-600 max-w-2xl mx-auto">Components, utilities, and templates designed to work together. Responsive by default and easy to customize.</p>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="p-6 rounded-2xl bg-white shadow hover:shadow-lg transition">
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary"> 
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4 class="mt-4 font-semibold">Design-ready blocks</h4>
+            <p class="mt-2 text-sm text-slate-500">Pre-built sections for marketing, pricing, team, and more.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white shadow hover:shadow-lg transition">
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-accent/10 text-accent"> 
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4 class="mt-4 font-semibold">Lightning fast</h4>
+            <p class="mt-2 text-sm text-slate-500">Small bundle size, no build step required using the CDN.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white shadow hover:shadow-lg transition">
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-amber-100 text-amber-600"> 
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 8v4l3 3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4 class="mt-4 font-semibold">Accessible</h4>
+            <p class="mt-2 text-sm text-slate-500">Keyboard-friendly markup and ARIA-ready components.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white shadow hover:shadow-lg transition">
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-emerald-100 text-emerald-600"> 
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4 class="mt-4 font-semibold">Customizable</h4>
+            <p class="mt-2 text-sm text-slate-500">Change tokens and utility classes to match your brand.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white shadow hover:shadow-lg transition">
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-pink-100 text-pink-600"> 
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4 class="mt-4 font-semibold">Documentation</h4>
+            <p class="mt-2 text-sm text-slate-500">Copy-ready examples and best practices included.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white shadow hover:shadow-lg transition">
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-violet-100 text-violet-600"> 
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4 class="mt-4 font-semibold">Components</h4>
+            <p class="mt-2 text-sm text-slate-500">Buttons, forms, modals, and more — styled and ready.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING / CTA -->
+    <section id="pricing" class="py-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h3 class="text-sm text-primary font-semibold">Pricing</h3>
+        <h2 class="text-3xl font-extrabold mt-2">Simple, predictable pricing</h2>
+        <p class="mt-3 text-slate-600 max-w-xl mx-auto">No hidden fees. Upgrade or cancel any time. All plans include components and regular updates.</p>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <div class="p-6 rounded-2xl border border-slate-200">
+            <div class="text-sm text-slate-500">Starter</div>
+            <div class="mt-3 text-3xl font-bold">Free</div>
+            <p class="mt-2 text-sm text-slate-500">For personal projects and experiments.</p>
+            <ul class="mt-4 text-sm text-slate-600 space-y-2">
+              <li>Included components</li>
+              <li>Community support</li>
+            </ul>
+            <button class="mt-6 w-full py-3 rounded-lg bg-white border border-slate-200">Try free</button>
+          </div>
+
+          <div class="p-6 rounded-2xl border-2 border-primary shadow-lg transform scale-105">
+            <div class="text-sm text-slate-500">Professional</div>
+            <div class="mt-3 text-3xl font-bold">$29<span class="text-sm">/mo</span></div>
+            <p class="mt-2 text-sm text-slate-500">For small teams and startups.</p>
+            <ul class="mt-4 text-sm text-slate-600 space-y-2">
+              <li>All components</li>
+              <li>Priority support</li>
+            </ul>
+            <button class="mt-6 w-full py-3 rounded-lg bg-primary text-white">Get started</button>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-slate-200">
+            <div class="text-sm text-slate-500">Enterprise</div>
+            <div class="mt-3 text-3xl font-bold">Custom</div>
+            <p class="mt-2 text-sm text-slate-500">SLA, onboarding, and dedicated support.</p>
+            <ul class="mt-4 text-sm text-slate-600 space-y-2">
+              <li>Custom license</li>
+              <li>Dedicated onboarding</li>
+            </ul>
+            <button class="mt-6 w-full py-3 rounded-lg border border-slate-200">Contact sales</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-20 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h3 class="text-sm text-primary font-semibold">What customers say</h3>
+        <h2 class="text-2xl font-extrabold mt-3">Loved by builders</h2>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <blockquote class="p-6 rounded-2xl bg-white shadow">“This kit saved us weeks of design time — simple to use and looks fantastic.”<footer class="mt-4 text-sm text-slate-500">— Maya, Product Lead</footer></blockquote>
+          <blockquote class="p-6 rounded-2xl bg-white shadow">“Clean markup and excellent docs. Integration was painless.”<footer class="mt-4 text-sm text-slate-500">— Arjun, Frontend Engineer</footer></blockquote>
+          <blockquote class="p-6 rounded-2xl bg-white shadow">“The components are flexible and accessible — a joy to work with.”<footer class="mt-4 text-sm text-slate-500">— Lina, Designer</footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="cta" class="py-20">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="p-8 rounded-3xl bg-gradient-to-r from-primary/10 to-accent/8 border border-white/30 glass">
+          <h2 class="text-2xl font-extrabold">Ready to ship faster?</h2>
+          <p class="mt-2 text-slate-600">Start your free trial today — build beautiful pages without the headache.</p>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="#" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold">Start free trial</a>
+            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-slate-200">Contact sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-100 mt-16">
+    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-start justify-between gap-8">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent text-white font-bold flex items-center justify-center">P</div>
+          <div>
+            <div class="font-semibold">Premium</div>
+            <div class="text-sm text-slate-500">Components & SaaS</div>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-slate-600 max-w-sm">Ship beautiful marketing sites and dashboards faster with a curated Tailwind kit.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div>
+          <h5 class="text-sm font-semibold">Product</h5>
+          <ul class="mt-3 text-sm text-slate-600 space-y-2">
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Docs</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-sm font-semibold">Company</h5>
+          <ul class="mt-3 text-sm text-slate-600 space-y-2">
+            <li>About</li>
+            <li>Careers</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-sm font-semibold">Resources</h5>
+          <ul class="mt-3 text-sm text-slate-600 space-y-2">
+            <li>Blog</li>
+            <li>Guides</li>
+            <li>Community</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-sm font-semibold">Follow</h5>
+          <ul class="mt-3 text-sm text-slate-600 space-y-2">
+            <li>Twitter</li>
+            <li>GitHub</li>
+            <li>Dribbble</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-100">
+      <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between">
+        <div>© <span id="year"></span> Premium UI — All rights reserved.</div>
+        <div class="mt-2 sm:mt-0">Made with ♥ by your team</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
