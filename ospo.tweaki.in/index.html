@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center py-4 px-8 bg-white shadow">
+    <h1 class="text-2xl font-bold text-red-600">FoodHouse</h1>
+
+    <ul class="hidden md:flex gap-8">
+      <li><a href="#" class="hover:text-red-500">Home</a></li>
+      <li><a href="#" class="hover:text-red-500">Menu</a></li>
+      <li><a href="#" class="hover:text-red-500">About</a></li>
+      <li><a href="#" class="hover:text-red-500">Contact</a></li>
+    </ul>
+
+    <button class="md:hidden text-2xl">☰</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="px-8 py-20 md:flex items-center gap-10">
+    <div class="md:w-1/2">
+      <h2 class="text-5xl font-bold leading-tight">
+        Delicious Food <span class="text-red-600">Delivered</span> To You
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Enjoy freshly prepared meals made with love, delivered right to your door.
+      </p>
+      <button class="mt-6 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">
+        Order Now
+      </button>
+    </div>
+
+    <div class="md:w-1/2 mt-10 md:mt-0">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+           alt="Food Image"
+           class="rounded-xl shadow-lg">
+    </div>
+  </section>
+
+  <!-- Popular Dishes -->
+  <section class="px-8 py-16 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-10">Our Popular Dishes</h3>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <!-- Card 1 -->
+      <div class="bg-gray-100 p-5 rounded-xl shadow">
+        <img src="https://images.unsplash.com/photo-1606755962773-0c3f293be0c2"
+             class="rounded-lg mb-4">
+        <h4 class="text-xl font-semibold">Italian Pasta</h4>
+        <p class="text-gray-600 mt-2">Creamy, delicious and full of flavor.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-gray-100 p-5 rounded-xl shadow">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349"
+             class="rounded-lg mb-4">
+        <h4 class="text-xl font-semibold">Cheese Burger</h4>
+        <p class="text-gray-600 mt-2">Juicy grilled beef with melted cheese.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-gray-100 p-5 rounded-xl shadow">
+        <img src="https://images.unsplash.com/photo-1606756790138-8ecb262b3f9a"
+             class="rounded-lg mb-4">
+        <h4 class="text-xl font-semibold">Hot Pizza</h4>
+        <p class="text-gray-600 mt-2">Crispy crust with premium toppings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-900 text-white text-center">
+    <p>© 2025 FoodHouse. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

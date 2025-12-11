@@ -1,0 +1,53 @@
+name: Dynamic Unzip
+
+on:
+  workflow_dispatch:
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Debug - List files
+        run: |
+          echo "Listing files in repo:"
+          ls -R .
+
+      - name: Find ZIP file in root
+        id: find_zip
+        run: |
+          # Find first ZIP in the root folder only
+          ZIP_PATH=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1)
+
+          if [[ -z "$ZIP_PATH" ]]; then
+            echo "❌ No ZIP file found in root directory"
+            exit 1
+          fi
+
+          echo "Found ZIP: $ZIP_PATH"
+
+          # Extract filename and folder name
+          ZIP_FILE=$(basename "$ZIP_PATH")
+          EXTRACT_FOLDER="${ZIP_FILE%.zip}"
+
+          echo "ZIP_PATH=$ZIP_PATH" >> $GITHUB_ENV
+          echo "ZIP_FILE=$ZIP_FILE" >> $GITHUB_ENV
+          echo "EXTRACT_FOLDER=$EXTRACT_FOLDER" >> $GITHUB_ENV
+
+      - name: Install unzip
+        run: sudo apt-get install -y unzip
+
+      - name: Unzip dynamically
+        run: |
+          echo "Unzipping: $ZIP_PATH → $EXTRACT_FOLDER"
+          unzip -o "$ZIP_PATH" -d "$EXTRACT_FOLDER"
+
+      - name: Commit extracted files
+        run: |
+          git config --global user.email "action@github.com"
+          git.config --global user.name "GitHub Action"
+          git add "$EXTRACT_FOLDER"
+          git commit -m "Extracted: $EXTRACT_FOLDER"
+          git push
