@@ -47,10 +47,17 @@ jobs:
           echo "Unzipping: $ZIP_PATH → $EXTRACT_FOLDER"
           unzip -o "$ZIP_PATH" -d "$EXTRACT_FOLDER"
 
+      - name: Delete ZIP file
+        run: |
+          echo "Deleting ZIP file: $ZIP_PATH"
+          rm -f "$ZIP_PATH"
+
       - name: Commit extracted files
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
+
           git add "$EXTRACT_FOLDER"
-          git commit -m "Extracted: $EXTRACT_FOLDER"
+          git add -u  # removes deleted ZIP from repository index
+          git commit -m "Extracted and removed ZIP: $EXTRACT_FOLDER" || echo "No changes to commit"
           git push
