@@ -1,7 +1,10 @@
 name: Dynamic Unzip
 
 on:
-  workflow_dispatch:
+  push:
+    paths:
+      - "*.zip"   # Run automatically when ZIP file is added/updated
+  workflow_dispatch: # Still allow manual run
 
 permissions:
   contents: write
@@ -14,50 +17,39 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Debug - List files
-        run: |
-          echo "Listing files in repo:"
-          ls -R .
+        run: ls -R .
 
       - name: Find ZIP file in root
         id: find_zip
         run: |
-          # Find first ZIP in the root folder only
           ZIP_PATH=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1)
 
           if [[ -z "$ZIP_PATH" ]]; then
-            echo "❌ No ZIP file found in root directory"
+            echo "❌ No ZIP file in root directory"
             exit 1
           fi
 
-          echo "Found ZIP: $ZIP_PATH"
-
-          # Extract filename and folder name
           ZIP_FILE=$(basename "$ZIP_PATH")
           EXTRACT_FOLDER="${ZIP_FILE%.zip}"
 
           echo "ZIP_PATH=$ZIP_PATH" >> $GITHUB_ENV
-          echo "ZIP_FILE=$ZIP_FILE" >> $GITHUB_ENV
           echo "EXTRACT_FOLDER=$EXTRACT_FOLDER" >> $GITHUB_ENV
 
       - name: Install unzip
         run: sudo apt-get install -y unzip
 
       - name: Unzip dynamically
-        run: |
-          echo "Unzipping: $ZIP_PATH → $EXTRACT_FOLDER"
-          unzip -o "$ZIP_PATH" -d "$EXTRACT_FOLDER"
+        run: unzip -o "$ZIP_PATH" -d "$EXTRACT_FOLDER"
 
       - name: Delete ZIP file
-        run: |
-          echo "Deleting ZIP file: $ZIP_PATH"
-          rm -f "$ZIP_PATH"
+        run: rm -f "$ZIP_PATH"
 
       - name: Commit extracted files
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
-
           git add "$EXTRACT_FOLDER"
-          git add -u  # removes deleted ZIP from repository index
-          git commit -m "Extracted and removed ZIP: $EXTRACT_FOLDER" || echo "No changes to commit"
+          git add -u   # detect deleted ZIP
+
+          git commit -m "Extracted and removed ZIP: $EXTRACT_FOLDER" || echo "No changes"
           git push
