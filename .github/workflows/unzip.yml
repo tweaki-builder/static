@@ -8,20 +8,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Debug - List files
+        run: |
+          echo "Listing files in repo:"
+          ls -R .
 
       - name: Find ZIP file
         id: find_zip
         run: |
-          ZIP_PATH=$(find previews -name "*.zip" -type f | head -n 1)
+          # Find any zip file inside previews folder
+          ZIP_PATH=$(find previews -type f -name "*.zip" | head -n 1)
+
+          if [[ -z "$ZIP_PATH" ]]; then
+            echo "❌ No ZIP file found in /previews directory"
+            exit 1
+          fi
+
+          echo "Found ZIP: $ZIP_PATH"
+
           echo "ZIP_PATH=$ZIP_PATH" >> $GITHUB_ENV
-
-          # Get filename only
+          
           ZIP_FILE=$(basename "$ZIP_PATH")
-          echo "ZIP_FILE=$ZIP_FILE" >> $GITHUB_ENV
-
-          # Remove .zip to get folder name
           EXTRACT_FOLDER="${ZIP_FILE%.zip}"
+
+          echo "ZIP_FILE=$ZIP_FILE" >> $GITHUB_ENV
           echo "EXTRACT_FOLDER=$EXTRACT_FOLDER" >> $GITHUB_ENV
 
       - name: Install unzip
@@ -29,6 +41,7 @@ jobs:
 
       - name: Unzip dynamically
         run: |
+          echo "Unzipping: $ZIP_PATH → $EXTRACT_FOLDER"
           unzip -o "$ZIP_PATH" -d "$EXTRACT_FOLDER"
 
       - name: Commit extracted files
