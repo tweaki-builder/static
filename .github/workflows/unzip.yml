@@ -3,6 +3,9 @@ name: Dynamic Unzip
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   unzip:
     runs-on: ubuntu-latest
