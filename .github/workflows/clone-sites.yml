@@ -17,8 +17,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install jq
-        run: sudo apt-get install -y jq
+      - name: Install jq & unzip
+        run: sudo apt-get install -y jq unzip
 
       - name: Process clone URLs
         run: |
@@ -74,21 +74,28 @@ jobs:
 
             SAFE_NAME=$(basename "$file" .json)
             ZIP_PATH="${SAFE_NAME}.zip"
+            EXTRACT_DIR="${SAFE_NAME}"
 
             echo "⬇️ Downloading ZIP → $ZIP_PATH"
-
             curl -L \
               https://copier.saveweb2zip.com/api/downloadArchive/$MD5 \
               -o "$ZIP_PATH"
 
-            echo "✅ Saved $ZIP_PATH"
+            echo "📂 Unzipping to → $EXTRACT_DIR"
+            mkdir -p "$EXTRACT_DIR"
+            unzip -oq "$ZIP_PATH" -d "$EXTRACT_DIR"
+
+            echo "🗑️ Deleting ZIP"
+            rm -f "$ZIP_PATH"
+
+            echo "✅ Done for $URL"
           done
 
-      - name: Commit ZIP files
+      - name: Commit extracted websites
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git add *.zip || echo "Nothing to add"
-          git commit -m "Add cloned website ZIPs" || echo "Nothing to commit"
+          git add .
+          git commit -m "Add extracted cloned websites" || echo "Nothing to commit"
           git push
