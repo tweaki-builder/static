@@ -1,0 +1,94 @@
+name: Clone Websites to ZIP
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "clone-urls/*.json"
+
+permissions:
+  contents: write
+
+jobs:
+  clone:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Process clone URLs
+        run: |
+          set -e
+
+          for file in clone-urls/*.json; do
+            echo "🚀 Processing $file"
+
+            PAYLOAD=$(cat "$file")
+            URL=$(jq -r '.url' "$file")
+
+            echo "➡️ Copying: $URL"
+
+            RESPONSE=$(curl -s -X POST \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD" \
+              https://copier.saveweb2zip.com/api/copySite)
+
+            MD5=$(echo "$RESPONSE" | jq -r '.md5')
+
+            if [[ "$MD5" == "null" || -z "$MD5" ]]; then
+              echo "❌ Failed to start copy"
+              echo "$RESPONSE"
+              continue
+            fi
+
+            echo "🆔 Job ID: $MD5"
+
+            FINISHED=false
+            for i in {1..60}; do
+              STATUS=$(curl -s https://copier.saveweb2zip.com/api/getStatus/$MD5)
+              IS_FINISHED=$(echo "$STATUS" | jq -r '.isFinished')
+              SUCCESS=$(echo "$STATUS" | jq -r '.success')
+
+              echo "⏳ Check $i → finished=$IS_FINISHED"
+
+              if [[ "$IS_FINISHED" == "true" ]]; then
+                FINISHED=true
+                if [[ "$SUCCESS" != "true" ]]; then
+                  echo "❌ Copy failed"
+                  echo "$STATUS"
+                fi
+                break
+              fi
+
+              sleep 10
+            done
+
+            if [[ "$FINISHED" != "true" ]]; then
+              echo "❌ Timeout waiting"
+              continue
+            fi
+
+            SAFE_NAME=$(basename "$file" .json)
+            ZIP_PATH="${SAFE_NAME}.zip"
+
+            echo "⬇️ Downloading ZIP → $ZIP_PATH"
+
+            curl -L \
+              https://copier.saveweb2zip.com/api/downloadArchive/$MD5 \
+              -o "$ZIP_PATH"
+
+            echo "✅ Saved $ZIP_PATH"
+          done
+
+      - name: Commit ZIP files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add *.zip || echo "Nothing to add"
+          git commit -m "Add cloned website ZIPs" || echo "Nothing to commit"
+          git push
