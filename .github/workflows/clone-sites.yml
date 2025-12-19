@@ -24,22 +24,23 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'  # Latest LTS as of Dec 2025
-          cache: 'npm'
+          cache: 'npm'  # Caches node_modules + npm cache
 
       - name: Cache Puppeteer Chromium
         id: cache-chromium
         uses: actions/cache@v4
         with:
           path: ~/.cache/puppeteer
-          key: chromium-${{ runner.os }}-puppeteer-${{ hashFiles('**/package-lock.json') }}
+          key: chromium-${{ runner.os }}-puppeteer-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             chromium-${{ runner.os }}-puppeteer-
 
       - name: Install dependencies
         run: |
-          npm ci || npm install website-scraper website-scraper-puppeteer
+          npm init -y  # Creates package.json if missing
+          npm install website-scraper website-scraper-puppeteer
 
-      - name: Create/Update cloning script
+      - name: Create cloning script
         run: |
           cat > index.js << 'EOF'
           const scrape = require('website-scraper').default;
@@ -61,7 +62,7 @@ jobs:
                 urls: [url],
                 directory: path.resolve(__dirname, dir),
                 recursive: true,
-                maxDepth: 20,  # Deeper recursion for linked pages/assets
+                maxDepth: 20,
                 filenameGenerator: 'bySiteStructure',
                 plugins: [
                   new PuppeteerPlugin({
@@ -79,7 +80,7 @@ jobs:
                   { selector: 'link[rel="stylesheet"]', attr: 'href' },
                   { selector: 'script', attr: 'src' },
                   { selector: 'source', attr: 'srcset' },
-                  { selector: '[style]', attr: 'style' }  // Inline backgrounds
+                  { selector: '[style]', attr: 'style' }
                 ]
               });
               console.log('✅ Website cloned successfully!');
@@ -102,13 +103,4 @@ jobs:
         with:
           name: ${{ inputs.directory }}
           path: ${{ inputs.directory }}
-          retention-days: 14  # Keep longer if needed
-
-      # Optional: Commit cloned files back to repo (uncomment if desired)
-      # - name: Commit and push cloned site
-      #   run: |
-      #     git config user.name "github-actions[bot]"
-      #     git config user.email "github-actions@github.com"
-      #     git add ${{ inputs.directory }} || echo "No changes"
-      #     git commit -m "Auto-clone: ${{ inputs.url }}" || echo "Nothing to commit"
-      #     git push || echo "Nothing to push"
+          retention-days: 14
