@@ -1,4 +1,4 @@
-name: Clone Websites with Playwright
+name: Clone Websites (Browser-based)
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -26,18 +26,17 @@ jobs:
       - name: Install dependencies
         run: |
           npm init -y
-          npm install playwright fs-extra node-fetch@2
-          npx playwright install chromium
+          npm install website-scraper website-scraper-puppeteer puppeteer
 
-      - name: Clone websites
+      - name: Run scraper
         run: |
-          node scripts/playwright-clone.js
+          node scripts/index.js
 
-      - name: Commit cloned sites
+      - name: Commit cloned websites
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
           git add sites/
-          git commit -m "Clone websites using Playwright" || echo "Nothing to commit"
+          git commit -m "Clone websites using Puppeteer scraper" || echo "Nothing to commit"
           git push
