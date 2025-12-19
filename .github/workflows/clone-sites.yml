@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'  # Latest LTS as of Dec 2025
-          cache: 'npm'  # Caches node_modules + npm cache
+          
 
       - name: Cache Puppeteer Chromium
         id: cache-chromium
