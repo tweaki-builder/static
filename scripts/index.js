@@ -1,5 +1,5 @@
 const scrape = require('website-scraper');
-const { PuppeteerPlugin } = require('website-scraper-puppeteer');
+const PuppeteerPlugin = require('website-scraper-puppeteer');
 const fs = require('fs');
 const path = require('path');
 
@@ -15,14 +15,17 @@ const OUTPUT_DIR = 'sites';
     const directory = path.resolve(OUTPUT_DIR, name);
 
     console.log(`🚀 Cloning ${url}`);
+    console.log(`📂 Output → ${directory}`);
 
     await scrape({
       urls: [url],
       directory,
+
       recursive: true,
       maxDepth: 5,
+
       plugins: [
-        new PuppeteerPlugin({
+        PuppeteerPlugin({
           launchOptions: {
             headless: true,
             args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -33,6 +36,7 @@ const OUTPUT_DIR = 'sites';
           }
         })
       ],
+
       request: {
         headers: {
           'User-Agent':
