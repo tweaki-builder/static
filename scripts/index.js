@@ -15,15 +15,12 @@ const OUTPUT_DIR = 'sites';
     const directory = path.resolve(OUTPUT_DIR, name);
 
     console.log(`🚀 Cloning ${url}`);
-    console.log(`📂 Output → ${directory}`);
 
     await scrape({
       urls: [url],
       directory,
-
       recursive: true,
       maxDepth: 5,
-
       plugins: [
         new PuppeteerPlugin({
           launchOptions: {
@@ -36,7 +33,6 @@ const OUTPUT_DIR = 'sites';
           }
         })
       ],
-
       request: {
         headers: {
           'User-Agent':
