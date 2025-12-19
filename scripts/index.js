@@ -1,5 +1,5 @@
-const scrape = require('website-scraper');
-const PuppeteerPlugin = require('website-scraper-puppeteer');
+const scrape = require('website-scraper').default;
+const PuppeteerPlugin = require('website-scraper-puppeteer').default;
 const fs = require('fs');
 const path = require('path');
 
