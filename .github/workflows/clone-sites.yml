@@ -1,4 +1,4 @@
-name: Clone Websites to ZIP
+name: Clone Websites Locally
 
 on:
   workflow_dispatch:
@@ -17,85 +17,46 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install jq & unzip
-        run: sudo apt-get install -y jq unzip
+      - name: Install tools
+        run: |
+          sudo apt update
+          sudo apt install -y jq httrack
 
-      - name: Process clone URLs
+      - name: Clone websites
         run: |
           set -e
 
           for file in clone-urls/*.json; do
             echo "🚀 Processing $file"
 
-            PAYLOAD=$(cat "$file")
             URL=$(jq -r '.url' "$file")
-
-            echo "➡️ Copying: $URL"
-
-            RESPONSE=$(curl -s -X POST \
-              -H "Content-Type: application/json" \
-              -d "$PAYLOAD" \
-              https://copier.saveweb2zip.com/api/copySite)
-
-            MD5=$(echo "$RESPONSE" | jq -r '.md5')
-
-            if [[ "$MD5" == "null" || -z "$MD5" ]]; then
-              echo "❌ Failed to start copy"
-              echo "$RESPONSE"
-              continue
-            fi
-
-            echo "🆔 Job ID: $MD5"
-
-            FINISHED=false
-            for i in {1..60}; do
-              STATUS=$(curl -s https://copier.saveweb2zip.com/api/getStatus/$MD5)
-              IS_FINISHED=$(echo "$STATUS" | jq -r '.isFinished')
-              SUCCESS=$(echo "$STATUS" | jq -r '.success')
-
-              echo "⏳ Check $i → finished=$IS_FINISHED"
-
-              if [[ "$IS_FINISHED" == "true" ]]; then
-                FINISHED=true
-                if [[ "$SUCCESS" != "true" ]]; then
-                  echo "❌ Copy failed"
-                  echo "$STATUS"
-                fi
-                break
-              fi
-
-              sleep 10
-            done
-
-            if [[ "$FINISHED" != "true" ]]; then
-              echo "❌ Timeout waiting"
-              continue
-            fi
-
             SAFE_NAME=$(basename "$file" .json)
-            ZIP_PATH="${SAFE_NAME}.zip"
-            EXTRACT_DIR="${SAFE_NAME}"
+            OUTPUT_DIR="sites/$SAFE_NAME"
 
-            echo "⬇️ Downloading ZIP → $ZIP_PATH"
-            curl -L \
-              https://copier.saveweb2zip.com/api/downloadArchive/$MD5 \
-              -o "$ZIP_PATH"
+            echo "➡️ Cloning: $URL"
+            mkdir -p "$OUTPUT_DIR"
 
-            echo "📂 Unzipping to → $EXTRACT_DIR"
-            mkdir -p "$EXTRACT_DIR"
-            unzip -oq "$ZIP_PATH" -d "$EXTRACT_DIR"
+            httrack "$URL" \
+              -O "$OUTPUT_DIR" \
+              "+*.css" "+*.js" "+*.png" "+*.jpg" "+*.jpeg" "+*.gif" "+*.svg" \
+              "+*.woff" "+*.woff2" "+*.ttf" "+*.eot" \
+              -v \
+              --disable-security-limits \
+              --robots=0 \
+              --keep-alive \
+              --sockets=4 \
+              --depth=5 \
+              --mirror \
+              --update
 
-            echo "🗑️ Deleting ZIP"
-            rm -f "$ZIP_PATH"
-
-            echo "✅ Done for $URL"
+            echo "✅ Done: $URL"
           done
 
-      - name: Commit extracted websites
+      - name: Commit cloned sites
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git add .
-          git commit -m "Add extracted cloned websites" || echo "Nothing to commit"
+          git add sites/
+          git commit -m "Clone websites from JSON configs" || echo "Nothing to commit"
           git push
