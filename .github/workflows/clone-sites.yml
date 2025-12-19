@@ -23,10 +23,12 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install dependencies (clean)
         run: |
+          rm -rf node_modules package-lock.json
           npm init -y
-          npm install website-scraper website-scraper-puppeteer puppeteer
+          npm install website-scraper@5 website-scraper-puppeteer@1 puppeteer
+
 
       - name: Run scraper
         run: |
