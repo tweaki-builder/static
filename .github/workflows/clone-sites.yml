@@ -1,4 +1,4 @@
-name: Clone Websites Locally
+name: Clone Websites with Playwright
 
 on:
   workflow_dispatch:
@@ -12,45 +12,26 @@ permissions:
 jobs:
   clone:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install tools
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install -y jq httrack
+          npm init -y
+          npm install playwright fs-extra node-fetch@2
+          npx playwright install chromium
 
       - name: Clone websites
         run: |
-          set -e
-
-          for file in clone-urls/*.json; do
-            echo "🚀 Processing $file"
-
-            URL=$(jq -r '.url' "$file")
-            SAFE_NAME=$(basename "$file" .json)
-            OUTPUT_DIR="sites/$SAFE_NAME"
-
-            echo "➡️ Cloning: $URL"
-            mkdir -p "$OUTPUT_DIR"
-
-            httrack "$URL" \
-              -O "$OUTPUT_DIR" \
-              "+*.css" "+*.js" "+*.png" "+*.jpg" "+*.jpeg" "+*.gif" "+*.svg" \
-              "+*.woff" "+*.woff2" "+*.ttf" "+*.eot" \
-              -v \
-              --disable-security-limits \
-              --robots=0 \
-              --keep-alive \
-              --sockets=4 \
-              --depth=5 \
-              --mirror \
-              --update
-
-            echo "✅ Done: $URL"
-          done
+          node scripts/playwright-clone.js
 
       - name: Commit cloned sites
         run: |
@@ -58,5 +39,5 @@ jobs:
           git config user.email "github-actions@github.com"
 
           git add sites/
-          git commit -m "Clone websites from JSON configs" || echo "Nothing to commit"
+          git commit -m "Clone websites using Playwright" || echo "Nothing to commit"
           git push
