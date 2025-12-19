@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        description: 'URL to clone (must include protocol, e.g. https://example.com)'
+        description: 'URL to clone (e.g., https://html.awaikenthemes.com/inspaire/index.html)'
         required: true
         type: string
       directory:
-        description: 'Output folder name inside the repo (e.g. my-cloned-site)'
+        description: 'Output folder name (e.g., inspaire-clone)'
         required: true
         type: string
         default: cloned-site
@@ -16,40 +16,30 @@ on:
 jobs:
   clone:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write    # Needed if you want to commit results back (optional)
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js (latest LTS)
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'   # Caches node_modules automatically
+          node-version: '24'  # Latest LTS as of Dec 2025
+          cache: 'npm'
 
       - name: Cache Puppeteer Chromium
-        id: cache-puppeteer
+        id: cache-chromium
         uses: actions/cache@v4
         with:
           path: ~/.cache/puppeteer
-          key: puppeteer-${{ runner.os }}-v3-${{ hashFiles('**/package-lock.json') }}
+          key: chromium-${{ runner.os }}-puppeteer-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            puppeteer-${{ runner.os }}-v3-
+            chromium-${{ runner.os }}-puppeteer-
 
       - name: Install dependencies
         run: |
           npm ci || npm install website-scraper website-scraper-puppeteer
 
-      - name: Create/Update package.json (if missing or incomplete)
-        run: |
-          if [ ! -f package.json ]; then
-            npm init -y
-          fi
-          npm install website-scraper website-scraper-puppeteer --save
-
-      - name: Create cloning script
+      - name: Create/Update cloning script
         run: |
           cat > index.js << 'EOF'
           const scrape = require('website-scraper').default;
@@ -71,22 +61,25 @@ jobs:
                 urls: [url],
                 directory: path.resolve(__dirname, dir),
                 recursive: true,
-                maxDepth: 10,
+                maxDepth: 20,  # Deeper recursion for linked pages/assets
+                filenameGenerator: 'bySiteStructure',
                 plugins: [
                   new PuppeteerPlugin({
-                    launchOptions: { 
+                    launchOptions: {
                       headless: true,
-                      args: ['--no-sandbox', '--disable-setuid-sandbox']
+                      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
                     },
-                    scrollToBottom: { timeout: 15000, viewportN: 10 },
+                    scrollToBottom: { timeout: 20000, viewportN: 15 },
                     blockNavigation: false
                   })
                 ],
                 sources: [
                   { selector: 'img', attr: 'src' },
+                  { selector: 'img', attr: 'data-src' },
                   { selector: 'link[rel="stylesheet"]', attr: 'href' },
                   { selector: 'script', attr: 'src' },
-                  { selector: 'source', attr: 'srcset' }
+                  { selector: 'source', attr: 'srcset' },
+                  { selector: '[style]', attr: 'style' }  // Inline backgrounds
                 ]
               });
               console.log('✅ Website cloned successfully!');
@@ -97,26 +90,25 @@ jobs:
           })();
           EOF
 
-      - name: Run website cloning
+      - name: Run cloning script
         env:
           INPUT_URL: ${{ inputs.url }}
           OUTPUT_DIR: ${{ inputs.directory }}
         run: |
           node index.js "$INPUT_URL" "$OUTPUT_DIR"
 
-      - name: Upload cloned website as artifact
+      - name: Upload cloned site as artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.directory }}
           path: ${{ inputs.directory }}
-          retention-days: 7
+          retention-days: 14  # Keep longer if needed
 
-      # Optional: Commit and push the cloned files back to repo
-      # Uncomment if you want the cloned site permanently stored in repo
+      # Optional: Commit cloned files back to repo (uncomment if desired)
       # - name: Commit and push cloned site
       #   run: |
       #     git config user.name "github-actions[bot]"
-      #     git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      #     git add ${{ inputs.directory }} || echo "Nothing to add"
+      #     git config user.email "github-actions@github.com"
+      #     git add ${{ inputs.directory }} || echo "No changes"
       #     git commit -m "Auto-clone: ${{ inputs.url }}" || echo "Nothing to commit"
       #     git push || echo "Nothing to push"
