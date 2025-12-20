@@ -13,13 +13,15 @@ on:
         default: cloned-site
 
 jobs:
-  clone:
+  clone-and-push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Node.js (latest LTS)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -48,7 +50,7 @@ jobs:
 
             const directory = path.resolve(__dirname, dirName);
 
-            // Create the directory manually (website-scraper will create it anyway if it doesn't exist)
+            // Ensure the directory exists
             if (!fs.existsSync(directory)) {
               fs.mkdirSync(directory, { recursive: true });
             }
@@ -73,7 +75,7 @@ jobs:
                 ]
               });
 
-              console.log('✅ Website cloned successfully into the specified folder!');
+              console.log('✅ Website cloned successfully!');
             } catch (err) {
               console.error('❌ Cloning failed:', err.message || err);
               process.exit(1);
@@ -88,9 +90,11 @@ jobs:
         run: |
           node index.js "$INPUT_URL" "$OUTPUT_DIR"
 
-      - name: Upload cloned site as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ inputs.directory }}
-          path: ${{ inputs.directory }}
-          retention-days: 14
+      - name: Commit and push cloned folder to main branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add "${{ inputs.directory }}"
+          git commit -m "Add cloned site: ${{ inputs.directory }} from ${{ inputs.url }}" || echo "No changes to commit"
+          git push origin main
