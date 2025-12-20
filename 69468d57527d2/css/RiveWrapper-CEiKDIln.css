@@ -1,0 +1,1 @@
+.bottom-edge-fade{-webkit-mask-image:linear-gradient(black 50%,rgba(0,0,0,.8) 60%,transparent 98%);mask-image:linear-gradient(black 50%,rgba(0,0,0,.8) 60%,transparent 98%);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:bottom;mask-position:bottom}
