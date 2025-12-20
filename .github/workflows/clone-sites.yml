@@ -15,16 +15,13 @@ on:
 jobs:
   clone-and-push:
     runs-on: ubuntu-latest
-    # Add write permissions for the default GITHUB_TOKEN
     permissions:
-      contents: write
-
+      contents: write  # Required for pushing with GITHUB_TOKEN
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Fetch full history so we can push safely
-          fetch-depth: 0
+          fetch-depth: 0  # Full history for safe pushing
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -55,7 +52,7 @@ jobs:
 
             const directory = path.resolve(__dirname, dirName);
 
-            // Remove existing folder if present
+            // Remove existing folder if it exists
             if (fs.existsSync(directory)) {
               console.log(`🗑️ Removing existing folder '${dirName}'...`);
               fs.rmSync(directory, { recursive: true, force: true });
@@ -71,30 +68,43 @@ jobs:
                   new PuppeteerPlugin({
                     launchOptions: {
                       headless: true,
-                      args: ['--no-sandbox', '--disable-setuid-sandbox']
+                      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security']
                     },
-                    gotoOptions: { 
-                      waitUntil: 'networkidle0',  // Stronger wait: no network activity
-                      timeout: 60000 
+                    gotoOptions: {
+                      waitUntil: 'networkidle0',  // Wait until no network activity
+                      timeout: 60000
                     },
                     scrollToBottom: {
-                      timeout: 30000,
-                      viewportN: 20
+                      timeout: 30000,   // Longer timeout for scrolling
+                      viewportN: 20     // Scroll multiple times to trigger lazy-load
                     },
                     renderOptions: async (page) => {
-                      // Optional: Disable animations/transitions for instant "final" state
+                      // Disable CSS animations and transitions for instant final state
                       await page.addStyleTag({
                         content: `
-                          * {
+                          *, *::before, *::after {
                             transition: none !important;
+                            transition-duration: 0s !important;
+                            transition-delay: 0s !important;
                             animation: none !important;
                             animation-duration: 0s !important;
                             animation-delay: 0s !important;
-                            transition-duration: 0s !important;
-                            transition-delay: 0s !important;
                           }
                         `
-                      }
+                      });
+
+                      // Optional: Force images to load (bypass lazy-loading)
+                      await page.evaluate(() => {
+                        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                          img.loading = 'eager';
+                          if (img.dataset.src) img.src = img.dataset.src;
+                          if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+                        });
+                      });
+
+                      // Extra delay to allow any remaining JS/timers to finish
+                      await page.waitForTimeout(15000);  // 15 seconds - adjust if needed (10000-30000)
+                    }
                   })
                 ]
               });
