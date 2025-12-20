@@ -15,9 +15,16 @@ on:
 jobs:
   clone-and-push:
     runs-on: ubuntu-latest
+    # Add write permissions for the default GITHUB_TOKEN
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Fetch full history so we can push safely
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -48,9 +55,9 @@ jobs:
 
             const directory = path.resolve(__dirname, dirName);
 
-            // *** FIX: Remove the folder if it already exists ***
+            // Remove existing folder if present
             if (fs.existsSync(directory)) {
-              console.log(`🗑️ Removing existing folder '${dirName}' to avoid conflict...`);
+              console.log(`🗑️ Removing existing folder '${dirName}'...`);
               fs.rmSync(directory, { recursive: true, force: true });
             }
 
