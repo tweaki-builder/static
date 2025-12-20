@@ -1,5 +1,4 @@
 name: Clone Website
-
 on:
   workflow_dispatch:
     inputs:
@@ -23,21 +22,11 @@ jobs:
       - name: Setup Node.js (latest LTS)
         uses: actions/setup-node@v4
         with:
-          node-version: '24'  # Latest LTS as of Dec 2025
-          
-
-      - name: Cache Puppeteer Chromium
-        id: cache-chromium
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/puppeteer
-          key: chromium-${{ runner.os }}-puppeteer-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            chromium-${{ runner.os }}-puppeteer-
+          node-version: '24'
 
       - name: Install dependencies
         run: |
-          npm init -y  # Creates package.json if missing
+          npm init -y
           npm install website-scraper website-scraper-puppeteer
 
       - name: Create cloning script
@@ -46,44 +35,45 @@ jobs:
           const scrape = require('website-scraper').default;
           const PuppeteerPlugin = require('website-scraper-puppeteer').default;
           const path = require('path');
+          const fs = require('fs');
 
           (async () => {
             const url = process.argv[2];
-            const dir = process.argv[3];
+            const dirName = process.argv[3];
 
-            if (!url || !dir) {
+            if (!url || !dirName) {
               console.error('❌ Usage: node index.js <url> <directory>');
               process.exit(1);
             }
 
+            const directory = path.resolve(__dirname, dirName);
+
+            // Create the directory manually (website-scraper will create it anyway if it doesn't exist)
+            if (!fs.existsSync(directory)) {
+              fs.mkdirSync(directory, { recursive: true });
+            }
+
             try {
-              console.log(`🔄 Cloning ${url} into ${dir}...`);
+              console.log(`🔄 Cloning ${url} into folder '${dirName}' ...`);
+
               await scrape({
                 urls: [url],
-                directory: path.resolve(__dirname, dir),
-                recursive: true,
-                maxDepth: 20,
-                filenameGenerator: 'bySiteStructure',
+                directory: directory,
                 plugins: [
                   new PuppeteerPlugin({
                     launchOptions: {
                       headless: true,
-                      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
+                      args: ['--no-sandbox', '--disable-setuid-sandbox']
                     },
-                    scrollToBottom: { timeout: 20000, viewportN: 15 },
-                    blockNavigation: false
+                    scrollToBottom: {
+                      timeout: 10000,
+                      viewportN: 10
+                    }
                   })
-                ],
-                sources: [
-                  { selector: 'img', attr: 'src' },
-                  { selector: 'img', attr: 'data-src' },
-                  { selector: 'link[rel="stylesheet"]', attr: 'href' },
-                  { selector: 'script', attr: 'src' },
-                  { selector: 'source', attr: 'srcset' },
-                  { selector: '[style]', attr: 'style' }
                 ]
               });
-              console.log('✅ Website cloned successfully!');
+
+              console.log('✅ Website cloned successfully into the specified folder!');
             } catch (err) {
               console.error('❌ Cloning failed:', err.message || err);
               process.exit(1);
