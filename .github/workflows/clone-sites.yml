@@ -11,31 +11,26 @@ on:
         required: true
         type: string
         default: cloned-site
-
 jobs:
   clone-and-push:
     runs-on: ubuntu-latest
     # Add write permissions for the default GITHUB_TOKEN
     permissions:
       contents: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           # Fetch full history so we can push safely
           fetch-depth: 0
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-
       - name: Install dependencies
         run: |
           npm init -y
           npm install website-scraper website-scraper-puppeteer
-
       - name: Create cloning script
         run: |
           cat > index.js << 'EOF'
@@ -43,27 +38,21 @@ jobs:
           const PuppeteerPlugin = require('website-scraper-puppeteer').default;
           const path = require('path');
           const fs = require('fs');
-
           (async () => {
             const url = process.argv[2];
             const dirName = process.argv[3];
-
             if (!url || !dirName) {
               console.error('❌ Usage: node index.js <url> <directory>');
               process.exit(1);
             }
-
             const directory = path.resolve(__dirname, dirName);
-
             // Remove existing folder if present
             if (fs.existsSync(directory)) {
-              console.log(🗑️ Removing existing folder '${dirName}'...);
+              console.log(`🗑️ Removing existing folder '${dirName}'...`);
               fs.rmSync(directory, { recursive: true, force: true });
             }
-
             try {
-              console.log(🔄 Cloning ${url} into folder '${dirName}' ...);
-
+              console.log(`🔄 Cloning ${url} into folder '${dirName}' ...`);
               await scrape({
                 urls: [url],
                 directory: directory,
@@ -74,13 +63,12 @@ jobs:
                       args: ['--no-sandbox', '--disable-setuid-sandbox']
                     },
                     scrollToBottom: {
-                      timeout: 30000,
-                      viewportN: 20
+                      timeout: 10000,
+                      viewportN: 10
                     }
                   })
                 ]
               });
-
               console.log('✅ Website cloned successfully!');
             } catch (err) {
               console.error('❌ Cloning failed:', err.message || err);
@@ -88,19 +76,17 @@ jobs:
             }
           })();
           EOF
-
       - name: Run cloning script
         env:
           INPUT_URL: ${{ inputs.url }}
           OUTPUT_DIR: ${{ inputs.directory }}
         run: |
           node index.js "$INPUT_URL" "$OUTPUT_DIR"
-
       - name: Commit and push cloned folder to main branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
+         
           git add "${{ inputs.directory }}"
           git commit -m "Add cloned site: ${{ inputs.directory }} from ${{ inputs.url }}" || echo "No changes to commit"
           git push origin HEAD:main
