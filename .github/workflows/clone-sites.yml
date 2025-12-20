@@ -73,10 +73,28 @@ jobs:
                       headless: true,
                       args: ['--no-sandbox', '--disable-setuid-sandbox']
                     },
+                    gotoOptions: { 
+                      waitUntil: 'networkidle0',  // Stronger wait: no network activity
+                      timeout: 60000 
+                    },
                     scrollToBottom: {
-                      timeout: 10000,
-                      viewportN: 10
-                    }
+                      timeout: 30000,
+                      viewportN: 20
+                    },
+                    renderOptions: async (page) => {
+                      // Optional: Disable animations/transitions for instant "final" state
+                      await page.addStyleTag({
+                        content: `
+                          * {
+                            transition: none !important;
+                            animation: none !important;
+                            animation-duration: 0s !important;
+                            animation-delay: 0s !important;
+                            transition-duration: 0s !important;
+                            transition-delay: 0s !important;
+                          }
+                        `
+                      }
                   })
                 ]
               });
