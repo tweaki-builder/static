@@ -1,0 +1,1255 @@
+<!DOCTYPE html><html lang="zxx" style="scroll-behavior: smooth;"><head><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button:not([disabled]):hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel:not([disabled]):hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger:not([disabled]):hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webilte - Index</title>
+  <link rel="icon" href="images/favicon.png">
+  <!-- CSS only -->
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/splitting.css">
+   <link rel="stylesheet" href="css/swiper.css">
+   <!-- fancybox -->
+   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+   <!-- Font Awesome 6 -->
+   <link rel="stylesheet" href="css/fontawesome.min.css">  
+   <!-- style -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- responsive -->
+   <link rel="stylesheet" href="css/responsive.css"> 
+ </head>
+<body class="page-loaded" style="">
+<div class="footer-fixed webilte-footer">
+    <!-- preloader -->
+    <div class="preloader">
+      <span class="loader"> </span>
+    </div>
+    <!-- preloader end -->
+  <div class="wrapper" style="margin-bottom: 1006px;">  
+    <!-- Header -->
+    <header>
+        <div class="container">
+          <div class="top-bar">
+            <div class="logo">
+              <a href="#">
+                <img alt="logo" src="images/logo.png">
+              </a>
+            </div>
+            <div class="header-left">
+              <nav>
+                <ul>
+                  <li><a href="#home">home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#team">Team</a></li>
+                  <li><a href="#pricing">Pricing</a></li>
+                  <li><a href="#blog">blog</a></li>
+                </ul>
+              </nav>
+              <div class="header-btn"> 
+                <a href="#" class="button-wrapper">
+                  <div class="button-arrow-wrapper">
+                    <i>
+                      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 0.999999C16 0.447715 15.5523 -2.87362e-07 15 -5.40243e-07L6 2.60547e-07C5.44772 -7.66277e-08 5 0.447715 5 1C5 1.55228 5.44772 2 6 2L14 2L14 10C14 10.5523 14.4477 11 15 11C15.5523 11 16 10.5523 16 10L16 0.999999ZM1.70711 15.7071L15.7071 1.70711L14.2929 0.292893L0.292893 14.2929L1.70711 15.7071Z"></path>
+                        </svg>
+                    </i>
+                  </div>
+                  <div class="button-main"> Request a Quote </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Home -->
+    <section id="home" class="hero-section bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="hero-text">
+              <h1>Friendly Ways to <span> Promote Your Services</span></h1>
+              <div class="tet-style">
+                <img src="images/cube.png" alt="img">
+                <p>Start your business today with a great and strong landing page made to enhance the marketer's workflow. </p>
+              </div>
+              <div class="rating">
+                <img src="images/paper-airplane.png" alt="img">
+                <ul class="team-img">
+                  <li><img src="images/team-img-1.jpg" alt="img"></li>
+                  <li><img src="images/team-img-2.png" alt="img"></li>
+                  <li><img src="images/team-img-3.jpg" alt="img"></li>
+                  <li><img src="images/team-img-1.jpg" alt="img"></li>
+                </ul> 
+                <ul class="stars">
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                </ul>
+                <span>4.9 OUT OF 5 rating</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <form role="form" class="get-a-quote" id="contact-form" method="post">
+              <img src="images/form-shap-2.png" alt="img" class="form-img">
+              <div>
+                <h3>Get a Quote</h3>
+                <span>Marketing Business campaign</span>
+              </div>
+              <div class="group-img">
+                <i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_22_21)">
+                  <path d="M13.6569 10.3431C12.7855 9.47181 11.7484 8.82678 10.6168 8.43631C11.8288 7.60159 12.625 6.20463 12.625 4.625C12.625 2.07478 10.5502 0 8 0C5.44978 0 3.375 2.07478 3.375 4.625C3.375 6.20463 4.17122 7.60159 5.38319 8.43631C4.25163 8.82678 3.2145 9.47181 2.34316 10.3431C0.832156 11.8542 0 13.8631 0 16H1.25C1.25 12.278 4.27803 9.25 8 9.25C11.722 9.25 14.75 12.278 14.75 16H16C16 13.8631 15.1678 11.8542 13.6569 10.3431ZM8 8C6.13903 8 4.625 6.486 4.625 4.625C4.625 2.764 6.13903 1.25 8 1.25C9.86097 1.25 11.375 2.764 11.375 4.625C11.375 6.486 9.86097 8 8 8Z" fill="black"></path>
+                  </g>
+                  </svg></i>
+                  <input type="text" name="Complete Name" placeholder="Complete Name" required="">
+              </div>
+              <div class="group-img">
+                <i><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_22_25)">
+                  <path d="M17.0769 3H0.923098C0.415371 3 0 3.41537 0 3.92306V14.0769C0 14.5846 0.415371 15 0.923098 15H17.0769C17.5846 15 18 14.5847 18 14.0769V3.92306C18 3.41537 17.5846 3 17.0769 3ZM16.7305 3.69226L9.531 9.09233C9.40156 9.19084 9.20285 9.25247 8.99996 9.25155C8.79711 9.25247 8.59845 9.19084 8.46896 9.09233L1.26946 3.69226H16.7305ZM12.8848 9.44864L16.8079 14.2948C16.8118 14.2997 16.8166 14.3034 16.8208 14.3078H1.17921C1.18336 14.3032 1.18821 14.2997 1.19215 14.2948L5.11523 9.44864C5.23543 9.30003 5.21265 9.08217 5.06377 8.96169C4.91516 8.84149 4.6973 8.86427 4.57706 9.01291L0.692297 13.8118V4.12496L8.0538 9.64611C8.33052 9.8522 8.66718 9.9429 8.99993 9.94382C9.33223 9.94311 9.66916 9.85241 9.94605 9.64611L17.3076 4.12496V13.8117L13.4229 9.01291C13.3027 8.86431 13.0846 8.84146 12.9362 8.96169C12.7873 9.08189 12.7645 9.30003 12.8848 9.44864Z" fill="black"></path>
+                  </g>
+                </svg>
+                </i>
+                  <input type="email" name="Email Address" placeholder="Email Address" required="">
+              </div>
+              <div class="group-img">
+                <i>
+                  <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_22_29)">
+                    <path d="M13.9786 0H6.99136C5.75827 0.00139826 4.75904 1.00063 4.75781 2.23372V18.7664C4.75904 19.9995 5.75827 20.9987 6.99136 20.9999H13.9786C15.2117 20.9987 16.211 19.9995 16.2124 18.7664V2.23372C16.211 1.00063 15.2117 0.00139826 13.9786 0ZM15.2577 18.7664C15.257 19.4725 14.6848 20.0448 13.9786 20.0455H6.99136C6.28524 20.0448 5.713 19.4725 5.7123 18.7664V2.23372C5.713 1.52742 6.28524 0.955186 6.99136 0.954487H13.9786C14.6848 0.955186 15.257 1.52742 15.2577 2.23372V18.7664Z" fill="black"></path>
+                    <path d="M11.917 1.90918H9.05338C8.78981 1.90918 8.57605 2.12276 8.57605 2.38634C8.57605 2.64991 8.78981 2.86367 9.05338 2.86367H11.917C12.1806 2.86367 12.3942 2.64991 12.3942 2.38634C12.3942 2.12276 12.1806 1.90918 11.917 1.90918Z" fill="black"></path>
+                    <path d="M11.4397 18.1363C11.4397 18.6636 11.0123 19.091 10.4852 19.091C9.95786 19.091 9.53052 18.6636 9.53052 18.1363C9.53052 17.6092 9.95786 17.1818 10.4852 17.1818C11.0123 17.1818 11.4397 17.6092 11.4397 18.1363Z" fill="black"></path>
+                    </g>
+                  </svg>
+                </i>
+                  <input type="number" name="Phone No" placeholder="Phone No" required="">
+              </div>
+              <p>Preferred Consult Method: </p>
+              <div class="d-flex align-items-center">
+                  <div class="radio-button">
+                      <input type="radio" id="VirtualIn-Office" name="fav_language" value="Virtual">
+                      <label for="Virtual">Virtual</label>
+                  </div>
+                  <div class="radio-button">
+                     <input type="radio" id="css" name="fav_language" value="In-Office">
+                      <label for="css">In-Office</label><br>
+                  </div>
+              </div> 
+              <button type="submit" class="button-wrapper">
+                <div class="button-arrow-wrapper">
+                    <i>
+                      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 0.999999C16 0.447715 15.5523 -2.87362e-07 15 -5.40243e-07L6 2.60547e-07C5.44772 -7.66277e-08 5 0.447715 5 1C5 1.55228 5.44772 2 6 2L14 2L14 10C14 10.5523 14.4477 11 15 11C15.5523 11 16 10.5523 16 10L16 0.999999ZM1.70711 15.7071L15.7071 1.70711L14.2929 0.292893L0.292893 14.2929L1.70711 15.7071Z"></path>
+                        </svg>
+                    </i>
+                  </div>
+                  <div class="button-main"> Request a Quote </div>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div> 
+      <div class="hero-shap">
+        <img src="images/shap.png" alt="img" class="shap-one">
+        <img src="images/shap.png" alt="img" class="shap-two">
+        <img src="images/shap-1.png" alt="img" class="shap-three">
+      </div> 
+      <video autoplay="" muted="" loop="" playsinline="" id="heroVideo">
+        <source src="media/businessman.mp4" type="video/mp4">
+      </video>
+    </section> 
+    <div class="branding bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="branding-style"> 
+              <i>
+                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_73_1279)">
+                    <path d="M45.0437 29.1547L36.6651 26.239V6.47754H38.8213C39.2026 6.47754 39.5682 6.32609 39.8378 6.05651C40.1074 5.78692 40.2588 5.42129 40.2588 5.04004C40.2588 4.65879 40.1074 4.29316 39.8378 4.02357C39.5682 3.75399 39.2026 3.60254 38.8213 3.60254H36.6651V1.44629C36.6651 1.06504 36.5136 0.699407 36.244 0.429823C35.9745 0.16024 35.6088 0.00878906 35.2276 0.00878906C34.8463 0.00878906 34.4807 0.16024 34.2111 0.429823C33.9415 0.699407 33.7901 1.06504 33.7901 1.44629V3.60254H6.47757V1.44629C6.47757 1.06504 6.32612 0.699407 6.05654 0.429823C5.78695 0.16024 5.42132 0.00878906 5.04007 0.00878906C4.65882 0.00878906 4.29319 0.16024 4.0236 0.429823C3.75402 0.699407 3.60257 1.06504 3.60257 1.44629V3.60254H1.44632C1.06507 3.60254 0.699437 3.75399 0.429854 4.02357C0.16027 4.29316 0.00881958 4.65879 0.00881958 5.04004C0.00881958 5.42129 0.16027 5.78692 0.429854 6.05651C0.699437 6.32609 1.06507 6.47754 1.44632 6.47754H3.60257V33.79H1.44632C1.06507 33.79 0.699437 33.9415 0.429854 34.2111C0.16027 34.4807 0.00881958 34.8463 0.00881958 35.2275C0.00881958 35.6088 0.16027 35.9744 0.429854 36.244C0.699437 36.5136 1.06507 36.665 1.44632 36.665H3.60257V38.8213C3.60257 39.2025 3.75402 39.5682 4.0236 39.8378C4.29319 40.1073 4.65882 40.2588 5.04007 40.2588C5.42132 40.2588 5.78695 40.1073 6.05654 39.8378C6.32612 39.5682 6.47757 39.2025 6.47757 38.8213V36.665H26.2391L29.1547 45.0437C29.2573 45.3231 29.4437 45.564 29.6883 45.7336C29.933 45.9031 30.224 45.993 30.5216 45.9911C30.8193 45.9891 31.1091 45.8954 31.3515 45.7226C31.5939 45.5499 31.777 45.3065 31.876 45.0258L35.1637 35.1634L45.0262 31.876C45.3068 31.7769 45.5501 31.5937 45.7228 31.3513C45.8955 31.1089 45.9892 30.8191 45.9911 30.5215C45.993 30.2239 45.9031 29.9329 45.7335 29.6883C45.564 29.4437 45.3231 29.2573 45.0437 29.1547ZM20.1338 33.79H6.47757V6.47754H33.7901V25.2386L30.4444 24.0744L33.3689 21.1502C33.6365 20.8796 33.7866 20.5144 33.7866 20.1338C33.7866 19.7532 33.6365 19.388 33.3689 19.1174L21.1502 6.89868C21.0167 6.76517 20.8583 6.65926 20.6839 6.58699C20.5095 6.51473 20.3226 6.47754 20.1338 6.47754C19.9451 6.47754 19.7581 6.51473 19.5837 6.58699C19.4094 6.65926 19.2509 6.76517 19.1175 6.89868L6.89872 19.1174C6.7652 19.2509 6.65929 19.4093 6.58703 19.5837C6.51477 19.7581 6.47757 19.945 6.47757 20.1338C6.47757 20.3226 6.51477 20.5095 6.58703 20.6839C6.65929 20.8583 6.7652 21.0167 6.89872 21.1502L19.1175 33.3689C19.2509 33.5024 19.4094 33.6083 19.5837 33.6806C19.7581 33.7529 19.9451 33.79 20.1338 33.79C20.3226 33.79 20.5095 33.7529 20.6839 33.6806C20.8583 33.6083 21.0167 33.5024 21.1502 33.3689L24.0745 30.4448L25.2386 33.79L20.1338 33.79ZM23.4812 21.6513C23.2263 21.5665 22.9529 21.5543 22.6915 21.6161C22.4301 21.6779 22.1911 21.8112 22.0012 22.0011C21.8112 22.191 21.6779 22.4301 21.6161 22.6915C21.5543 22.9529 21.5665 23.2263 21.6513 23.4812L23.0251 27.4288L20.1338 30.3195L9.94779 20.1338L20.1338 9.94811L30.3199 20.1338L27.4285 23.0249L23.4812 21.6513ZM33.5725 32.6631C33.3608 32.7338 33.1685 32.8528 33.0108 33.0106C32.853 33.1684 32.7341 33.3608 32.6635 33.5725L30.4827 40.1135L25.3434 25.3433L40.1135 30.483L33.5725 32.6631Z" fill="white"></path>
+                    <path d="M19.4149 20.8524C20.2088 20.8524 20.8524 20.2088 20.8524 19.4149C20.8524 18.621 20.2088 17.9774 19.4149 17.9774C18.621 17.9774 17.9774 18.621 17.9774 19.4149C17.9774 20.2088 18.621 20.8524 19.4149 20.8524Z" fill="white"></path>
+                  </g> 
+                </svg> 
+              </i> 
+              <div>
+                <h2>Branding</h2>
+                <p>Focused on finding and placing the best UX talent from around the world.</p>
+                <span>1.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="branding-style">
+              <i>
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M42.6252 8.24825H38.5004V4.12305C38.5004 3.75838 38.3555 3.40864 38.0976 3.15076C37.8398 2.89289 37.49 2.74801 37.1254 2.74799H19.2354C18.0079 1.72273 16.5851 0.95721 15.0532 0.497773C13.5212 0.0383358 11.912 -0.105467 10.3229 0.0750689C7.77326 0.37286 5.39233 1.50088 3.54702 3.28528C1.70172 5.06969 0.494464 7.41144 0.111309 9.94963C-0.229806 12.3264 0.185402 14.7503 1.29814 16.878C2.41088 19.0057 4.16476 20.7295 6.31143 21.8052C6.38684 21.8429 6.45033 21.9008 6.49489 21.9723C6.53944 22.0439 6.56332 22.1264 6.56387 22.2107V24.511C6.56609 25.1225 6.81078 25.7082 7.24425 26.1395C7.67772 26.5708 8.26458 26.8125 8.87607 26.8116H10.3135V27.4992C10.3123 27.6805 10.3469 27.8603 10.4155 28.0282C10.484 28.1961 10.5851 28.3488 10.7129 28.4774C10.8407 28.6061 10.9927 28.7082 11.1601 28.7779C11.3276 28.8475 11.5071 28.8834 11.6884 28.8834C11.8698 28.8834 12.0493 28.8475 12.2168 28.7779C12.3842 28.7082 12.5362 28.6061 12.664 28.4774C12.7918 28.3488 12.8929 28.1961 12.9614 28.0282C13.03 27.8603 13.0646 27.6805 13.0634 27.4992V26.8116H14.5008C15.1123 26.8125 15.6992 26.5708 16.1327 26.1395C16.5661 25.7082 16.8108 25.1225 16.813 24.511V22.2111C16.8143 22.1257 16.8391 22.0424 16.8847 21.9702C16.9303 21.8981 16.995 21.8399 17.0715 21.8022C18.4957 21.0867 19.7546 20.0815 20.7676 18.8511C21.7806 17.6207 22.5253 16.1922 22.9541 14.6572C23.3828 13.1222 23.4861 11.5145 23.2572 9.9373C23.0284 8.36005 22.4725 6.84802 21.6253 5.49813H35.7504V35.7496H11.6884V30.9368C11.6896 30.7555 11.655 30.5757 11.5864 30.4078C11.5179 30.2399 11.4168 30.0873 11.289 29.9586C11.1612 29.83 11.0092 29.7279 10.8418 29.6582C10.6744 29.5885 10.4948 29.5526 10.3135 29.5526C10.1321 29.5526 9.95256 29.5885 9.78514 29.6582C9.61771 29.7279 9.46573 29.83 9.33793 29.9586C9.21013 30.0873 9.10904 30.2399 9.04049 30.4078C8.97194 30.5757 8.93727 30.7555 8.93849 30.9368V36.3077C8.15214 36.7612 7.53751 37.4617 7.19001 38.3003C6.8425 39.1389 6.78157 40.0688 7.01666 40.9456C7.25175 41.8224 7.76972 42.5971 8.49015 43.1494C9.21059 43.7017 10.0932 44.0007 11.001 44H42.6252C42.9899 44 43.3396 43.8551 43.5975 43.5972C43.8554 43.3393 44.0002 42.9896 44.0002 42.6249V9.62332C44.0002 9.25865 43.8554 8.90891 43.5975 8.65103C43.3396 8.39316 42.9899 8.24828 42.6252 8.24825ZM15.8147 19.3562C15.2877 19.624 14.8451 20.0325 14.5359 20.5364C14.2268 21.0403 14.0631 21.6199 14.0631 22.2111V24.0615H9.3138V22.2108C9.31456 21.6205 9.1518 21.0415 8.84356 20.5382C8.53531 20.0348 8.09365 19.6266 7.56755 19.3589C5.93043 18.5397 4.59253 17.2262 3.74331 15.6044C2.89408 13.9826 2.57657 12.1348 2.83573 10.3226C3.08731 8.72838 3.76394 7.23144 4.79441 5.98928C5.82489 4.74713 7.17112 3.80569 8.69146 3.26401C10.2118 2.72234 11.85 2.60046 13.4338 2.9112C15.0175 3.22194 16.4882 3.95381 17.6912 5.02981C18.7574 5.97597 19.5757 7.16893 20.0744 8.50439C20.573 9.83985 20.737 11.2771 20.5518 12.6906C20.3667 14.104 19.8381 15.4506 19.0123 16.6126C18.1865 17.7746 17.0886 18.7165 15.8147 19.3562ZM41.2503 41.2499H11.001C10.6363 41.2499 10.2865 41.105 10.0287 40.8471C9.77079 40.5892 9.62592 40.2395 9.62592 39.8748C9.62592 39.5101 9.77079 39.1603 10.0287 38.9025C10.2865 38.6446 10.6363 38.4997 11.001 38.4997H37.1254C37.4901 38.4997 37.8398 38.3548 38.0977 38.0969C38.3555 37.8391 38.5004 37.4893 38.5004 37.1246V10.9984H41.2503L41.2503 41.2499Z" fill="white"></path>
+              </svg> 
+            </i>
+              <div>
+                <h2>Consulting</h2>
+                <p>Focused on finding and placing the best UX talent from around the world.</p>
+                <span>2.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="branding-style mb-0">
+               <i>
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_80_2691)">
+                    <path d="M43.151 0.105112C42.8999 0.000791914 42.6234 -0.0265669 42.3566 0.0265067C42.0899 0.0795803 41.8449 0.210694 41.6528 0.403212L36.556 5.5H14.4375V4.125C14.4375 3.03098 14.0029 1.98177 13.2293 1.20818C12.4557 0.434597 11.4065 0 10.3125 0C9.21848 0 8.16927 0.434597 7.39568 1.20818C6.6221 1.98177 6.1875 3.03098 6.1875 4.125V11H2.0625C1.51567 11.0006 0.991416 11.2181 0.604752 11.6048C0.218087 11.9914 0.000596885 12.5157 0 13.0625L0 33.6875C0.00528089 34.0511 0.149401 34.3989 0.402834 34.6597L9.34033 43.5972C9.60045 43.8516 9.94867 43.9959 10.3125 44H33.6875C34.2343 43.9994 34.7586 43.7819 35.1452 43.3952C35.5319 43.0086 35.7494 42.4843 35.75 41.9375V37.8125H39.1875C39.7343 37.8119 40.2586 37.5944 40.6452 37.2077C41.0319 36.8211 41.2494 36.2968 41.25 35.75V29.5629H42.625C42.9897 29.5629 43.3394 29.418 43.5973 29.1601C43.8551 28.9023 44 28.5525 44 28.1879V1.37538C44 1.10341 43.9194 0.837558 43.7682 0.611445C43.6171 0.385332 43.4023 0.209123 43.151 0.105112ZM33.806 8.25L31.056 11H14.4375V8.25H33.806ZM8.9375 4.125C8.9375 3.76033 9.08237 3.41059 9.34023 3.15273C9.59809 2.89487 9.94783 2.75 10.3125 2.75C10.6772 2.75 11.0269 2.89487 11.2848 3.15273C11.5426 3.41059 11.6875 3.76033 11.6875 4.125V18.7676L10.3125 20.4864L8.9375 18.7676V4.125ZM8.9375 39.3053L4.69467 35.0625H8.9375V39.3053ZM33 41.25H11.6875V34.375C11.6869 33.8282 11.4694 33.3039 11.0827 32.9173C10.6961 32.5306 10.1718 32.3131 9.625 32.3125H2.75V13.75H6.1875V19.25C6.1876 19.5623 6.29391 19.8652 6.48896 20.109L9.23896 23.5465C9.36873 23.706 9.53241 23.8346 9.71811 23.9229C9.90381 24.0113 10.1069 24.0571 10.3125 24.0571C10.5181 24.0571 10.7212 24.0113 10.9069 23.9229C11.0926 23.8346 11.2562 23.706 11.386 23.5465L14.136 20.109C14.3311 19.8652 14.4374 19.5623 14.4375 19.25V13.75H28.306L14.8403 27.2157C14.6523 27.4096 14.5252 27.6543 14.4745 27.9196C14.4239 28.1849 14.4519 28.4592 14.5553 28.7087C14.6586 28.9582 14.8327 29.172 15.0561 29.3238C15.2795 29.4756 15.5425 29.5587 15.8125 29.5629H33V41.25ZM38.5 35.0625H35.75V29.5629H38.5V35.0625ZM41.25 26.8129H19.1322L41.25 4.69505V26.8129Z" fill="white"></path>
+                    <path d="M28.2922 23.214C28.3962 23.4653 28.5724 23.68 28.7985 23.8312C29.0247 23.9823 29.2905 24.0629 29.5625 24.0629H37.125C37.4896 24.0629 37.8394 23.918 38.0972 23.6602C38.3551 23.4023 38.5 23.0526 38.5 22.6879V15.1254C38.4958 14.8554 38.4127 14.5924 38.261 14.369C38.1092 14.1456 37.8954 13.9715 37.6458 13.8681C37.3963 13.7648 37.122 13.7367 36.8567 13.7874C36.5914 13.838 36.3467 13.9652 36.1528 14.1533L28.5903 21.7158C28.398 21.908 28.267 22.1529 28.2139 22.4196C28.1609 22.6863 28.1881 22.9628 28.2922 23.214ZM35.75 18.4451V21.3129H32.8821L35.75 18.4451Z" fill="white"></path>
+                    <path d="M10.3125 29.5625C11.0719 29.5625 11.6875 28.9469 11.6875 28.1875C11.6875 27.4281 11.0719 26.8125 10.3125 26.8125C9.55311 26.8125 8.9375 27.4281 8.9375 28.1875C8.9375 28.9469 9.55311 29.5625 10.3125 29.5625Z" fill="white"></path>
+                  </g> 
+                </svg> 
+              </i>    
+              <div>
+                <h2>Design</h2>
+                <p>Focused on finding and placing the best UX talent from around the world.</p>
+                <span>3.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Home end -->
+
+    <!-- Who We Are -->
+
+    <section id="about" class="who-we-are gap" style="background-image: url(images/background-pattern-1.png);">
+      <div class="container">
+        <div class="heading">
+          <h2 class="text_invert" style=""><div style="display: block; text-align: start; position: relative; overflow: hidden; color: rgb(0, 0, 0); background-position-x: 0%;">Who We Are?</div></h2>
+          <p>We help entrepreneurs and small businesses overcome challenges, streamline operations, and unlock growth with strategic business consulting.</p>
+          <img src="images/left-pattern.png" alt="img">
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="mission">
+              <h3>Mission.</h3>
+              <p>Through careful analysis, creative thinking, and a deep understanding of their goals, we empower businesses to surpass expectations and thrive in today's dynamic and competitive landscape. </p> 
+            </div>
+            <div class="vision">
+              <h3>Vision.</h3>
+              <ul class="theme-list">
+                <li>Use Facebook Pixel &amp; Google Remarketing</li> 
+                <li>Retarget website visitors &amp; abandoned carts</li>
+                <li>Send follow-up emails or special offers</li>
+             </ul>
+            </div> 
+            <div class="experience">
+              <h3 data-max="14" class="ms-animated">9<span>+</span></h3>
+              <p>years of experience</p>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="about-img">
+              <figure>
+                <img src="images/about.jpg" alt="img">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who We Are end -->
+
+    <!-- Recommended companies -->
+
+    <section class="gap" style="background-color: #F5F5F5;">
+      <div class="container">
+        <div class="recommended-companies">
+          <h2 class="text_invert" style=""><div style="display: block; text-align: center; position: relative; overflow: hidden; color: rgb(0, 0, 0); background-position-x: 0%;">Recommended </div><div style="display: block; text-align: center; position: relative; overflow: hidden; color: rgb(0, 0, 0); background-position-x: 0%;">companies</div></h2>
+          <p>We help entrepreneurs and small businesses overcome challenges, streamline operations, and unlock growth with strategic business consulting.</p>
+          <img src="images/shap-4.png" alt="img" class="shap-3">
+          <img src="images/shap-3.png" alt="img" class="shap-4">
+        </div>
+      </div>
+      <div class="marquee">
+        <div class="container">
+          <div class="marquee-icon">
+            <div class="marquee-content"> 
+              <div class="marquee-item">
+                <img src="images/sponsor-1.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-2.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-3.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-4.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-5.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-6.png" alt="img">
+              </div> 
+            </div> 
+            <div class="marquee-content"> 
+              <div class="marquee-item">
+                <img src="images/sponsor-1.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-2.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-3.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-4.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-5.png" alt="img">
+              </div>
+              <div class="marquee-item">
+                <img src="images/sponsor-6.png" alt="img">
+              </div> 
+            </div> 
+          </div>
+        </div> 
+      </div>
+    </section>
+
+    <!-- workflow-section -->
+
+    <!-- workflow-section end -->
+
+    <section class="gap workflow-section">
+      <div class="container">
+        <div class="heading">
+          <h2 class="text_invert" style=""><div style="display: block; text-align: start; position: relative; overflow: hidden; color: rgb(0, 0, 0); background-position-x: 0%;">Seamless </div><div style="display: block; text-align: start; position: relative; overflow: hidden; color: rgb(0, 0, 0); background-position-x: 0%;">Workflow</div></h2>
+          <p>We help entrepreneurs and small businesses overcome challenges, streamline operations, and unlock growth with strategic business consulting.</p> 
+        </div>
+        <div class="row g-0">
+          <div class="col-lg-4 col-md-6">
+            <div class="workflow"><div class="hover-overlay" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 0; visibility: hidden;"></div>
+              <img src="images/workflow-1.png" alt="img">
+              <h3>Discovery &amp; Strategy</h3>
+              <p>starting out or ready to level up, we're here to guide every step with clear insights and actionable strategies.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="workflow center"><div class="hover-overlay" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 0; visibility: hidden;"></div>
+              <img src="images/workflow-2.png" alt="img">
+              <h3>Development &amp; Execution</h3>
+              <p>starting out or ready to level up, we're here to guide every step with clear insights and actionable strategies.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="workflow"><div class="hover-overlay" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 0; visibility: hidden;"></div>
+              <img src="images/workflow-3.png" alt="img">
+              <h3>Launch &amp; Support</h3>
+              <p>starting out or ready to level up, we're here to guide every step with clear insights and actionable strategies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="images/top-pattern.png" alt="img" class="shap-3">
+      <img src="images/top-pattern.png" alt="img" class="shap-4">
+    </section>
+
+    <!-- webilte-reviews -->
+
+    <section class="gap reviews">
+      <div class="container">
+        <div class="swiper-container js-reviews-carousel swiper-container-fade swiper-container-initialized swiper-container-horizontal" data-loop="false" data-autoplay="6000">
+          <div class="swiper-wrapper" style="transition-duration: 0ms;">
+            <div class="swiper-slide swiper-slide-prev" data-swiper-autoplay="6000" style="width: 696px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+              <div class="webilte-reviews">
+                <div class="reviews-img">
+                  <img src="images/man-face-portrait.jpg" alt="img">
+                  <img src="images/quotation-mark.png" alt="img" class="quotation-mark">
+                </div>
+                <div class="webilte-text">
+                  <div data-splitting="" class="words lines splitting" style="--word-total: 46; --line-total: 4;"><p><span class="word" data-word="This" style="--word-index: 0; --line-index: 0;">This</span><span class="whitespace"> </span><span class="word" data-word="is" style="--word-index: 1; --line-index: 0;">is</span><span class="whitespace"> </span><span class="word" data-word="one" style="--word-index: 2; --line-index: 0;">one</span><span class="whitespace"> </span><span class="word" data-word="the" style="--word-index: 3; --line-index: 0;">the</span><span class="whitespace"> </span><span class="word" data-word="most" style="--word-index: 4; --line-index: 0;">most</span><span class="whitespace"> </span><span class="word" data-word="transparent" style="--word-index: 5; --line-index: 0;">transparent</span><span class="whitespace"> </span><span class="word" data-word="referral" style="--word-index: 6; --line-index: 0;">referral</span><span class="whitespace"> </span><span class="word" data-word="programs" style="--word-index: 7; --line-index: 0;">programs</span><span class="whitespace"> </span><span class="word" data-word="I’ve" style="--word-index: 8; --line-index: 0;">I’ve</span><span class="whitespace"> </span><span class="word" data-word="ever" style="--word-index: 9; --line-index: 0;">ever</span><span class="whitespace"> </span><span class="word" data-word="used" style="--word-index: 10; --line-index: 0;">used</span><span class="whitespace"> </span><span class="word" data-word="before." style="--word-index: 11; --line-index: 1;">before.</span><span class="whitespace"> </span><span class="word" data-word="Besides," style="--word-index: 12; --line-index: 1;">Besides,</span><span class="whitespace"> </span><span class="word" data-word="it’s" style="--word-index: 13; --line-index: 1;">it’s</span><span class="whitespace"> </span><span class="word" data-word="double-sided" style="--word-index: 14; --line-index: 1;">double-sided</span><span class="whitespace"> </span><span class="word" data-word="and" style="--word-index: 15; --line-index: 1;">and</span><span class="whitespace"> </span><span class="word" data-word="it" style="--word-index: 16; --line-index: 1;">it</span><span class="whitespace"> </span><span class="word" data-word="lets" style="--word-index: 17; --line-index: 1;">lets</span><span class="whitespace"> </span><span class="word" data-word="me" style="--word-index: 18; --line-index: 1;">me</span><span class="whitespace"> </span><span class="word" data-word="not" style="--word-index: 19; --line-index: 1;">not</span><span class="whitespace"> </span><span class="word" data-word="only" style="--word-index: 20; --line-index: 1;">only</span><span class="whitespace"> </span><span class="word" data-word="share" style="--word-index: 21; --line-index: 1;">share</span><span class="whitespace"> </span><span class="word" data-word="a" style="--word-index: 22; --line-index: 1;">a</span><span class="whitespace"> </span><span class="word" data-word="great" style="--word-index: 23; --line-index: 1;">great</span><span class="whitespace"> </span><span class="word" data-word="service" style="--word-index: 24; --line-index: 2;">service</span><span class="whitespace"> </span><span class="word" data-word="with" style="--word-index: 25; --line-index: 2;">with</span><span class="whitespace"> </span><span class="word" data-word="my" style="--word-index: 26; --line-index: 2;">my</span><span class="whitespace"> </span><span class="word" data-word="friends," style="--word-index: 27; --line-index: 2;">friends,</span><span class="whitespace"> </span><span class="word" data-word="but" style="--word-index: 28; --line-index: 2;">but</span><span class="whitespace"> </span><span class="word" data-word="to" style="--word-index: 29; --line-index: 2;">to</span><span class="whitespace"> </span><span class="word" data-word="earn" style="--word-index: 30; --line-index: 2;">earn</span><span class="whitespace"> </span><span class="word" data-word="and" style="--word-index: 31; --line-index: 2;">and</span><span class="whitespace"> </span><span class="word" data-word="make" style="--word-index: 32; --line-index: 2;">make</span><span class="whitespace"> </span><span class="word" data-word="them" style="--word-index: 33; --line-index: 2;">them</span><span class="whitespace"> </span><span class="word" data-word="earn" style="--word-index: 34; --line-index: 2;">earn</span><span class="whitespace"> </span><span class="word" data-word="as" style="--word-index: 35; --line-index: 2;">as</span><span class="whitespace"> </span><span class="word" data-word="well." style="--word-index: 36; --line-index: 2;">well.</span><span class="whitespace"> </span><span class="word" data-word="I" style="--word-index: 37; --line-index: 2;">I</span><span class="whitespace"> </span><span class="word" data-word="earned" style="--word-index: 38; --line-index: 3;">earned</span><span class="whitespace"> </span><span class="word" data-word="money" style="--word-index: 39; --line-index: 3;">money</span><span class="whitespace"> </span><span class="word" data-word="by" style="--word-index: 40; --line-index: 3;">by</span><span class="whitespace"> </span><span class="word" data-word="sharing" style="--word-index: 41; --line-index: 3;">sharing</span><span class="whitespace"> </span><span class="word" data-word="referral" style="--word-index: 42; --line-index: 3;">referral</span><span class="whitespace"> </span><span class="word" data-word="link" style="--word-index: 43; --line-index: 3;">link</span><span class="whitespace"> </span><span class="word" data-word="on" style="--word-index: 44; --line-index: 3;">on</span><span class="whitespace"> </span><span class="word" data-word="Facebook." style="--word-index: 45; --line-index: 3;">Facebook.</span></p></div>
+                  <h3 class="title">
+                    <span data-splitting="" class="words lines splitting" style="--word-total: 2; --line-total: 1;"><span class="word" data-word="John" style="--word-index: 0; --line-index: 0;">John</span><span class="whitespace"> </span><span class="word" data-word="Michael" style="--word-index: 1; --line-index: 0;">Michael</span></span>
+                  </h3>
+                  <ul class="stars">
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                  </ul>
+                  <div class="subtitle">
+                    <span data-splitting="" class="words lines splitting" style="--word-total: 2; --line-total: 1;"><span class="word" data-word="Quality" style="--word-index: 0; --line-index: 0;">Quality</span><span class="whitespace"> </span><span class="word" data-word="Manager" style="--word-index: 1; --line-index: 0;">Manager</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-active" data-swiper-autoplay="6000" style="width: 696px; opacity: 1; transform: translate3d(-696px, 0px, 0px); transition-duration: 0ms;">
+              <div class="webilte-reviews">
+                <div class="reviews-img">
+                  <img src="images/man-2.jpg" alt="img">
+                  <img src="images/quotation-mark.png" alt="img" class="quotation-mark">
+                </div>
+                <div class="webilte-text">
+                  <div data-splitting="" class="words lines splitting" style="--word-total: 46; --line-total: 4;"><p><span class="word" data-word="This" style="--word-index: 0; --line-index: 0;">This</span><span class="whitespace"> </span><span class="word" data-word="is" style="--word-index: 1; --line-index: 0;">is</span><span class="whitespace"> </span><span class="word" data-word="one" style="--word-index: 2; --line-index: 0;">one</span><span class="whitespace"> </span><span class="word" data-word="the" style="--word-index: 3; --line-index: 0;">the</span><span class="whitespace"> </span><span class="word" data-word="most" style="--word-index: 4; --line-index: 0;">most</span><span class="whitespace"> </span><span class="word" data-word="transparent" style="--word-index: 5; --line-index: 0;">transparent</span><span class="whitespace"> </span><span class="word" data-word="referral" style="--word-index: 6; --line-index: 0;">referral</span><span class="whitespace"> </span><span class="word" data-word="programs" style="--word-index: 7; --line-index: 0;">programs</span><span class="whitespace"> </span><span class="word" data-word="I’ve" style="--word-index: 8; --line-index: 0;">I’ve</span><span class="whitespace"> </span><span class="word" data-word="ever" style="--word-index: 9; --line-index: 0;">ever</span><span class="whitespace"> </span><span class="word" data-word="used" style="--word-index: 10; --line-index: 0;">used</span><span class="whitespace"> </span><span class="word" data-word="before." style="--word-index: 11; --line-index: 1;">before.</span><span class="whitespace"> </span><span class="word" data-word="Besides," style="--word-index: 12; --line-index: 1;">Besides,</span><span class="whitespace"> </span><span class="word" data-word="it’s" style="--word-index: 13; --line-index: 1;">it’s</span><span class="whitespace"> </span><span class="word" data-word="double-sided" style="--word-index: 14; --line-index: 1;">double-sided</span><span class="whitespace"> </span><span class="word" data-word="and" style="--word-index: 15; --line-index: 1;">and</span><span class="whitespace"> </span><span class="word" data-word="it" style="--word-index: 16; --line-index: 1;">it</span><span class="whitespace"> </span><span class="word" data-word="lets" style="--word-index: 17; --line-index: 1;">lets</span><span class="whitespace"> </span><span class="word" data-word="me" style="--word-index: 18; --line-index: 1;">me</span><span class="whitespace"> </span><span class="word" data-word="not" style="--word-index: 19; --line-index: 1;">not</span><span class="whitespace"> </span><span class="word" data-word="only" style="--word-index: 20; --line-index: 1;">only</span><span class="whitespace"> </span><span class="word" data-word="share" style="--word-index: 21; --line-index: 1;">share</span><span class="whitespace"> </span><span class="word" data-word="a" style="--word-index: 22; --line-index: 1;">a</span><span class="whitespace"> </span><span class="word" data-word="great" style="--word-index: 23; --line-index: 1;">great</span><span class="whitespace"> </span><span class="word" data-word="service" style="--word-index: 24; --line-index: 2;">service</span><span class="whitespace"> </span><span class="word" data-word="with" style="--word-index: 25; --line-index: 2;">with</span><span class="whitespace"> </span><span class="word" data-word="my" style="--word-index: 26; --line-index: 2;">my</span><span class="whitespace"> </span><span class="word" data-word="friends," style="--word-index: 27; --line-index: 2;">friends,</span><span class="whitespace"> </span><span class="word" data-word="but" style="--word-index: 28; --line-index: 2;">but</span><span class="whitespace"> </span><span class="word" data-word="to" style="--word-index: 29; --line-index: 2;">to</span><span class="whitespace"> </span><span class="word" data-word="earn" style="--word-index: 30; --line-index: 2;">earn</span><span class="whitespace"> </span><span class="word" data-word="and" style="--word-index: 31; --line-index: 2;">and</span><span class="whitespace"> </span><span class="word" data-word="make" style="--word-index: 32; --line-index: 2;">make</span><span class="whitespace"> </span><span class="word" data-word="them" style="--word-index: 33; --line-index: 2;">them</span><span class="whitespace"> </span><span class="word" data-word="earn" style="--word-index: 34; --line-index: 2;">earn</span><span class="whitespace"> </span><span class="word" data-word="as" style="--word-index: 35; --line-index: 2;">as</span><span class="whitespace"> </span><span class="word" data-word="well." style="--word-index: 36; --line-index: 2;">well.</span><span class="whitespace"> </span><span class="word" data-word="I" style="--word-index: 37; --line-index: 2;">I</span><span class="whitespace"> </span><span class="word" data-word="earned" style="--word-index: 38; --line-index: 3;">earned</span><span class="whitespace"> </span><span class="word" data-word="money" style="--word-index: 39; --line-index: 3;">money</span><span class="whitespace"> </span><span class="word" data-word="by" style="--word-index: 40; --line-index: 3;">by</span><span class="whitespace"> </span><span class="word" data-word="sharing" style="--word-index: 41; --line-index: 3;">sharing</span><span class="whitespace"> </span><span class="word" data-word="referral" style="--word-index: 42; --line-index: 3;">referral</span><span class="whitespace"> </span><span class="word" data-word="link" style="--word-index: 43; --line-index: 3;">link</span><span class="whitespace"> </span><span class="word" data-word="on" style="--word-index: 44; --line-index: 3;">on</span><span class="whitespace"> </span><span class="word" data-word="Facebook." style="--word-index: 45; --line-index: 3;">Facebook.</span></p></div>
+                  <h3 class="title">
+                    <span data-splitting="" class="words lines splitting" style="--word-total: 2; --line-total: 1;"><span class="word" data-word="Carter" style="--word-index: 0; --line-index: 0;">Carter</span><span class="whitespace"> </span><span class="word" data-word="Davis" style="--word-index: 1; --line-index: 0;">Davis</span></span>
+                  </h3>
+                  <ul class="stars">
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                  </ul>
+                  <div class="subtitle">
+                    <span data-splitting="" class="words lines splitting" style="--word-total: 2; --line-total: 1;"><span class="word" data-word="Quality" style="--word-index: 0; --line-index: 0;">Quality</span><span class="whitespace"> </span><span class="word" data-word="Manager" style="--word-index: 1; --line-index: 0;">Manager</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-next" data-swiper-autoplay="6000" style="width: 696px; opacity: 0; transform: translate3d(-1392px, 0px, 0px); transition-duration: 0ms;">
+              <div class="webilte-reviews">
+                <div class="reviews-img">
+                  <img src="images/man-3.jpg" alt="img">
+                  <img src="images/quotation-mark.png" alt="img" class="quotation-mark">
+                </div>
+                <div class="webilte-text">
+                  <div data-splitting="" class="words lines splitting" style="--word-total: 46; --line-total: 4;"><p> <span class="word" data-word="I’ve" style="--word-index: 0; --line-index: 0;">I’ve</span><span class="whitespace"> </span><span class="word" data-word="ever" style="--word-index: 1; --line-index: 0;">ever</span><span class="whitespace"> </span><span class="word" data-word="used" style="--word-index: 2; --line-index: 0;">used</span><span class="whitespace"> </span><span class="word" data-word="before." style="--word-index: 3; --line-index: 0;">before.</span><span class="whitespace"> </span><span class="word" data-word="Besides," style="--word-index: 4; --line-index: 0;">Besides,</span><span class="whitespace"> </span><span class="word" data-word="it’s" style="--word-index: 5; --line-index: 0;">it’s</span><span class="whitespace"> </span><span class="word" data-word="double-sided" style="--word-index: 6; --line-index: 0;">double-sided</span><span class="whitespace"> </span><span class="word" data-word="and" style="--word-index: 7; --line-index: 0;">and</span><span class="whitespace"> </span><span class="word" data-word="it" style="--word-index: 8; --line-index: 0;">it</span><span class="whitespace"> </span><span class="word" data-word="lets" style="--word-index: 9; --line-index: 0;">lets</span><span class="whitespace"> </span><span class="word" data-word="me" style="--word-index: 10; --line-index: 0;">me</span><span class="whitespace"> </span><span class="word" data-word="not" style="--word-index: 11; --line-index: 0;">not</span><span class="whitespace"> </span><span class="word" data-word="only" style="--word-index: 12; --line-index: 0;">only</span><span class="whitespace"> </span><span class="word" data-word="share" style="--word-index: 13; --line-index: 1;">share</span><span class="whitespace"> </span><span class="word" data-word="a" style="--word-index: 14; --line-index: 1;">a</span><span class="whitespace"> </span><span class="word" data-word="great" style="--word-index: 15; --line-index: 1;">great</span><span class="whitespace"> </span><span class="word" data-word="service" style="--word-index: 16; --line-index: 1;">service</span><span class="whitespace"> </span><span class="word" data-word="with" style="--word-index: 17; --line-index: 1;">with</span><span class="whitespace"> </span><span class="word" data-word="my" style="--word-index: 18; --line-index: 1;">my</span><span class="whitespace"> </span><span class="word" data-word="friends," style="--word-index: 19; --line-index: 1;">friends,</span><span class="whitespace"> </span><span class="word" data-word="but" style="--word-index: 20; --line-index: 1;">but</span><span class="whitespace"> </span><span class="word" data-word="to" style="--word-index: 21; --line-index: 1;">to</span><span class="whitespace"> </span><span class="word" data-word="earn" style="--word-index: 22; --line-index: 1;">earn</span><span class="whitespace"> </span><span class="word" data-word="and" style="--word-index: 23; --line-index: 1;">and</span><span class="whitespace"> </span><span class="word" data-word="make" style="--word-index: 24; --line-index: 1;">make</span><span class="whitespace"> </span><span class="word" data-word="them" style="--word-index: 25; --line-index: 1;">them</span><span class="whitespace"> </span><span class="word" data-word="earn" style="--word-index: 26; --line-index: 1;">earn</span><span class="whitespace"> </span><span class="word" data-word="as" style="--word-index: 27; --line-index: 2;">as</span><span class="whitespace"> </span><span class="word" data-word="well." style="--word-index: 28; --line-index: 2;">well.</span><span class="whitespace"> </span><span class="word" data-word="I" style="--word-index: 29; --line-index: 2;">I</span><span class="whitespace"> </span><span class="word" data-word="earned" style="--word-index: 30; --line-index: 2;">earned</span><span class="whitespace"> </span><span class="word" data-word="money" style="--word-index: 31; --line-index: 2;">money</span><span class="whitespace"> </span><span class="word" data-word="by" style="--word-index: 32; --line-index: 2;">by</span><span class="whitespace"> </span><span class="word" data-word="sharing" style="--word-index: 33; --line-index: 2;">sharing</span><span class="whitespace"> </span><span class="word" data-word="referral" style="--word-index: 34; --line-index: 2;">referral</span><span class="whitespace"> </span><span class="word" data-word="link" style="--word-index: 35; --line-index: 2;">link</span><span class="whitespace"> </span><span class="word" data-word="on" style="--word-index: 36; --line-index: 2;">on</span><span class="whitespace"> </span><span class="word" data-word="Facebook." style="--word-index: 37; --line-index: 2;">Facebook.</span><span class="whitespace"> </span><span class="word" data-word="This" style="--word-index: 38; --line-index: 2;">This</span><span class="whitespace"> </span><span class="word" data-word="is" style="--word-index: 39; --line-index: 2;">is</span><span class="whitespace"> </span><span class="word" data-word="one" style="--word-index: 40; --line-index: 3;">one</span><span class="whitespace"> </span><span class="word" data-word="the" style="--word-index: 41; --line-index: 3;">the</span><span class="whitespace"> </span><span class="word" data-word="most" style="--word-index: 42; --line-index: 3;">most</span><span class="whitespace"> </span><span class="word" data-word="transparent" style="--word-index: 43; --line-index: 3;">transparent</span><span class="whitespace"> </span><span class="word" data-word="referral" style="--word-index: 44; --line-index: 3;">referral</span><span class="whitespace"> </span><span class="word" data-word="programs" style="--word-index: 45; --line-index: 3;">programs</span></p></div>
+                  <h3 class="title">
+                    <span data-splitting="" class="words lines splitting" style="--word-total: 2; --line-total: 1;"><span class="word" data-word="Thomas" style="--word-index: 0; --line-index: 0;">Thomas</span><span class="whitespace"> </span><span class="word" data-word="Willimes" style="--word-index: 1; --line-index: 0;">Willimes</span></span>
+                  </h3>
+                  <ul class="stars">
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                    <li><i class="fa-solid fa-star"></i></li>
+                  </ul>
+                  <div class="subtitle">
+                    <span data-splitting="" class="words lines splitting" style="--word-total: 2; --line-total: 1;"><span class="word" data-word="Quality" style="--word-index: 0; --line-index: 0;">Quality</span><span class="whitespace"> </span><span class="word" data-word="Manager" style="--word-index: 1; --line-index: 0;">Manager</span></span>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </div>
+          <div class="swiper-button-style">
+            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false">
+              <svg width="52" height="16" viewBox="0 0 52 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M51.7068 8.70711C52.0973 8.31658 52.0973 7.68342 51.7068 7.29289L45.3428 0.928932C44.9523 0.538408 44.3192 0.538408 43.9286 0.928932C43.5381 1.31946 43.5381 1.95262 43.9286 2.34315L49.5855 8L43.9286 13.6569C43.5381 14.0474 43.5381 14.6805 43.9286 15.0711C44.3192 15.4616 44.9523 15.4616 45.3428 15.0711L51.7068 8.70711ZM0.435181 9H50.9997V7H0.435181V9Z" fill="black"></path>
+                </svg> 
+            </div>
+            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false">
+              <svg width="52" height="16" viewBox="0 0 52 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.292946 8.70711C-0.0975761 8.31658 -0.0975761 7.68342 0.292946 7.29289L6.65691 0.928932C7.04743 0.538408 7.6806 0.538408 8.07112 0.928932C8.46165 1.31946 8.46165 1.95262 8.07112 2.34315L2.41427 8L8.07112 13.6569C8.46165 14.0474 8.46165 14.6805 8.07112 15.0711C7.6806 15.4616 7.04743 15.4616 6.65691 15.0711L0.292946 8.70711ZM51.5646 9H1.00005V7H51.5646V9Z" fill="black"></path>
+              </svg> 
+            </div>
+          </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div> 
+      </div>
+      <img src="images/modern-pattern.png" alt="img">
+    </section>
+
+    <!-- webilte-reviews end -->
+
+    <!-- Unique Services -->
+
+    <section id="services" class="services gap no-bottom" style="background-color: #F5F5F5;">
+      <div class="container">
+        <div class="heading">
+          <h2 class="text_invert" style=""><div style="display: block; text-align: start; position: relative; overflow: hidden; color: rgb(221, 221, 221); background-position-x: 0%;">Unique Services</div></h2>
+          <p>We help entrepreneurs and small businesses overcome challenges, streamline operations, and unlock growth with strategic business consulting.</p> 
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="services-style">
+                  <i>
+                    <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_8_296)">
+                        <path d="M59.459 7.11475H60.4754C61.0364 7.11475 61.4918 6.66043 61.4918 6.09836V2.03279C61.4918 1.47072 61.0364 1.01639 60.4754 1.01639H56.4098C55.8488 1.01639 55.3934 1.47072 55.3934 2.03279V3.04918H35.0656V1.01639C35.0656 0.454328 34.6102 0 34.0492 0H27.9508C27.3898 0 26.9344 0.454328 26.9344 1.01639V3.04918H6.60654V2.03279C6.60654 1.47072 6.1512 1.01639 5.59015 1.01639H1.52457C0.963523 1.01639 0.508179 1.47072 0.508179 2.03279V6.09836C0.508179 6.66043 0.963523 7.11475 1.52457 7.11475H2.54097V54.8852H1.52457C0.963523 54.8852 0.508179 55.3396 0.508179 55.9016V59.9672C0.508179 60.5293 0.963523 60.9836 1.52457 60.9836H5.59015C6.1512 60.9836 6.60654 60.5293 6.60654 59.9672V58.9508H26.9344V60.9836C26.9344 61.5457 27.3898 62 27.9508 62H34.0492C34.6102 62 35.0656 61.5457 35.0656 60.9836V58.9508H55.3934V59.9672C55.3934 60.5293 55.8488 60.9836 56.4098 60.9836H60.4754C61.0364 60.9836 61.4918 60.5293 61.4918 59.9672V55.9016C61.4918 55.3396 61.0364 54.8852 60.4754 54.8852H59.459V31V7.11475ZM57.4262 3.04918H59.459V5.08197H57.4262V3.04918ZM28.9672 2.03279H33.0328V4.23836V6.09836H28.9672V4.23836V4.06557V2.03279ZM2.54097 3.04918H4.57375V5.08197H2.54097V3.04918ZM4.57375 7.11475H5.59015C6.1512 7.11475 6.60654 6.66043 6.60654 6.09836V5.08197H20.3228C13.1094 7.93295 7.43185 13.577 4.57375 20.6023V7.11475ZM4.57375 58.9508H2.54097V56.918H4.57375V58.9508ZM5.59015 54.8852H4.57375V41.3977C7.43185 48.423 13.1094 54.067 20.3228 56.918H6.60654V55.9016C6.60654 55.3396 6.1512 54.8852 5.59015 54.8852ZM25.1557 24.2755L28.7548 34.1122C27.465 35.0574 26.8826 36.765 27.4599 38.3394C27.7973 39.2633 28.4753 40.0012 29.3687 40.4159C29.8626 40.6456 30.3891 40.7604 30.9177 40.7604C31.3456 40.7604 31.7735 40.6852 32.1861 40.5338C33.111 40.1953 33.8479 39.5174 34.2626 38.625C34.6773 37.7316 34.72 36.7314 34.3815 35.8075C33.8062 34.2331 32.2603 33.3042 30.6646 33.4139L27.0635 23.5722L41.0582 34.6936C39.4056 36.9611 38.9472 39.679 39.8436 42.1437L41.0216 45.3667L28.7233 49.8653L27.5432 46.6382C26.6325 44.1511 24.4676 42.3856 21.6431 41.7717L25.1557 24.2755ZM32.4727 36.5058C32.6242 36.9195 32.6049 37.3687 32.4189 37.7682C32.2329 38.1686 31.9025 38.4725 31.4868 38.625C31.0732 38.7754 30.6229 38.7581 30.2245 38.5711C29.824 38.3851 29.5201 38.0548 29.3687 37.6401C29.0556 36.7843 29.4967 35.834 30.3525 35.5209C30.5396 35.4528 30.7306 35.4193 30.9187 35.4193C31.5925 35.4203 32.2268 35.837 32.4727 36.5058ZM29.4215 51.7761L41.7199 47.2765L44.0098 53.5395C43.9529 53.571 43.897 53.6046 43.8401 53.6351C43.2475 53.9603 42.6468 54.2622 42.036 54.5397C41.9577 54.5752 41.8795 54.6098 41.8002 54.6444C41.7595 54.6616 41.7189 54.6789 41.6792 54.6962C41.0643 54.9645 40.4413 55.2115 39.808 55.4321C39.8019 55.4341 39.7948 55.4371 39.7887 55.4392C39.6912 55.4737 39.5916 55.5042 39.493 55.5378C38.875 55.7441 38.2499 55.926 37.6167 56.0856C37.4815 56.1202 37.3474 56.1537 37.2122 56.1852C36.5373 56.3438 35.8553 56.48 35.1652 56.5857C35.1316 56.5908 35.0981 56.5938 35.0645 56.5989V54.8852C35.0645 54.3232 34.6092 53.8689 34.0481 53.8689H30.1869L29.4215 51.7761ZM33.0328 59.9672H28.9672V57.7616V55.9016H29.4754H33.0328V57.7616V57.9344V59.9672ZM59.459 58.9508H57.4262V57.9344V56.918H58.4426H59.459V58.9508ZM57.4262 41.4414V54.8852H56.4098C55.8488 54.8852 55.3934 55.3396 55.3934 55.9016V56.918H41.6619C41.6802 56.9109 41.6975 56.9018 41.7158 56.8936C42.3246 56.6497 42.9233 56.3773 43.5159 56.0897C43.6714 56.0145 43.8248 55.9382 43.9793 55.86C44.5881 55.551 45.1919 55.2268 45.7834 54.872C45.7844 54.871 45.7855 54.87 45.7865 54.87C46.3983 54.5051 46.9868 54.1158 47.5631 53.7123C47.7471 53.5843 47.9229 53.4491 48.1028 53.317C48.4972 53.0273 48.8834 52.7315 49.2595 52.4246C49.4496 52.269 49.6376 52.1125 49.8236 51.953C50.1946 51.6348 50.5523 51.3065 50.904 50.9711C51.0575 50.8248 51.215 50.6814 51.3655 50.532C51.8503 50.0472 52.3209 49.5512 52.766 49.0359C52.8087 48.9871 52.8463 48.9343 52.888 48.8845C53.2895 48.4129 53.6737 47.929 54.0416 47.4341C54.1727 47.2572 54.2957 47.0763 54.4228 46.8974C54.6952 46.5122 54.9584 46.1219 55.2095 45.7235C55.3355 45.5243 55.4595 45.325 55.5794 45.1238C55.8295 44.704 56.0663 44.2782 56.2929 43.8462C56.3844 43.6734 56.481 43.5027 56.5684 43.3278C56.8702 42.7221 57.1538 42.1071 57.411 41.48C57.414 41.4668 57.4211 41.4546 57.4262 41.4414ZM45.7804 52.4622L41.7534 41.4465C40.9952 39.3629 41.54 37.0953 43.2475 35.2221C43.4376 35.0137 43.5321 34.7363 43.5087 34.4557C43.4864 34.1752 43.3481 33.917 43.1276 33.7412L25.7523 19.9335C25.5887 19.3176 25.2594 17.608 26.2331 16.369C27.342 14.9593 29.9175 14.444 33.6782 14.8668C37.452 15.2998 40.0713 14.7225 41.4709 13.1653C42.5706 11.9436 42.596 10.413 42.4385 9.70046L40.4545 10.1416C40.4565 10.1507 40.6232 11.0695 39.9605 11.8074C39.0508 12.8167 36.9001 13.1836 33.9079 12.8482C29.3422 12.3268 26.225 13.0932 24.6353 15.1138C23.0294 17.1557 23.5773 19.7363 23.8222 20.5911L19.4426 42.408C19.3867 42.6885 19.4507 42.9792 19.6194 43.2099C19.7892 43.4407 20.0463 43.5891 20.3309 43.6185C22.9369 43.896 24.8701 45.2519 25.6344 47.3395L28.0219 53.8689H27.9508C27.3898 53.8689 26.9344 54.3232 26.9344 54.8852V56.605C14.1085 54.6769 4.57375 43.8594 4.57375 31C4.57375 18.1406 14.1085 7.32311 26.9344 5.39502V7.11475C26.9344 7.67682 27.3898 8.13115 27.9508 8.13115H34.0492C34.6102 8.13115 35.0656 7.67682 35.0656 7.11475V5.39502C47.8914 7.32311 57.4262 18.1406 57.4262 31C57.4262 39.7095 53.0923 47.6384 45.7804 52.4622ZM41.6772 5.08197H55.3934V6.09836C55.3934 6.66043 55.8488 7.11475 56.4098 7.11475H57.4262V20.6023C54.5681 13.577 48.8905 7.93295 41.6772 5.08197Z" fill="black"></path>
+                      </g> 
+                    </svg> 
+                  </i>
+                  <h3><a href="#"> Creative Concepts </a></h3>
+                  <p>Our learning management system creates a personalized experience for learners</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="services-style">
+                  <i>
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_8_310)">
+                      <path d="M40.7636 56.9325H45.3616C47.1211 56.9325 48.6799 55.8779 49.3359 54.2457L51.3989 49.105" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M40.7636 60.7912H45.3616C48.7056 60.7912 51.6702 58.7873 52.9165 55.6838L55.6007 48.9971" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M49.4333 48.9789L54.0189 49.2752C55.521 49.3724 56.9069 48.468 57.4218 47.0526L58.3543 44.4902" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M55.3652 32.6797L59.0682 35.4017C60.2817 36.2933 60.7607 37.8772 60.2472 39.2912L59.8845 40.2876" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M53.4081 29.0959C55.0117 29.6795 55.8386 31.4528 55.255 33.0564L49.5903 48.6199C49.0067 50.2236 47.2334 51.0505 45.6298 50.4668C44.0261 49.8832 43.1992 48.1099 43.7829 46.5063L49.4475 30.9428C50.0312 29.339 51.8044 28.5122 53.4081 29.0959Z" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M37.0314 63.0624C39.3511 63.0624 41.2315 61.1819 41.2315 58.8622C41.2315 56.5426 39.3511 54.6621 37.0314 54.6621C34.7118 54.6621 32.8313 56.5426 32.8313 58.8622C32.8313 61.1819 34.7118 63.0624 37.0314 63.0624Z" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M14.4838 50.3684H17.6938L26.0872 57.5497C27.2112 58.5116 28.9459 57.7132 28.9459 56.2341V50.3685H34.4985C37.7774 50.3685 40.4343 47.7104 40.4343 44.4327V28.3302C40.4343 25.0513 37.7774 22.3931 34.4985 22.3931H7.94245C4.6648 22.3931 2.00665 25.0512 2.00665 28.3302V44.4325C2.00665 47.7101 4.6648 50.3683 7.94245 50.3683H10.0131" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M8.18481 32.9731H34.2565" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M8.18481 37.5488H34.2565" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M8.18481 42.1245H29.9916" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M6.2627 22.6345C7.4532 17.5929 10.0206 12.965 13.776 9.20957C19.1115 3.8754 26.2047 0.9375 33.7487 0.9375C41.2926 0.9375 48.3858 3.8754 53.7213 9.20957C59.0555 14.5451 61.9934 21.6382 61.9934 29.1822C61.9934 32.3463 61.4633 35.4758 60.4376 38.4367" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M10.2966 22.3932C13.2447 12.2242 22.6434 4.76953 33.7488 4.76953C47.2095 4.76953 58.1614 15.7215 58.1614 29.1822C58.1614 30.9207 57.9762 32.6476 57.6134 34.3325" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </g> 
+                    </svg> 
+                  </i>
+                  <h3><a href="#"> Expert Support </a></h3>
+                  <p>Our learning management system creates a personalized experience for learners</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="services-style">
+                  <i>
+                    <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M30.9631 9.95657C20.1229 9.95657 11.3038 18.7757 11.3038 29.6158C11.3038 33.0838 12.2194 36.4934 13.9514 39.476C15.6314 42.369 18.0388 44.8034 20.913 46.516C21.7555 47.018 22.2194 47.8343 22.2194 48.8146V53.3424C22.2194 54.9714 23.2943 56.3539 24.7721 56.8182V56.9021C24.7721 59.5796 26.9502 61.7579 29.6277 61.7579H32.2984C34.9759 61.7579 37.1543 59.5797 37.1543 56.9021V56.8182C38.6318 56.3538 39.7067 54.9712 39.7067 53.3424V48.8146C39.7067 47.8342 40.1707 47.0179 41.0133 46.516C43.8876 44.8034 46.2949 42.369 47.975 39.476C49.7071 36.4934 50.6225 33.0838 50.6225 29.6158C50.6227 18.7756 41.8034 9.95657 30.9631 9.95657ZM32.2985 59.5781H29.6278C28.1801 59.5781 26.998 58.4222 26.954 56.9848H34.9725C34.9284 58.4222 33.7463 59.5781 32.2985 59.5781ZM36.0644 54.8051H25.862C25.0554 54.8051 24.3992 54.1489 24.3992 53.3423V52.567H37.527V53.3423C37.527 54.1489 36.8709 54.8051 36.0644 54.8051ZM39.8978 44.6434C38.3912 45.5409 37.5271 47.0613 37.5271 48.8145V50.3872H24.3992V48.8145C24.3992 47.0613 23.5352 45.5409 22.0288 44.6434C16.7579 41.5027 13.4836 35.7446 13.4836 29.6157C13.4836 19.9774 21.3249 12.1361 30.9632 12.1361C40.6017 12.1361 48.4431 19.9774 48.4431 29.6157C48.443 35.7446 45.1686 41.5027 39.8978 44.6434ZM5.65232 14.8555C5.95312 14.3344 6.61938 14.1556 7.14105 14.4567L11.3116 16.8645C11.8329 17.1654 12.0114 17.8319 11.7105 18.3532C11.5087 18.7028 11.1423 18.8983 10.7656 18.8983C10.5808 18.8983 10.3935 18.8511 10.2218 18.7521L6.0512 16.3443C5.5299 16.0433 5.35128 15.3767 5.65232 14.8555ZM7.64238 30.5585H2.82648C2.22452 30.5585 1.73663 30.0706 1.73663 29.4686C1.73663 28.8667 2.22452 28.3788 2.82648 28.3788H7.64238C8.24433 28.3788 8.73222 28.8667 8.73222 29.4686C8.73222 30.0706 8.24433 30.5585 7.64238 30.5585ZM11.7105 40.5842C12.0114 41.1055 11.8329 41.772 11.3116 42.0729L7.14105 44.4809C6.96946 44.5799 6.782 44.627 6.59722 44.627C6.22049 44.627 5.85418 44.4317 5.65232 44.082C5.3514 43.5607 5.5299 42.8942 6.0512 42.5933L10.2218 40.1853C10.7433 39.8844 11.4097 40.063 11.7105 40.5842ZM43.0725 26.5054H41.9022C41.6626 25.6595 41.3265 24.8486 40.8971 24.0808L41.7251 23.253C42.1507 22.8274 42.1508 22.1374 41.7252 21.7117L38.8676 18.8539C38.6632 18.6495 38.386 18.5347 38.097 18.5347C37.8079 18.5347 37.5307 18.6495 37.3265 18.8539L36.4983 19.682C35.7299 19.2523 34.9192 18.9163 34.0738 18.6768V17.5066C34.0738 16.9047 33.5859 16.4168 32.9839 16.4168H28.9426C28.3407 16.4168 27.8528 16.9047 27.8528 17.5066V18.6768C27.007 18.9163 26.196 19.2523 25.428 19.6819L24.6002 18.8541C24.1745 18.4284 23.4846 18.4284 23.0588 18.8541L20.201 21.7119C19.7754 22.1375 19.7754 22.8275 20.201 23.2531L21.0289 24.0809C20.5992 24.8493 20.2631 25.6601 20.0237 26.5056H18.854C18.252 26.5056 17.7641 26.9936 17.7641 27.5954V31.637C17.7641 32.2389 18.252 32.7268 18.854 32.7268H20.0238C20.2634 33.5725 20.5994 34.3834 21.0289 35.1515L20.201 35.9793C19.7754 36.405 19.7755 37.095 20.201 37.5207L23.0588 40.3785C23.2632 40.5829 23.5405 40.6977 23.8295 40.6977C24.1184 40.6977 24.3958 40.5829 24.6001 40.3783L25.4279 39.5505C26.1962 39.9802 27.0072 40.3162 27.8527 40.5556V41.7256C27.8527 42.3276 28.3406 42.8155 28.9425 42.8155H32.9838C33.5857 42.8155 34.0736 42.3276 34.0736 41.7256V40.5555C34.9192 40.316 35.7302 39.9799 36.4983 39.5504L37.3263 40.3783C37.7521 40.8039 38.4418 40.804 38.8676 40.3782L41.7252 37.5205C42.1507 37.095 42.1508 36.405 41.7252 35.9793L40.8973 35.1513C41.3268 34.383 41.6628 33.5722 41.9023 32.7268H43.0725C43.6744 32.7268 44.1623 32.2389 44.1623 31.637V27.5954C44.1623 26.9934 43.6744 26.5054 43.0725 26.5054ZM41.9826 30.5469H41.0446C40.5249 30.5469 40.0775 30.9139 39.9759 31.4236C39.7411 32.6017 39.2826 33.7075 38.6136 34.7103C38.3251 35.1425 38.382 35.7183 38.7494 36.0857L39.4133 36.7496L38.0968 38.0661L37.4329 37.4022C37.0654 37.0347 36.4895 36.9777 36.0574 37.2665C35.0552 37.9353 33.9494 38.3937 32.7708 38.6287C32.2611 38.7303 31.8941 39.1777 31.8941 39.6974V40.6354H30.0325V39.6974C30.0325 39.1776 29.6653 38.7301 29.1555 38.6287C27.9774 38.394 26.8717 37.9356 25.8689 37.2665C25.4369 36.9778 24.8608 37.0347 24.4933 37.4023L23.8296 38.0662L22.5131 36.7496L23.1769 36.0857C23.5443 35.7182 23.6012 35.1424 23.3126 34.7102C22.6438 33.7081 22.1854 32.6024 21.9505 31.4236C21.8489 30.9139 21.4014 30.5469 20.8817 30.5469H19.9439V28.6851H20.8817C21.4015 28.6851 21.849 28.3179 21.9505 27.8081C22.1851 26.6301 22.6435 25.5244 23.3126 24.5217C23.6012 24.0895 23.5443 23.5136 23.1769 23.1461L22.5131 22.4823L23.8296 21.1657L24.4933 21.8296C24.8609 22.1971 25.4366 22.2539 25.8689 21.9654C26.8709 21.2966 27.9767 20.8383 29.1559 20.6031C29.6656 20.5014 30.0325 20.0541 30.0325 19.5344V18.5964H31.8941V19.5344C31.8941 20.0541 32.2611 20.5015 32.7708 20.6031C33.9489 20.8379 35.0547 21.2964 36.0574 21.9654C36.4899 22.254 37.0655 22.1971 37.4329 21.8296L38.0968 21.1656L39.4133 22.4821L38.7493 23.1461C38.3817 23.5137 38.3249 24.0897 38.6136 24.522C39.2821 25.5233 39.7406 26.629 39.9759 27.8085C40.0776 28.318 40.525 28.6851 41.0446 28.6851H41.9826V30.5469ZM30.9629 22.2293C26.8899 22.2293 23.5764 25.543 23.5764 29.616C23.5764 33.689 26.8899 37.0026 30.9629 37.0026C35.036 37.0026 38.3496 33.689 38.3496 29.616C38.3496 25.543 35.036 22.2293 30.9629 22.2293ZM30.9629 34.8229C28.0918 34.8229 25.7561 32.4872 25.7561 29.616C25.7561 26.7449 28.0918 24.409 30.9629 24.409C33.834 24.409 36.1699 26.7449 36.1699 29.616C36.1699 32.4872 33.834 34.8229 30.9629 34.8229ZM50.216 18.3532C49.9151 17.8319 50.0936 17.1654 50.6149 16.8645L54.7853 14.4567C55.3067 14.1556 55.9732 14.3345 56.274 14.8555C56.5749 15.3768 56.3964 16.0433 55.8751 16.3443L51.7048 18.7521C51.5332 18.8511 51.3457 18.8984 51.1609 18.8984C50.7841 18.8983 50.4179 18.7028 50.216 18.3532ZM60.2633 29.4885C60.2633 30.0905 59.7754 30.5784 59.1735 30.5784H54.3576C53.7556 30.5784 53.2677 30.0905 53.2677 29.4885C53.2677 28.8866 53.7556 28.3987 54.3576 28.3987H59.1735C59.7754 28.3987 60.2633 28.8866 60.2633 29.4885ZM56.274 44.082C56.0721 44.4317 55.7058 44.627 55.3291 44.627C55.1443 44.627 54.9569 44.5799 54.7853 44.4809L50.6149 42.0729C50.0936 41.772 49.9151 41.1055 50.216 40.5842C50.5168 40.0629 51.1833 39.8843 51.7048 40.1853L55.8751 42.5933C56.3964 42.8943 56.5749 43.5608 56.274 44.082ZM29.8733 6.14781V1.33203C29.8733 0.730074 30.3611 0.242188 30.9631 0.242188C31.5651 0.242188 32.0529 0.730074 32.0529 1.33203V6.14781C32.0529 6.74977 31.5651 7.23765 30.9631 7.23765C30.3611 7.23765 29.8733 6.74964 29.8733 6.14781ZM15.951 5.6466C15.6501 5.12529 15.8286 4.45879 16.3499 4.15787C16.8709 3.85684 17.5376 4.03557 17.8386 4.55664L20.2468 8.72711C20.5477 9.24841 20.3692 9.91491 19.8479 10.2158C19.6763 10.3149 19.4889 10.3621 19.3041 10.3621C18.9275 10.3621 18.561 10.1667 18.3592 9.81707L15.951 5.6466ZM41.68 8.72735L44.0877 4.55688C44.3886 4.03569 45.0547 3.85696 45.5764 4.15787C46.0978 4.45879 46.2762 5.12529 45.9753 5.6466L43.5676 9.81707C43.3658 10.1667 42.9995 10.3622 42.6227 10.3622C42.4379 10.3622 42.2506 10.3151 42.0789 10.2161C41.5577 9.91504 41.3791 9.24854 41.68 8.72735Z" fill="black"></path>
+                    </svg>
+                  </i>
+                  <h3><a href="#"> Unique ideas </a></h3>
+                  <p>Our learning management system creates a personalized experience for learners</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="services-style">
+                  <i>
+                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_8_326)">
+                      <path d="M52.5639 37.5182C59.1857 28.2989 55.7622 14.5588 46.0737 9.34354V4.06316C46.0199 2.61351 43.9395 2.6146 43.8862 4.06316V8.27167C42.835 7.83538 41.7381 7.48822 40.6047 7.23906V4.06316C40.5509 2.61351 38.4705 2.6146 38.4173 4.06316V6.88579C34.9199 6.51752 31.3219 7.1228 28.1362 8.60286V1.09375C28.1362 0.489779 27.6465 0 27.0424 0H1.1062C0.502121 0 0.0124512 0.489779 0.0124512 1.09375V27.0301C0.0124512 27.634 0.502121 28.1238 1.1062 28.1238H16.838C16.936 29.2406 17.1287 30.3377 17.4098 31.4052H10.9029C9.45323 31.459 9.45432 33.5394 10.9029 33.5926H18.126C19.5716 37.2652 22.1083 40.4603 25.4578 42.706L18.7296 54.3595C18.5342 54.6979 18.5342 55.1148 18.7296 55.4532C18.925 55.7916 19.286 56.0001 19.6768 56.0001H49.136C49.5268 56.0001 49.8878 55.7916 50.0831 55.4532C50.2786 55.1148 50.2786 54.6979 50.0831 54.3595L44.3106 44.3611C47.6482 42.8906 50.4882 40.5402 52.5639 37.5182ZM2.19994 2.18749H25.9487V25.9363H2.19994V2.18749ZM21.5714 53.8125L34.4065 31.5814L47.2417 53.8125H21.5714ZM43.2097 42.4538L35.3538 28.847C34.9595 28.1258 33.8536 28.1259 33.4594 28.847L26.5547 40.8062C23.8833 38.9825 21.8041 36.4752 20.5001 33.5926H22.1681C23.6178 33.5388 23.6167 31.4584 22.1681 31.4052H19.6812C19.3634 30.3432 19.1464 29.245 19.0355 28.1238H27.0425C27.6466 28.1238 28.1363 27.634 28.1363 27.0301V11.0466C31.2568 9.36509 34.898 8.66739 38.4174 9.0876V11.9381C38.4712 13.3878 40.5516 13.3867 40.6049 11.9381V9.48562C41.7471 9.77043 42.8451 10.1676 43.8863 10.6657V19.8131C43.9401 21.2627 46.0205 21.2617 46.0738 19.8131V11.914C57.471 19.3369 55.9208 37.132 43.2097 42.4538Z" fill="black"></path>
+                      <path d="M14.0743 36.874H5.98057C4.53091 36.9278 4.53201 39.0083 5.98057 39.0615H14.0743C15.524 39.0077 15.5229 36.9273 14.0743 36.874Z" fill="black"></path>
+                      <path d="M5.98143 33.5928C7.43109 33.539 7.43 31.4585 5.98143 31.4053H5.98056C4.5309 31.4592 4.53287 33.5396 5.98143 33.5928Z" fill="black"></path>
+                      </g> 
+                   </svg> 
+                  </i>
+                  <h3><a href="#"> Scalable System </a></h3>
+                  <p>Our learning management system creates a personalized experience for learners</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-img">
+        <img src="images/video-img.jpg" alt="img">
+        <a data-fancybox="" href="https://www.youtube.com/watch?v=xKxrkht7CpY">
+          <i>
+            <svg width="19" height="44" viewBox="0 0 19 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.25 38.2862L16.3542 22L2.25 5.71382L2.25 38.2862Z" stroke="black" stroke-width="4"></path>
+            </svg>
+          </i>
+        </a>  
+      </div>
+      <img src="images/top-pattern.png" alt="img" class="shap-3">
+    </section>
+
+    <!-- Unique Services end -->
+
+    <!-- Unique team --> 
+
+    <section id="team" class="gap">
+      <div class="container">
+        <div class="heading">
+          <h2 class="text_invert" style=""><div style="display: block; text-align: start; position: relative; overflow: hidden; color: rgb(221, 221, 221); background-position-x: 0%;">Unique team</div></h2>
+          <div class="heading-rating"> 
+            <img src="images/rating.png" alt="img">
+            <div>
+              <h3>4.9<span>/5</span></h3>
+              <p>Clients rate professionals on Google.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="team-swiper swiper swiper-container-initialized swiper-container-horizontal swiper-container-free-mode">
+            <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-2178px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" style="width: 696px; margin-right: 30px;">
+                <div class="team-style img-hover">
+                  <figure><img src="images/team-2.jpg" alt="img"></figure>
+                  <div>
+                    <span>UI designer</span>
+                    <h3>Oliver Robo</h3>
+                    <ul class="theme-list">
+                      <li>Logo Design</li> 
+                      <li>Brand Messaging </li>
+                      <li>Visual Identity</li>
+                    </ul>
+                    <a href="#">
+                      <img src="images/twitter.png" alt="img">
+                      <span>twitter</span>
+                    </a>
+                  </div>
+                </div> 
+              </div>
+              <div class="swiper-slide" data-swiper-slide-index="0" style="width: 696px; margin-right: 30px;"> 
+                <div class="team-style img-hover">
+                  <figure><img src="images/team-1.jpg" alt="img"></figure>
+                  <div>
+                    <span>Expert Consultant</span>
+                    <h3>Romina Ron</h3>
+                    <ul class="theme-list">
+                      <li>Team Collaboration </li> 
+                      <li>Brand Messaging </li>
+                      <li>Data Analysis</li>
+                    </ul>
+                    <a href="#">
+                      <i>
+                      <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="path-1-outside-1_74_2236" maskUnits="userSpaceOnUse" x="0" y="0" width="42" height="42">
+                        <rect fill="white" width="42" height="42"></rect>
+                        <path d="M40.375 21C40.375 30.6875 33.2656 38.7344 23.9688 40.1406V26.625H28.5L29.3594 21H23.9688V17.4062C23.9688 15.8438 24.75 14.3594 27.1719 14.3594H29.5938V9.59375C29.5938 9.59375 27.4062 9.20312 25.2188 9.20312C20.8438 9.20312 17.9531 11.9375 17.9531 16.7812V21H13.0312V26.625H17.9531V40.1406C8.65625 38.7344 1.625 30.6875 1.625 21C1.625 10.2969 10.2969 1.625 21 1.625C31.7031 1.625 40.375 10.2969 40.375 21Z"></path>
+                        </mask>
+                        <path d="M23.9688 40.1406H22.9688V41.3033L24.1183 41.1294L23.9688 40.1406ZM23.9688 26.625V25.625H22.9688V26.625H23.9688ZM28.5 26.625V27.625H29.3588L29.4885 26.776L28.5 26.625ZM29.3594 21L30.3479 21.151L30.5238 20H29.3594V21ZM23.9688 21H22.9688V22H23.9688V21ZM29.5938 14.3594V15.3594H30.5938V14.3594H29.5938ZM29.5938 9.59375H30.5938V8.7565L29.7695 8.60932L29.5938 9.59375ZM17.9531 21V22H18.9531V21H17.9531ZM13.0312 21V20H12.0312V21H13.0312ZM13.0312 26.625H12.0312V27.625H13.0312V26.625ZM17.9531 26.625H18.9531V25.625H17.9531V26.625ZM17.9531 40.1406L17.8036 41.1294L18.9531 41.3033V40.1406H17.9531ZM39.375 21C39.375 30.1881 32.6319 37.8189 23.8192 39.1519L24.1183 41.1294C33.8993 39.6499 41.375 31.1869 41.375 21H39.375ZM24.9688 40.1406V26.625H22.9688V40.1406H24.9688ZM23.9688 27.625H28.5V25.625H23.9688V27.625ZM29.4885 26.776L30.3479 21.151L28.3708 20.849L27.5115 26.474L29.4885 26.776ZM29.3594 20H23.9688V22H29.3594V20ZM24.9688 21V17.4062H22.9688V21H24.9688ZM24.9688 17.4062C24.9688 16.7751 25.1278 16.2816 25.4131 15.9572C25.6771 15.657 26.174 15.3594 27.1719 15.3594V13.3594C25.7479 13.3594 24.6432 13.804 23.9111 14.6365C23.2003 15.445 22.9688 16.4749 22.9688 17.4062H24.9688ZM27.1719 15.3594H29.5938V13.3594H27.1719V15.3594ZM30.5938 14.3594V9.59375H28.5938V14.3594H30.5938ZM29.5938 9.59375C29.7695 8.60932 29.7694 8.60931 29.7693 8.60929C29.7693 8.60928 29.7692 8.60926 29.7691 8.60925C29.7689 8.60921 29.7687 8.60918 29.7685 8.60913C29.768 8.60905 29.7674 8.60893 29.7666 8.6088C29.7651 8.60853 29.7631 8.60817 29.7605 8.60772C29.7554 8.60682 29.7482 8.60556 29.7389 8.60397C29.7205 8.60078 29.694 8.59625 29.6599 8.59057C29.5917 8.57922 29.4934 8.56325 29.3691 8.54423C29.1206 8.5062 28.7677 8.45579 28.3448 8.40545C27.5029 8.30522 26.3665 8.20312 25.2188 8.20312V10.2031C26.2585 10.2031 27.3096 10.2963 28.1083 10.3914C28.5058 10.4387 28.8364 10.486 29.0665 10.5212C29.1814 10.5388 29.271 10.5534 29.3311 10.5634C29.3611 10.5684 29.3837 10.5722 29.3984 10.5748C29.4057 10.576 29.411 10.577 29.4143 10.5775C29.416 10.5778 29.4171 10.578 29.4177 10.5781C29.418 10.5782 29.4182 10.5782 29.4182 10.5782C29.4182 10.5782 29.4182 10.5782 29.4182 10.5782C29.4182 10.5782 29.4181 10.5782 29.4181 10.5782C29.418 10.5782 29.418 10.5782 29.5938 9.59375ZM25.2188 8.20312C22.8209 8.20312 20.7271 8.95679 19.2328 10.4741C17.7392 11.9907 16.9531 14.1597 16.9531 16.7812H18.9531C18.9531 14.559 19.6124 12.9389 20.6578 11.8775C21.7025 10.8166 23.2416 10.2031 25.2188 10.2031V8.20312ZM16.9531 16.7812V21H18.9531V16.7812H16.9531ZM17.9531 20H13.0312V22H17.9531V20ZM12.0312 21V26.625H14.0312V21H12.0312ZM13.0312 27.625H17.9531V25.625H13.0312V27.625ZM16.9531 26.625V40.1406H18.9531V26.625H16.9531ZM18.1027 39.1519C9.2957 37.8197 2.625 30.1939 2.625 21H0.625C0.625 31.1811 8.0168 39.649 17.8036 41.1294L18.1027 39.1519ZM2.625 21C2.625 10.8492 10.8492 2.625 21 2.625V0.625C9.74459 0.625 0.625 9.74459 0.625 21H2.625ZM21 2.625C31.1508 2.625 39.375 10.8492 39.375 21H41.375C41.375 9.74459 32.2554 0.625 21 0.625V2.625Z" mask="url(#path-1-outside-1_74_2236)"></path>
+                      </svg> 
+                      </i>
+                      <span>facebook</span>
+                    </a>
+                  </div>
+                </div> 
+              </div>  
+              <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 696px; margin-right: 30px;">
+                <div class="team-style img-hover">
+                  <figure><img src="images/team-2.jpg" alt="img"></figure>
+                  <div>
+                    <span>UI designer</span>
+                    <h3>Oliver Robo</h3>
+                    <ul class="theme-list">
+                      <li>Logo Design</li> 
+                      <li>Brand Messaging </li>
+                      <li>Visual Identity</li>
+                    </ul>
+                    <a href="#">
+                      <img src="images/twitter.png" alt="img">
+                      <span>twitter</span>
+                    </a>
+                  </div>
+                </div> 
+              </div>
+              <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" style="width: 696px; margin-right: 30px;"> 
+                <div class="team-style img-hover">
+                  <figure><img src="images/team-1.jpg" alt="img"></figure>
+                  <div>
+                    <span>Expert Consultant</span>
+                    <h3>Romina Ron</h3>
+                    <ul class="theme-list">
+                      <li>Team Collaboration </li> 
+                      <li>Brand Messaging </li>
+                      <li>Data Analysis</li>
+                    </ul>
+                    <a href="#">
+                      <i>
+                      <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="path-1-outside-1_74_2236" maskUnits="userSpaceOnUse" x="0" y="0" width="42" height="42">
+                        <rect fill="white" width="42" height="42"></rect>
+                        <path d="M40.375 21C40.375 30.6875 33.2656 38.7344 23.9688 40.1406V26.625H28.5L29.3594 21H23.9688V17.4062C23.9688 15.8438 24.75 14.3594 27.1719 14.3594H29.5938V9.59375C29.5938 9.59375 27.4062 9.20312 25.2188 9.20312C20.8438 9.20312 17.9531 11.9375 17.9531 16.7812V21H13.0312V26.625H17.9531V40.1406C8.65625 38.7344 1.625 30.6875 1.625 21C1.625 10.2969 10.2969 1.625 21 1.625C31.7031 1.625 40.375 10.2969 40.375 21Z"></path>
+                        </mask>
+                        <path d="M23.9688 40.1406H22.9688V41.3033L24.1183 41.1294L23.9688 40.1406ZM23.9688 26.625V25.625H22.9688V26.625H23.9688ZM28.5 26.625V27.625H29.3588L29.4885 26.776L28.5 26.625ZM29.3594 21L30.3479 21.151L30.5238 20H29.3594V21ZM23.9688 21H22.9688V22H23.9688V21ZM29.5938 14.3594V15.3594H30.5938V14.3594H29.5938ZM29.5938 9.59375H30.5938V8.7565L29.7695 8.60932L29.5938 9.59375ZM17.9531 21V22H18.9531V21H17.9531ZM13.0312 21V20H12.0312V21H13.0312ZM13.0312 26.625H12.0312V27.625H13.0312V26.625ZM17.9531 26.625H18.9531V25.625H17.9531V26.625ZM17.9531 40.1406L17.8036 41.1294L18.9531 41.3033V40.1406H17.9531ZM39.375 21C39.375 30.1881 32.6319 37.8189 23.8192 39.1519L24.1183 41.1294C33.8993 39.6499 41.375 31.1869 41.375 21H39.375ZM24.9688 40.1406V26.625H22.9688V40.1406H24.9688ZM23.9688 27.625H28.5V25.625H23.9688V27.625ZM29.4885 26.776L30.3479 21.151L28.3708 20.849L27.5115 26.474L29.4885 26.776ZM29.3594 20H23.9688V22H29.3594V20ZM24.9688 21V17.4062H22.9688V21H24.9688ZM24.9688 17.4062C24.9688 16.7751 25.1278 16.2816 25.4131 15.9572C25.6771 15.657 26.174 15.3594 27.1719 15.3594V13.3594C25.7479 13.3594 24.6432 13.804 23.9111 14.6365C23.2003 15.445 22.9688 16.4749 22.9688 17.4062H24.9688ZM27.1719 15.3594H29.5938V13.3594H27.1719V15.3594ZM30.5938 14.3594V9.59375H28.5938V14.3594H30.5938ZM29.5938 9.59375C29.7695 8.60932 29.7694 8.60931 29.7693 8.60929C29.7693 8.60928 29.7692 8.60926 29.7691 8.60925C29.7689 8.60921 29.7687 8.60918 29.7685 8.60913C29.768 8.60905 29.7674 8.60893 29.7666 8.6088C29.7651 8.60853 29.7631 8.60817 29.7605 8.60772C29.7554 8.60682 29.7482 8.60556 29.7389 8.60397C29.7205 8.60078 29.694 8.59625 29.6599 8.59057C29.5917 8.57922 29.4934 8.56325 29.3691 8.54423C29.1206 8.5062 28.7677 8.45579 28.3448 8.40545C27.5029 8.30522 26.3665 8.20312 25.2188 8.20312V10.2031C26.2585 10.2031 27.3096 10.2963 28.1083 10.3914C28.5058 10.4387 28.8364 10.486 29.0665 10.5212C29.1814 10.5388 29.271 10.5534 29.3311 10.5634C29.3611 10.5684 29.3837 10.5722 29.3984 10.5748C29.4057 10.576 29.411 10.577 29.4143 10.5775C29.416 10.5778 29.4171 10.578 29.4177 10.5781C29.418 10.5782 29.4182 10.5782 29.4182 10.5782C29.4182 10.5782 29.4182 10.5782 29.4182 10.5782C29.4182 10.5782 29.4181 10.5782 29.4181 10.5782C29.418 10.5782 29.418 10.5782 29.5938 9.59375ZM25.2188 8.20312C22.8209 8.20312 20.7271 8.95679 19.2328 10.4741C17.7392 11.9907 16.9531 14.1597 16.9531 16.7812H18.9531C18.9531 14.559 19.6124 12.9389 20.6578 11.8775C21.7025 10.8166 23.2416 10.2031 25.2188 10.2031V8.20312ZM16.9531 16.7812V21H18.9531V16.7812H16.9531ZM17.9531 20H13.0312V22H17.9531V20ZM12.0312 21V26.625H14.0312V21H12.0312ZM13.0312 27.625H17.9531V25.625H13.0312V27.625ZM16.9531 26.625V40.1406H18.9531V26.625H16.9531ZM18.1027 39.1519C9.2957 37.8197 2.625 30.1939 2.625 21H0.625C0.625 31.1811 8.0168 39.649 17.8036 41.1294L18.1027 39.1519ZM2.625 21C2.625 10.8492 10.8492 2.625 21 2.625V0.625C9.74459 0.625 0.625 9.74459 0.625 21H2.625ZM21 2.625C31.1508 2.625 39.375 10.8492 39.375 21H41.375C41.375 9.74459 32.2554 0.625 21 0.625V2.625Z" mask="url(#path-1-outside-1_74_2236)"></path>
+                      </svg> 
+                      </i>
+                      <span>facebook</span>
+                    </a>
+                  </div>
+                </div> 
+              </div>  
+              <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3" style="width: 696px; margin-right: 30px;">
+                <div class="team-style img-hover">
+                  <figure><img src="images/team-2.jpg" alt="img"></figure>
+                  <div>
+                    <span>UI designer</span>
+                    <h3>Oliver Robo</h3>
+                    <ul class="theme-list">
+                      <li>Logo Design</li> 
+                      <li>Brand Messaging </li>
+                      <li>Visual Identity</li>
+                    </ul>
+                    <a href="#">
+                      <img src="images/twitter.png" alt="img">
+                      <span>twitter</span>
+                    </a>
+                  </div>
+                </div> 
+              </div>
+            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 696px; margin-right: 30px;"> 
+                <div class="team-style img-hover">
+                  <figure><img src="images/team-1.jpg" alt="img"></figure>
+                  <div>
+                    <span>Expert Consultant</span>
+                    <h3>Romina Ron</h3>
+                    <ul class="theme-list">
+                      <li>Team Collaboration </li> 
+                      <li>Brand Messaging </li>
+                      <li>Data Analysis</li>
+                    </ul>
+                    <a href="#">
+                      <i>
+                      <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="path-1-outside-1_74_2236" maskUnits="userSpaceOnUse" x="0" y="0" width="42" height="42">
+                        <rect fill="white" width="42" height="42"></rect>
+                        <path d="M40.375 21C40.375 30.6875 33.2656 38.7344 23.9688 40.1406V26.625H28.5L29.3594 21H23.9688V17.4062C23.9688 15.8438 24.75 14.3594 27.1719 14.3594H29.5938V9.59375C29.5938 9.59375 27.4062 9.20312 25.2188 9.20312C20.8438 9.20312 17.9531 11.9375 17.9531 16.7812V21H13.0312V26.625H17.9531V40.1406C8.65625 38.7344 1.625 30.6875 1.625 21C1.625 10.2969 10.2969 1.625 21 1.625C31.7031 1.625 40.375 10.2969 40.375 21Z"></path>
+                        </mask>
+                        <path d="M23.9688 40.1406H22.9688V41.3033L24.1183 41.1294L23.9688 40.1406ZM23.9688 26.625V25.625H22.9688V26.625H23.9688ZM28.5 26.625V27.625H29.3588L29.4885 26.776L28.5 26.625ZM29.3594 21L30.3479 21.151L30.5238 20H29.3594V21ZM23.9688 21H22.9688V22H23.9688V21ZM29.5938 14.3594V15.3594H30.5938V14.3594H29.5938ZM29.5938 9.59375H30.5938V8.7565L29.7695 8.60932L29.5938 9.59375ZM17.9531 21V22H18.9531V21H17.9531ZM13.0312 21V20H12.0312V21H13.0312ZM13.0312 26.625H12.0312V27.625H13.0312V26.625ZM17.9531 26.625H18.9531V25.625H17.9531V26.625ZM17.9531 40.1406L17.8036 41.1294L18.9531 41.3033V40.1406H17.9531ZM39.375 21C39.375 30.1881 32.6319 37.8189 23.8192 39.1519L24.1183 41.1294C33.8993 39.6499 41.375 31.1869 41.375 21H39.375ZM24.9688 40.1406V26.625H22.9688V40.1406H24.9688ZM23.9688 27.625H28.5V25.625H23.9688V27.625ZM29.4885 26.776L30.3479 21.151L28.3708 20.849L27.5115 26.474L29.4885 26.776ZM29.3594 20H23.9688V22H29.3594V20ZM24.9688 21V17.4062H22.9688V21H24.9688ZM24.9688 17.4062C24.9688 16.7751 25.1278 16.2816 25.4131 15.9572C25.6771 15.657 26.174 15.3594 27.1719 15.3594V13.3594C25.7479 13.3594 24.6432 13.804 23.9111 14.6365C23.2003 15.445 22.9688 16.4749 22.9688 17.4062H24.9688ZM27.1719 15.3594H29.5938V13.3594H27.1719V15.3594ZM30.5938 14.3594V9.59375H28.5938V14.3594H30.5938ZM29.5938 9.59375C29.7695 8.60932 29.7694 8.60931 29.7693 8.60929C29.7693 8.60928 29.7692 8.60926 29.7691 8.60925C29.7689 8.60921 29.7687 8.60918 29.7685 8.60913C29.768 8.60905 29.7674 8.60893 29.7666 8.6088C29.7651 8.60853 29.7631 8.60817 29.7605 8.60772C29.7554 8.60682 29.7482 8.60556 29.7389 8.60397C29.7205 8.60078 29.694 8.59625 29.6599 8.59057C29.5917 8.57922 29.4934 8.56325 29.3691 8.54423C29.1206 8.5062 28.7677 8.45579 28.3448 8.40545C27.5029 8.30522 26.3665 8.20312 25.2188 8.20312V10.2031C26.2585 10.2031 27.3096 10.2963 28.1083 10.3914C28.5058 10.4387 28.8364 10.486 29.0665 10.5212C29.1814 10.5388 29.271 10.5534 29.3311 10.5634C29.3611 10.5684 29.3837 10.5722 29.3984 10.5748C29.4057 10.576 29.411 10.577 29.4143 10.5775C29.416 10.5778 29.4171 10.578 29.4177 10.5781C29.418 10.5782 29.4182 10.5782 29.4182 10.5782C29.4182 10.5782 29.4182 10.5782 29.4182 10.5782C29.4182 10.5782 29.4181 10.5782 29.4181 10.5782C29.418 10.5782 29.418 10.5782 29.5938 9.59375ZM25.2188 8.20312C22.8209 8.20312 20.7271 8.95679 19.2328 10.4741C17.7392 11.9907 16.9531 14.1597 16.9531 16.7812H18.9531C18.9531 14.559 19.6124 12.9389 20.6578 11.8775C21.7025 10.8166 23.2416 10.2031 25.2188 10.2031V8.20312ZM16.9531 16.7812V21H18.9531V16.7812H16.9531ZM17.9531 20H13.0312V22H17.9531V20ZM12.0312 21V26.625H14.0312V21H12.0312ZM13.0312 27.625H17.9531V25.625H13.0312V27.625ZM16.9531 26.625V40.1406H18.9531V26.625H16.9531ZM18.1027 39.1519C9.2957 37.8197 2.625 30.1939 2.625 21H0.625C0.625 31.1811 8.0168 39.649 17.8036 41.1294L18.1027 39.1519ZM2.625 21C2.625 10.8492 10.8492 2.625 21 2.625V0.625C9.74459 0.625 0.625 9.74459 0.625 21H2.625ZM21 2.625C31.1508 2.625 39.375 10.8492 39.375 21H41.375C41.375 9.74459 32.2554 0.625 21 0.625V2.625Z" mask="url(#path-1-outside-1_74_2236)"></path>
+                      </svg> 
+                      </i>
+                      <span>facebook</span>
+                    </a>
+                  </div>
+                </div> 
+              </div></div>
+            <div class="swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span></div>
+          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unique team end -->
+
+    <!-- Have a project -->
+
+    <section class="gap no-top">
+      <div class="container">
+        <div class="row g-0">
+          <div class="col-lg-6"> 
+            <div class="project-style">
+              <h2 class="text_invert" style=""><div style="display: block; text-align: start; position: relative; overflow: hidden; color: rgb(221, 221, 221); background-position-x: 0%;">Have a project in </div><div style="display: block; text-align: start; position: relative; overflow: hidden; color: rgb(221, 221, 221); background-position-x: 0%;">mind?</div></h2>
+              <p>Get in touch with us today and let’s transform your vision into a digital experience that stands out.</p>
+              <a href="#" class="button-wrapper">
+                <div class="button-arrow-wrapper">
+                  <i>
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 0.999999C16 0.447715 15.5523 -2.87362e-07 15 -5.40243e-07L6 2.60547e-07C5.44772 -7.66277e-08 5 0.447715 5 1C5 1.55228 5.44772 2 6 2L14 2L14 10C14 10.5523 14.4477 11 15 11C15.5523 11 16 10.5523 16 10L16 0.999999ZM1.70711 15.7071L15.7071 1.70711L14.2929 0.292893L0.292893 14.2929L1.70711 15.7071Z"></path>
+                      </svg>
+                  </i>
+                </div>
+                <div class="button-main"> Request a Quote </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="project-img">
+              <img src="images/innovation-training-flat.png" alt="img">
+              <img src="images/top-pattern.png" alt="img" class="shap-3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Have a project end -->
+
+    <!-- pricing -->
+
+    <section id="pricing" class="gap pricing" style="background-color: #1C1C1C;">
+      <div class="container">
+        <div class="heading">
+          <h2 class="move-anim" style="perspective: 400px;"><div style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 50% 0%; transform: translate3d(0px, 49.2404px, -41.3176px) rotateX(-80deg); opacity: 0;">flexible pricing</div></h2>
+          <p>We help entrepreneurs and small businesses overcome challenges, streamline operations, and unlock growth with strategic business consulting.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="pricing-table">
+               <i>
+                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M35.625 24.375C36.1223 24.375 36.5992 24.1775 36.9508 23.8258C37.3025 23.4742 37.5 22.9973 37.5 22.5C37.5 22.0027 37.3025 21.5258 36.9508 21.1742C36.5992 20.8225 36.1223 20.625 35.625 20.625H31.875V18.75C31.875 18.2527 31.6775 17.7758 31.3258 17.4242C30.9742 17.0725 30.4973 16.875 30 16.875C29.5027 16.875 29.0258 17.0725 28.6742 17.4242C28.3225 17.7758 28.125 18.2527 28.125 18.75V20.625H26.25C25.2554 20.625 24.3016 21.0201 23.5984 21.7234C22.8951 22.4266 22.5 23.3804 22.5 24.375V28.125C22.5 29.1196 22.8951 30.0734 23.5984 30.7766C24.3016 31.4799 25.2554 31.875 26.25 31.875H33.75V35.625H24.375C23.8777 35.625 23.4008 35.8225 23.0492 36.1742C22.6975 36.5258 22.5 37.0027 22.5 37.5C22.5 37.9973 22.6975 38.4742 23.0492 38.8258C23.4008 39.1775 23.8777 39.375 24.375 39.375H28.125V41.25C28.125 41.7473 28.3225 42.2242 28.6742 42.5758C29.0258 42.9275 29.5027 43.125 30 43.125C30.4973 43.125 30.9742 42.9275 31.3258 42.5758C31.6775 42.2242 31.875 41.7473 31.875 41.25V39.375H33.75C34.7446 39.375 35.6984 38.9799 36.4016 38.2766C37.1049 37.5734 37.5 36.6196 37.5 35.625V31.875C37.5 30.8804 37.1049 29.9266 36.4016 29.2234C35.6984 28.5201 34.7446 28.125 33.75 28.125H26.25V24.375H35.625Z" fill="#949494"></path>
+                    <path d="M48.2063 38.0439C48.032 37.8681 47.8246 37.7286 47.5961 37.6335C47.3676 37.5383 47.1225 37.4893 46.875 37.4893C46.6275 37.4893 46.3824 37.5383 46.1539 37.6335C45.9254 37.7286 45.7181 37.8681 45.5438 38.0439L38.0438 45.5439C37.7836 45.8076 37.6074 46.1424 37.5373 46.5061C37.4672 46.8698 37.5064 47.2462 37.65 47.5876C37.7907 47.93 38.0296 48.2232 38.3365 48.43C38.6435 48.6369 39.0048 48.7483 39.375 48.7501H41.25V54.3751C41.25 54.8724 41.4476 55.3493 41.7992 55.701C42.1508 56.0526 42.6277 56.2501 43.125 56.2501C43.6223 56.2501 44.0992 56.0526 44.4508 55.701C44.8025 55.3493 45 54.8724 45 54.3751V46.8751C45.0013 46.492 44.8851 46.1177 44.6672 45.8026C44.4493 45.4875 44.1401 45.2467 43.7813 45.1126L46.875 42.0189L49.9688 45.1126C49.6099 45.2467 49.3007 45.4875 49.0828 45.8026C48.8649 46.1177 48.7488 46.492 48.75 46.8751V54.3751C48.75 54.8724 48.9476 55.3493 49.2992 55.701C49.6508 56.0526 50.1277 56.2501 50.625 56.2501C51.1223 56.2501 51.5992 56.0526 51.9508 55.701C52.3025 55.3493 52.5 54.8724 52.5 54.3751V48.7501H54.375C54.7452 48.7483 55.1065 48.6369 55.4135 48.43C55.7205 48.2232 55.9594 47.93 56.1 47.5876C56.2436 47.2462 56.2828 46.8698 56.2128 46.5061C56.1427 46.1424 55.9664 45.8076 55.7063 45.5439L48.2063 38.0439Z" fill="#949494"></path>
+                    <path d="M35.1938 51.9C33.4911 52.2979 31.7485 52.4992 30 52.5C25.5499 52.5 21.1998 51.1804 17.4997 48.7081C13.7996 46.2357 10.9157 42.7217 9.21272 38.6104C7.50975 34.4991 7.06418 29.9751 7.93234 25.6105C8.80051 21.2459 10.9434 17.2368 14.0901 14.0901C17.2368 10.9434 21.2459 8.80051 25.6105 7.93234C29.9751 7.06418 34.4991 7.50975 38.6104 9.21272C42.7217 10.9157 46.2357 13.7996 48.7081 17.4997C51.1804 21.1998 52.5 25.5499 52.5 30C52.5039 32.0483 52.2198 34.087 51.6563 36.0563C51.5734 36.2969 51.5404 36.552 51.5592 36.8058C51.5781 37.0597 51.6484 37.307 51.766 37.5328C51.8836 37.7585 52.0458 37.958 52.243 38.119C52.4401 38.2801 52.668 38.3992 52.9127 38.4693C53.1574 38.5394 53.4138 38.559 53.6663 38.5268C53.9188 38.4946 54.1621 38.4113 54.3814 38.282C54.6007 38.1527 54.7913 37.9801 54.9417 37.7748C55.0921 37.5694 55.1992 37.3356 55.2563 37.0875C55.9154 34.7827 56.2499 32.3972 56.25 30C56.25 24.8083 54.7105 19.7331 51.8261 15.4163C48.9417 11.0995 44.842 7.73497 40.0455 5.74817C35.2489 3.76137 29.9709 3.24154 24.8789 4.2544C19.7869 5.26726 15.1096 7.76733 11.4385 11.4385C7.76733 15.1096 5.26726 19.7869 4.2544 24.8789C3.24154 29.9709 3.76137 35.2489 5.74817 40.0455C7.73497 44.842 11.0995 48.9417 15.4163 51.8261C19.7331 54.7105 24.8083 56.25 30 56.25C32.0397 56.251 34.0725 56.0119 36.0563 55.5375C36.5053 55.3929 36.8832 55.0843 37.1148 54.6733C37.3464 54.2624 37.4146 53.7792 37.3058 53.3202C37.1969 52.8612 36.9191 52.4601 36.5276 52.1969C36.1362 51.9337 35.6599 51.8277 35.1938 51.9Z" fill="#949494"></path>
+                 </svg>
+               </i>
+                <div class="pricing-top">
+                  <span>Individuals</span>
+                  <h3>$40<span>/month</span></h3>
+                  <p>ecommerce solution and a marketing hub, all in one.</p>
+                </div>
+                <ul>
+                  <li><i class="fa-solid fa-circle-check"></i>24x7 Premium support </li>
+                  <li><i class="fa-solid fa-circle-check"></i>Site Optimisation</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Monthly Report</li>
+                  <li><i class="fa-solid fa-circle-check"></i>No Minimum Term</li>
+                </ul>
+                <a href="#" class="button-wrapper">
+                  <div class="button-arrow-wrapper">
+                    <i>
+                      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 0.999999C16 0.447715 15.5523 -2.87362e-07 15 -5.40243e-07L6 2.60547e-07C5.44772 -7.66277e-08 5 0.447715 5 1C5 1.55228 5.44772 2 6 2L14 2L14 10C14 10.5523 14.4477 11 15 11C15.5523 11 16 10.5523 16 10L16 0.999999ZM1.70711 15.7071L15.7071 1.70711L14.2929 0.292893L0.292893 14.2929L1.70711 15.7071Z"></path>
+                        </svg>
+                    </i>
+                  </div>
+                  <div class="button-main"> Purchase Now </div>
+                </a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="pricing-table two">
+               <i>
+                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M35.625 24.375C36.1223 24.375 36.5992 24.1775 36.9508 23.8258C37.3025 23.4742 37.5 22.9973 37.5 22.5C37.5 22.0027 37.3025 21.5258 36.9508 21.1742C36.5992 20.8225 36.1223 20.625 35.625 20.625H31.875V18.75C31.875 18.2527 31.6775 17.7758 31.3258 17.4242C30.9742 17.0725 30.4973 16.875 30 16.875C29.5027 16.875 29.0258 17.0725 28.6742 17.4242C28.3225 17.7758 28.125 18.2527 28.125 18.75V20.625H26.25C25.2554 20.625 24.3016 21.0201 23.5984 21.7234C22.8951 22.4266 22.5 23.3804 22.5 24.375V28.125C22.5 29.1196 22.8951 30.0734 23.5984 30.7766C24.3016 31.4799 25.2554 31.875 26.25 31.875H33.75V35.625H24.375C23.8777 35.625 23.4008 35.8225 23.0492 36.1742C22.6975 36.5258 22.5 37.0027 22.5 37.5C22.5 37.9973 22.6975 38.4742 23.0492 38.8258C23.4008 39.1775 23.8777 39.375 24.375 39.375H28.125V41.25C28.125 41.7473 28.3225 42.2242 28.6742 42.5758C29.0258 42.9275 29.5027 43.125 30 43.125C30.4973 43.125 30.9742 42.9275 31.3258 42.5758C31.6775 42.2242 31.875 41.7473 31.875 41.25V39.375H33.75C34.7446 39.375 35.6984 38.9799 36.4016 38.2766C37.1049 37.5734 37.5 36.6196 37.5 35.625V31.875C37.5 30.8804 37.1049 29.9266 36.4016 29.2234C35.6984 28.5201 34.7446 28.125 33.75 28.125H26.25V24.375H35.625Z" fill="#949494"></path>
+                    <path d="M48.2063 38.0439C48.032 37.8681 47.8246 37.7286 47.5961 37.6335C47.3676 37.5383 47.1225 37.4893 46.875 37.4893C46.6275 37.4893 46.3824 37.5383 46.1539 37.6335C45.9254 37.7286 45.7181 37.8681 45.5438 38.0439L38.0438 45.5439C37.7836 45.8076 37.6074 46.1424 37.5373 46.5061C37.4672 46.8698 37.5064 47.2462 37.65 47.5876C37.7907 47.93 38.0296 48.2232 38.3365 48.43C38.6435 48.6369 39.0048 48.7483 39.375 48.7501H41.25V54.3751C41.25 54.8724 41.4476 55.3493 41.7992 55.701C42.1508 56.0526 42.6277 56.2501 43.125 56.2501C43.6223 56.2501 44.0992 56.0526 44.4508 55.701C44.8025 55.3493 45 54.8724 45 54.3751V46.8751C45.0013 46.492 44.8851 46.1177 44.6672 45.8026C44.4493 45.4875 44.1401 45.2467 43.7813 45.1126L46.875 42.0189L49.9688 45.1126C49.6099 45.2467 49.3007 45.4875 49.0828 45.8026C48.8649 46.1177 48.7488 46.492 48.75 46.8751V54.3751C48.75 54.8724 48.9476 55.3493 49.2992 55.701C49.6508 56.0526 50.1277 56.2501 50.625 56.2501C51.1223 56.2501 51.5992 56.0526 51.9508 55.701C52.3025 55.3493 52.5 54.8724 52.5 54.3751V48.7501H54.375C54.7452 48.7483 55.1065 48.6369 55.4135 48.43C55.7205 48.2232 55.9594 47.93 56.1 47.5876C56.2436 47.2462 56.2828 46.8698 56.2128 46.5061C56.1427 46.1424 55.9664 45.8076 55.7063 45.5439L48.2063 38.0439Z" fill="#949494"></path>
+                    <path d="M35.1938 51.9C33.4911 52.2979 31.7485 52.4992 30 52.5C25.5499 52.5 21.1998 51.1804 17.4997 48.7081C13.7996 46.2357 10.9157 42.7217 9.21272 38.6104C7.50975 34.4991 7.06418 29.9751 7.93234 25.6105C8.80051 21.2459 10.9434 17.2368 14.0901 14.0901C17.2368 10.9434 21.2459 8.80051 25.6105 7.93234C29.9751 7.06418 34.4991 7.50975 38.6104 9.21272C42.7217 10.9157 46.2357 13.7996 48.7081 17.4997C51.1804 21.1998 52.5 25.5499 52.5 30C52.5039 32.0483 52.2198 34.087 51.6563 36.0563C51.5734 36.2969 51.5404 36.552 51.5592 36.8058C51.5781 37.0597 51.6484 37.307 51.766 37.5328C51.8836 37.7585 52.0458 37.958 52.243 38.119C52.4401 38.2801 52.668 38.3992 52.9127 38.4693C53.1574 38.5394 53.4138 38.559 53.6663 38.5268C53.9188 38.4946 54.1621 38.4113 54.3814 38.282C54.6007 38.1527 54.7913 37.9801 54.9417 37.7748C55.0921 37.5694 55.1992 37.3356 55.2563 37.0875C55.9154 34.7827 56.2499 32.3972 56.25 30C56.25 24.8083 54.7105 19.7331 51.8261 15.4163C48.9417 11.0995 44.842 7.73497 40.0455 5.74817C35.2489 3.76137 29.9709 3.24154 24.8789 4.2544C19.7869 5.26726 15.1096 7.76733 11.4385 11.4385C7.76733 15.1096 5.26726 19.7869 4.2544 24.8789C3.24154 29.9709 3.76137 35.2489 5.74817 40.0455C7.73497 44.842 11.0995 48.9417 15.4163 51.8261C19.7331 54.7105 24.8083 56.25 30 56.25C32.0397 56.251 34.0725 56.0119 36.0563 55.5375C36.5053 55.3929 36.8832 55.0843 37.1148 54.6733C37.3464 54.2624 37.4146 53.7792 37.3058 53.3202C37.1969 52.8612 36.9191 52.4601 36.5276 52.1969C36.1362 51.9337 35.6599 51.8277 35.1938 51.9Z" fill="#949494"></path>
+                 </svg>
+               </i>
+                <div class="pricing-top">
+                  <span>Professionals</span>
+                  <h3>$150<span>/month</span></h3>
+                  <p>ecommerce solution and a marketing hub, all in one.</p>
+                </div>
+                <ul>
+                  <li><i class="fa-solid fa-circle-check"></i>24x7 Premium support </li>
+                  <li><i class="fa-solid fa-circle-check"></i>Site Optimisation</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Monthly Report</li>
+                  <li><i class="fa-solid fa-circle-check"></i>No Minimum Term</li>
+                </ul>
+                <a href="#" class="button-wrapper">
+                  <div class="button-arrow-wrapper">
+                    <i>
+                      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 0.999999C16 0.447715 15.5523 -2.87362e-07 15 -5.40243e-07L6 2.60547e-07C5.44772 -7.66277e-08 5 0.447715 5 1C5 1.55228 5.44772 2 6 2L14 2L14 10C14 10.5523 14.4477 11 15 11C15.5523 11 16 10.5523 16 10L16 0.999999ZM1.70711 15.7071L15.7071 1.70711L14.2929 0.292893L0.292893 14.2929L1.70711 15.7071Z"></path>
+                        </svg>
+                    </i>
+                  </div>
+                  <div class="button-main"> Purchase Now </div>
+                </a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="pricing-table">
+               <i>
+                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M35.625 24.375C36.1223 24.375 36.5992 24.1775 36.9508 23.8258C37.3025 23.4742 37.5 22.9973 37.5 22.5C37.5 22.0027 37.3025 21.5258 36.9508 21.1742C36.5992 20.8225 36.1223 20.625 35.625 20.625H31.875V18.75C31.875 18.2527 31.6775 17.7758 31.3258 17.4242C30.9742 17.0725 30.4973 16.875 30 16.875C29.5027 16.875 29.0258 17.0725 28.6742 17.4242C28.3225 17.7758 28.125 18.2527 28.125 18.75V20.625H26.25C25.2554 20.625 24.3016 21.0201 23.5984 21.7234C22.8951 22.4266 22.5 23.3804 22.5 24.375V28.125C22.5 29.1196 22.8951 30.0734 23.5984 30.7766C24.3016 31.4799 25.2554 31.875 26.25 31.875H33.75V35.625H24.375C23.8777 35.625 23.4008 35.8225 23.0492 36.1742C22.6975 36.5258 22.5 37.0027 22.5 37.5C22.5 37.9973 22.6975 38.4742 23.0492 38.8258C23.4008 39.1775 23.8777 39.375 24.375 39.375H28.125V41.25C28.125 41.7473 28.3225 42.2242 28.6742 42.5758C29.0258 42.9275 29.5027 43.125 30 43.125C30.4973 43.125 30.9742 42.9275 31.3258 42.5758C31.6775 42.2242 31.875 41.7473 31.875 41.25V39.375H33.75C34.7446 39.375 35.6984 38.9799 36.4016 38.2766C37.1049 37.5734 37.5 36.6196 37.5 35.625V31.875C37.5 30.8804 37.1049 29.9266 36.4016 29.2234C35.6984 28.5201 34.7446 28.125 33.75 28.125H26.25V24.375H35.625Z" fill="#949494"></path>
+                    <path d="M48.2063 38.0439C48.032 37.8681 47.8246 37.7286 47.5961 37.6335C47.3676 37.5383 47.1225 37.4893 46.875 37.4893C46.6275 37.4893 46.3824 37.5383 46.1539 37.6335C45.9254 37.7286 45.7181 37.8681 45.5438 38.0439L38.0438 45.5439C37.7836 45.8076 37.6074 46.1424 37.5373 46.5061C37.4672 46.8698 37.5064 47.2462 37.65 47.5876C37.7907 47.93 38.0296 48.2232 38.3365 48.43C38.6435 48.6369 39.0048 48.7483 39.375 48.7501H41.25V54.3751C41.25 54.8724 41.4476 55.3493 41.7992 55.701C42.1508 56.0526 42.6277 56.2501 43.125 56.2501C43.6223 56.2501 44.0992 56.0526 44.4508 55.701C44.8025 55.3493 45 54.8724 45 54.3751V46.8751C45.0013 46.492 44.8851 46.1177 44.6672 45.8026C44.4493 45.4875 44.1401 45.2467 43.7813 45.1126L46.875 42.0189L49.9688 45.1126C49.6099 45.2467 49.3007 45.4875 49.0828 45.8026C48.8649 46.1177 48.7488 46.492 48.75 46.8751V54.3751C48.75 54.8724 48.9476 55.3493 49.2992 55.701C49.6508 56.0526 50.1277 56.2501 50.625 56.2501C51.1223 56.2501 51.5992 56.0526 51.9508 55.701C52.3025 55.3493 52.5 54.8724 52.5 54.3751V48.7501H54.375C54.7452 48.7483 55.1065 48.6369 55.4135 48.43C55.7205 48.2232 55.9594 47.93 56.1 47.5876C56.2436 47.2462 56.2828 46.8698 56.2128 46.5061C56.1427 46.1424 55.9664 45.8076 55.7063 45.5439L48.2063 38.0439Z" fill="#949494"></path>
+                    <path d="M35.1938 51.9C33.4911 52.2979 31.7485 52.4992 30 52.5C25.5499 52.5 21.1998 51.1804 17.4997 48.7081C13.7996 46.2357 10.9157 42.7217 9.21272 38.6104C7.50975 34.4991 7.06418 29.9751 7.93234 25.6105C8.80051 21.2459 10.9434 17.2368 14.0901 14.0901C17.2368 10.9434 21.2459 8.80051 25.6105 7.93234C29.9751 7.06418 34.4991 7.50975 38.6104 9.21272C42.7217 10.9157 46.2357 13.7996 48.7081 17.4997C51.1804 21.1998 52.5 25.5499 52.5 30C52.5039 32.0483 52.2198 34.087 51.6563 36.0563C51.5734 36.2969 51.5404 36.552 51.5592 36.8058C51.5781 37.0597 51.6484 37.307 51.766 37.5328C51.8836 37.7585 52.0458 37.958 52.243 38.119C52.4401 38.2801 52.668 38.3992 52.9127 38.4693C53.1574 38.5394 53.4138 38.559 53.6663 38.5268C53.9188 38.4946 54.1621 38.4113 54.3814 38.282C54.6007 38.1527 54.7913 37.9801 54.9417 37.7748C55.0921 37.5694 55.1992 37.3356 55.2563 37.0875C55.9154 34.7827 56.2499 32.3972 56.25 30C56.25 24.8083 54.7105 19.7331 51.8261 15.4163C48.9417 11.0995 44.842 7.73497 40.0455 5.74817C35.2489 3.76137 29.9709 3.24154 24.8789 4.2544C19.7869 5.26726 15.1096 7.76733 11.4385 11.4385C7.76733 15.1096 5.26726 19.7869 4.2544 24.8789C3.24154 29.9709 3.76137 35.2489 5.74817 40.0455C7.73497 44.842 11.0995 48.9417 15.4163 51.8261C19.7331 54.7105 24.8083 56.25 30 56.25C32.0397 56.251 34.0725 56.0119 36.0563 55.5375C36.5053 55.3929 36.8832 55.0843 37.1148 54.6733C37.3464 54.2624 37.4146 53.7792 37.3058 53.3202C37.1969 52.8612 36.9191 52.4601 36.5276 52.1969C36.1362 51.9337 35.6599 51.8277 35.1938 51.9Z" fill="#949494"></path>
+                 </svg>
+               </i>
+                <div class="pricing-top">
+                  <span>Business</span>
+                  <h3>$170<span>/month</span></h3>
+                  <p>ecommerce solution and a marketing hub, all in one.</p>
+                </div>
+                <ul>
+                  <li><i class="fa-solid fa-circle-check"></i>24x7 Premium support </li>
+                  <li><i class="fa-solid fa-circle-check"></i>Site Optimisation</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Monthly Report</li>
+                  <li><i class="fa-solid fa-circle-check"></i>No Minimum Term</li>
+                </ul>
+                <a href="#" class="button-wrapper">
+                  <div class="button-arrow-wrapper">
+                    <i>
+                      <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 0.999999C16 0.447715 15.5523 -2.87362e-07 15 -5.40243e-07L6 2.60547e-07C5.44772 -7.66277e-08 5 0.447715 5 1C5 1.55228 5.44772 2 6 2L14 2L14 10C14 10.5523 14.4477 11 15 11C15.5523 11 16 10.5523 16 10L16 0.999999ZM1.70711 15.7071L15.7071 1.70711L14.2929 0.292893L0.292893 14.2929L1.70711 15.7071Z"></path>
+                        </svg>
+                    </i>
+                  </div>
+                  <div class="button-main"> Purchase Now </div>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="images/shaps-5.png" alt="img" class="shap-3">
+      <img src="images/shaps-6.png" alt="img" class="shap-4">
+    </section>
+
+    <!-- pricing end -->
+
+    <!-- question-answer -->
+
+    <section class="question-answer gap">
+      <div class="container">
+        <div class="heading">
+          <h2 class="text_invert" style=""><div style="display: block; text-align: start; position: relative; overflow: hidden; color: rgb(221, 221, 221); background-position-x: 0%;">Question Answer!</div></h2>
+          <p>We help entrepreneurs and small businesses overcome challenges, streamline operations, and unlock growth with strategic business consulting.</p>
+          <img src="images/shaps-7.png" alt="img">
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="question-heading">
+              <h3>If you need any further information</h3>
+              <a href="#" class="button-wrapper">
+                <div class="button-arrow-wrapper">
+                  <i>
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 0.999999C16 0.447715 15.5523 -2.87362e-07 15 -5.40243e-07L6 2.60547e-07C5.44772 -7.66277e-08 5 0.447715 5 1C5 1.55228 5.44772 2 6 2L14 2L14 10C14 10.5523 14.4477 11 15 11C15.5523 11 16 10.5523 16 10L16 0.999999ZM1.70711 15.7071L15.7071 1.70711L14.2929 0.292893L0.292893 14.2929L1.70711 15.7071Z"></path>
+                      </svg>
+                  </i>
+                </div>
+                <div class="button-main"> Contact Us </div>
+              </a>
+              <div class="img-hover">
+                <figure>
+                  <img src="images/peace-day.jpg" alt="img">
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="accordion">
+              <div class="accordion-item">
+                <a href="#" class="heading">
+                    <div class="icon"></div>
+                    <div class="title">What is the main purpose of a landing page?</div>
+                </a> 
+                <div class="content">
+                    <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
+                    </p>
+                </div>
+              </div> 
+              <div class="accordion-item active">
+                <a href="#" class="heading">
+                    <div class="icon"></div>
+                    <div class="title">Understand and analyze the information?</div>
+                </a>
+
+                <div class="content" style="display: block;">
+                    <p>With a results-driven approach and a focus on clarity, scalability, and sustainability, we work with you to create a custom roadmap tailored to your goals. Whether you're just starting out or ready to level up, we're here to guide every step with clear insights and actionable strategies.
+                    </p>
+                </div>
+              </div> 
+              <div class="accordion-item">
+                <a href="#" class="heading">
+                    <div class="icon"></div>
+                    <div class="title">What is the value of business consulting?</div>
+                </a>  
+                <div class="content">
+                    <p>With a results-driven approach and a focus on clarity, scalability, and sustainability, we work with you to create a custom roadmap tailored to your goals. Whether you're just starting out or ready to level up, we're here to guide every step with clear insights and actionable strategies.
+                    </p>
+                </div>
+              </div> 
+              <div class="accordion-item">
+                <a href="#" class="heading">
+                    <div class="icon"></div>
+                    <div class="title">Why choose business consulting?</div>
+                </a> 
+                <div class="content">
+                    <p>With a results-driven approach and a focus on clarity, scalability, and sustainability, we work with you to create a custom roadmap tailored to your goals. Whether you're just starting out or ready to level up, we're here to guide every step with clear insights and actionable strategies. </p>
+                </div>
+              </div> 
+              <div class="accordion-item">
+                <a href="#" class="heading">
+                    <div class="icon"></div>
+                    <div class="title">How can a business benefit from using a consultant?</div>
+                </a>  
+                <div class="content">
+                    <p>With a results-driven approach and a focus on clarity, scalability, and sustainability, we work with you to create a custom roadmap tailored to your goals. Whether you're just starting out or ready to level up, we're here to guide every step with clear insights and actionable strategies.
+                    </p>
+                </div>
+              </div> 
+              <div class="accordion-item">
+                <a href="#" class="heading">
+                    <div class="icon"></div>
+                    <div class="title">What is the main purpose of a landing page?</div>
+                </a> 
+                <div class="content">
+                    <p>With a results-driven approach and a focus on clarity, scalability, and sustainability, we work with you to create a custom roadmap tailored to your goals. Whether you're just starting out or ready to level up, we're here to guide every step with clear insights and actionable strategies.
+                    </p>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- question-answer end -->
+
+    <!-- Latest Stories -->
+
+    <section id="blog" class="gap no-top">
+      <div class="container">
+        <div class="heading">
+          <h2 class="text_invert" style=""><div style="display: block; text-align: start; position: relative; overflow: hidden; color: rgb(221, 221, 221); background-position-x: 0%;">Latest Stories</div></h2>
+          <p>We help entrepreneurs and small businesses overcome challenges, streamline operations, and unlock growth with strategic business consulting.</p> 
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="blog-style img-hover"><div class="hover-overlay" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 0; visibility: hidden;"></div>
+              <div class="blog-img">
+                <figure>
+                  <img src="images/blog-img-1.jpg" alt="img">
+                </figure>
+                <div class="data">
+                  <h3> 24 <span>Dec, 25</span></h3>
+                </div> 
+              </div>
+              <div class="blog-data">
+                <a href="#">Develoment</a>
+                <h3><a href="#">Hiring Your Startup’s First Customer Success Lead</a></h3>
+                <div class="blog-bottom-links">
+                  <a href="#">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.0711 12.9289C15.9819 11.8398 14.6855 11.0335 13.2711 10.5454C14.786 9.50199 15.7812 7.75578 15.7812 5.78125C15.7812 2.59348 13.1878 0 10 0C6.81223 0 4.21875 2.59348 4.21875 5.78125C4.21875 7.75578 5.21402 9.50199 6.72898 10.5454C5.31453 11.0335 4.01813 11.8398 2.92895 12.9289C1.0402 14.8177 0 17.3289 0 20H1.5625C1.5625 15.3475 5.34754 11.5625 10 11.5625C14.6525 11.5625 18.4375 15.3475 18.4375 20H20C20 17.3289 18.9598 14.8177 17.0711 12.9289ZM10 10C7.67379 10 5.78125 8.1075 5.78125 5.78125C5.78125 3.455 7.67379 1.5625 10 1.5625C12.3262 1.5625 14.2188 3.455 14.2188 5.78125C14.2188 8.1075 12.3262 10 10 10Z" fill="black"></path>
+                    </svg> 
+                    <span>by admin</span>
+                  </a>
+                  <a href="#">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.9375 2H1.6875C1.308 2 1 2.308 1 2.6875V19.5312C1 19.8145 1.17394 20.0685 1.43759 20.1717C1.51906 20.2033 1.60362 20.2188 1.6875 20.2188C1.87622 20.2188 2.06081 20.1411 2.1935 19.9967L5.78431 16.0938H20.9375C21.317 16.0938 21.625 15.7858 21.625 15.4062V2.6875C21.625 2.308 21.317 2 20.9375 2ZM20.25 14.7188H5.4825C5.29 14.7188 5.10678 14.7992 4.9765 14.9408L2.375 17.7685V3.375H20.25V14.7188Z" fill="black"></path>
+                      <path d="M8.73438 7.84375H13.8906C14.2701 7.84375 14.5781 7.53575 14.5781 7.15625C14.5781 6.77675 14.2701 6.46875 13.8906 6.46875H8.73438C8.35487 6.46875 8.04688 6.77675 8.04688 7.15625C8.04688 7.53575 8.35487 7.84375 8.73438 7.84375Z" fill="black"></path>
+                      <path d="M8.73438 11.9688H13.8906C14.2701 11.9688 14.5781 11.6608 14.5781 11.2812C14.5781 10.9017 14.2701 10.5938 13.8906 10.5938H8.73438C8.35487 10.5938 8.04688 10.9017 8.04688 11.2812C8.04688 11.6608 8.35487 11.9688 8.73438 11.9688Z" fill="black"></path>
+                      </svg> 
+                    <span>No Comment</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="blog-style img-hover"><div class="hover-overlay" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 0; visibility: hidden;"></div>
+              <div class="blog-img">
+                <figure>
+                  <img src="images/blog-img-2.jpg" alt="img">
+                </figure>
+                <div class="data">
+                  <h3> 24 <span>Dec, 25</span></h3>
+                </div> 
+              </div>
+              <div class="blog-data">
+                <a href="#">Develoment</a>
+                <h3><a href="#">Hiring Your Startup’s First Customer Success Lead</a></h3>
+                <div class="blog-bottom-links">
+                  <a href="#">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.0711 12.9289C15.9819 11.8398 14.6855 11.0335 13.2711 10.5454C14.786 9.50199 15.7812 7.75578 15.7812 5.78125C15.7812 2.59348 13.1878 0 10 0C6.81223 0 4.21875 2.59348 4.21875 5.78125C4.21875 7.75578 5.21402 9.50199 6.72898 10.5454C5.31453 11.0335 4.01813 11.8398 2.92895 12.9289C1.0402 14.8177 0 17.3289 0 20H1.5625C1.5625 15.3475 5.34754 11.5625 10 11.5625C14.6525 11.5625 18.4375 15.3475 18.4375 20H20C20 17.3289 18.9598 14.8177 17.0711 12.9289ZM10 10C7.67379 10 5.78125 8.1075 5.78125 5.78125C5.78125 3.455 7.67379 1.5625 10 1.5625C12.3262 1.5625 14.2188 3.455 14.2188 5.78125C14.2188 8.1075 12.3262 10 10 10Z" fill="black"></path>
+                    </svg> 
+                    <span>by admin</span>
+                  </a>
+                  <a href="#">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.9375 2H1.6875C1.308 2 1 2.308 1 2.6875V19.5312C1 19.8145 1.17394 20.0685 1.43759 20.1717C1.51906 20.2033 1.60362 20.2188 1.6875 20.2188C1.87622 20.2188 2.06081 20.1411 2.1935 19.9967L5.78431 16.0938H20.9375C21.317 16.0938 21.625 15.7858 21.625 15.4062V2.6875C21.625 2.308 21.317 2 20.9375 2ZM20.25 14.7188H5.4825C5.29 14.7188 5.10678 14.7992 4.9765 14.9408L2.375 17.7685V3.375H20.25V14.7188Z" fill="black"></path>
+                      <path d="M8.73438 7.84375H13.8906C14.2701 7.84375 14.5781 7.53575 14.5781 7.15625C14.5781 6.77675 14.2701 6.46875 13.8906 6.46875H8.73438C8.35487 6.46875 8.04688 6.77675 8.04688 7.15625C8.04688 7.53575 8.35487 7.84375 8.73438 7.84375Z" fill="black"></path>
+                      <path d="M8.73438 11.9688H13.8906C14.2701 11.9688 14.5781 11.6608 14.5781 11.2812C14.5781 10.9017 14.2701 10.5938 13.8906 10.5938H8.73438C8.35487 10.5938 8.04688 10.9017 8.04688 11.2812C8.04688 11.6608 8.35487 11.9688 8.73438 11.9688Z" fill="black"></path>
+                      </svg> 
+                    <span>No Comment</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="blog-style img-hover"><div class="hover-overlay" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 0; visibility: hidden;"></div>
+              <div class="blog-img">
+                <figure>
+                  <img src="images/blog-img-3.jpg" alt="img">
+                </figure>
+                <div class="data">
+                  <h3> 24 <span>Dec, 25</span></h3>
+                </div> 
+              </div>
+              <div class="blog-data">
+                <a href="#">Develoment</a>
+                <h3><a href="#">Hiring Your Startup’s First Customer Success Lead</a></h3>
+                <div class="blog-bottom-links">
+                  <a href="#">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.0711 12.9289C15.9819 11.8398 14.6855 11.0335 13.2711 10.5454C14.786 9.50199 15.7812 7.75578 15.7812 5.78125C15.7812 2.59348 13.1878 0 10 0C6.81223 0 4.21875 2.59348 4.21875 5.78125C4.21875 7.75578 5.21402 9.50199 6.72898 10.5454C5.31453 11.0335 4.01813 11.8398 2.92895 12.9289C1.0402 14.8177 0 17.3289 0 20H1.5625C1.5625 15.3475 5.34754 11.5625 10 11.5625C14.6525 11.5625 18.4375 15.3475 18.4375 20H20C20 17.3289 18.9598 14.8177 17.0711 12.9289ZM10 10C7.67379 10 5.78125 8.1075 5.78125 5.78125C5.78125 3.455 7.67379 1.5625 10 1.5625C12.3262 1.5625 14.2188 3.455 14.2188 5.78125C14.2188 8.1075 12.3262 10 10 10Z" fill="black"></path>
+                    </svg> 
+                    <span>by admin</span>
+                  </a>
+                  <a href="#">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.9375 2H1.6875C1.308 2 1 2.308 1 2.6875V19.5312C1 19.8145 1.17394 20.0685 1.43759 20.1717C1.51906 20.2033 1.60362 20.2188 1.6875 20.2188C1.87622 20.2188 2.06081 20.1411 2.1935 19.9967L5.78431 16.0938H20.9375C21.317 16.0938 21.625 15.7858 21.625 15.4062V2.6875C21.625 2.308 21.317 2 20.9375 2ZM20.25 14.7188H5.4825C5.29 14.7188 5.10678 14.7992 4.9765 14.9408L2.375 17.7685V3.375H20.25V14.7188Z" fill="black"></path>
+                      <path d="M8.73438 7.84375H13.8906C14.2701 7.84375 14.5781 7.53575 14.5781 7.15625C14.5781 6.77675 14.2701 6.46875 13.8906 6.46875H8.73438C8.35487 6.46875 8.04688 6.77675 8.04688 7.15625C8.04688 7.53575 8.35487 7.84375 8.73438 7.84375Z" fill="black"></path>
+                      <path d="M8.73438 11.9688H13.8906C14.2701 11.9688 14.5781 11.6608 14.5781 11.2812C14.5781 10.9017 14.2701 10.5938 13.8906 10.5938H8.73438C8.35487 10.5938 8.04688 10.9017 8.04688 11.2812C8.04688 11.6608 8.35487 11.9688 8.73438 11.9688Z" fill="black"></path>
+                      </svg> 
+                    <span>No Comment</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Stories end -->
+
+    <!-- contact -->
+
+    <div id="contact" style="background-color: #f5f5f5;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-contact">
+              <i>
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_17_765)">
+                  <path d="M36.0512 6.33301H1.94876C0.876894 6.33301 0 7.2099 0 8.2817V29.7176C0 30.7893 0.876894 31.6664 1.94876 31.6664H36.0513C37.123 31.6664 38.0001 30.7895 38.0001 29.7176V8.2817C38 7.2099 37.1231 6.33301 36.0512 6.33301ZM35.32 7.79445L20.121 19.1946C19.8477 19.4026 19.4282 19.5327 18.9999 19.5307C18.5717 19.5327 18.1523 19.4026 17.8789 19.1946L2.67997 7.79445H35.32ZM27.2012 19.9468L35.4832 30.1776C35.4916 30.1879 35.5017 30.1957 35.5106 30.205H2.48945C2.4982 30.1952 2.50845 30.1879 2.51676 30.1776L10.7988 19.9468C11.0526 19.6331 11.0045 19.1731 10.6902 18.9188C10.3764 18.665 9.91652 18.7131 9.66269 19.0269L1.46152 29.1579V8.70793L17.0025 20.3637C17.5867 20.7988 18.2974 20.9902 18.9999 20.9922C19.7014 20.9907 20.4127 20.7992 20.9972 20.3637L36.5382 8.70793V29.1577L28.3372 19.0269C28.0834 18.7132 27.623 18.665 27.3098 18.9188C26.9955 19.1726 26.9473 19.6331 27.2012 19.9468Z" fill="black"></path>
+                  </g> 
+                </svg>
+              </i>
+              <div>
+                <span>Say hello! </span>
+                <h4><a href="mailto:info@domainname.com">info@domainname.com</a></h4>
+                <h4><a href="mailto:business@domain.com">business@domain.com</a></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-contact">
+              <i>
+                <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_17_753" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="39" height="39">
+                  <path d="M0 0.315784H38.6842V39H0V0.315784Z" fill="white"></path>
+                  </mask>
+                  <g mask="url(#mask0_17_753)">
+                  <path d="M30.9708 33.738C30.9708 36.2267 28.9534 38.2441 26.4646 38.2441H21.5838C19.877 38.2441 18.3168 37.2801 17.5537 35.7531L16.5458 33.738L14.2927 38.2441L12.0396 33.738L9.78663 38.2441L7.53357 33.738L5.28045 38.2441L3.02747 33.738L0.774414 38.2441" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M20.1166 20.4134C20.1166 20.8306 19.7782 21.1689 19.361 21.1689C18.9438 21.1689 18.6055 20.8306 18.6055 20.4134C18.6055 19.9962 18.9438 19.6578 19.361 19.6578C19.7782 19.6578 20.1166 19.9962 20.1166 20.4134Z" fill="black"></path>
+                  <path d="M16.9955 17.9731C16.0756 16.9014 15.2497 15.8085 14.573 14.7494C14.0155 13.8775 14.184 12.7223 14.9161 11.9901L17.4593 9.44696C18.0063 8.89994 18.0063 8.01293 17.4593 7.46591L11.4746 1.48119C10.9275 0.934167 10.0405 0.934167 9.49269 1.48119L7.97856 2.99607C5.52083 5.45387 4.85587 9.20367 6.39878 12.3188C9.14445 17.8608 15.6996 27.2621 26.5833 32.5986C29.7067 34.1301 33.5283 33.4803 35.9884 31.021L37.5373 29.4721C38.0843 28.9243 38.0843 28.0373 37.5373 27.4903L31.4997 21.5063C30.9519 20.9585 30.0649 20.9585 29.5178 21.5063L26.9746 24.0487C26.2433 24.7809 25.088 24.9494 24.2154 24.3918C23.4459 23.9002 22.6582 23.3296 21.8737 22.7012" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                </svg> 
+              </i>
+              <div>
+                <span>Contact us</span>
+                <h4>Phone:<a href="callto:1234567899"> +1 23871 7662 </a></h4>
+                <h4>Fax:<a href="callto:1234567899"> +1 23871 7662</a></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-contact">
+              <div>
+              <i>
+                <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_17_805" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="41" height="41">
+                  <path d="M0.17395 0.216961H40.8261V40.8691H0.17395V0.216961Z" fill="white"></path>
+                  </mask>
+                  <g mask="url(#mask0_17_805)">
+                  <path d="M8.59021 40.0752H32.4098" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M20.5 21.6543C16.9977 21.6543 14.1481 18.8047 14.1481 15.3024C14.1481 11.8001 16.9977 8.95049 20.5 8.95049C24.0023 8.95049 26.8519 11.8001 26.8519 15.3024C26.8519 18.8047 24.0023 21.6543 20.5 21.6543Z" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M28.4399 30.0712C28.4399 30.5098 28.0844 30.8652 27.6459 30.8652C27.2075 30.8652 26.8519 30.5098 26.8519 30.0712C26.8519 29.6327 27.2075 29.2773 27.6459 29.2773C28.0844 29.2773 28.4399 29.6327 28.4399 30.0712Z" fill="black"></path>
+                  <path d="M25.5309 32.9491L20.5 40.0752L9.05946 23.8699C7.26902 21.4825 6.20825 18.5168 6.20825 15.3028C6.20825 7.40974 12.607 1.01099 20.5 1.01099C28.3931 1.01099 34.7918 7.40974 34.7918 15.3028C34.7918 18.5168 33.731 21.4825 31.9406 23.8699L29.65 27.1145" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                  </svg> 
+              </i>
+              </div>
+              <div>
+                <span>Location</span>
+                <h4>New town 245 Go Up Street<br> Ltd 71 United State</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- contact end -->
+
+  </div>  
+
+    <!-- footer -->
+
+    <footer class="webilte-footer gap no-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="footer-left">
+              <p>Start Your Business and Achieve Goals</p>
+              <h2>Grow Your Business!</h2>
+              <a href="#" class="button-wrapper">
+                <div class="button-arrow-wrapper">
+                  <i>
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 0.999999C16 0.447715 15.5523 -2.87362e-07 15 -5.40243e-07L6 2.60547e-07C5.44772 -7.66277e-08 5 0.447715 5 1C5 1.55228 5.44772 2 6 2L14 2L14 10C14 10.5523 14.4477 11 15 11C15.5523 11 16 10.5523 16 10L16 0.999999ZM1.70711 15.7071L15.7071 1.70711L14.2929 0.292893L0.292893 14.2929L1.70711 15.7071Z"></path>
+                      </svg>
+                  </i>
+                </div>
+                <div class="button-main"> Request a Quote </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="footer-center">
+              <p>We are a branding agency that digitally works to help companies grow. We have a successful track record of working with various organizations. </p>
+              <ul>
+                <li><a href="#"> Expert Team</a></li>
+                <li><a href="#"> Content Marketing</a></li>
+                <li><a href="#"> Our Services</a></li>
+                <li><a href="#"> Website Design</a> </li>
+                <li><a href="#"> Promote Studio</a></li>
+                <li><a href="#"> Contact Us</a></li> 
+                <li><a href="#"> Social Marketing</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <ul class="footer-link">
+              <li>
+                <a href="#">
+                  <img src="images/instagram.png" alt="img">
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/twitter.png" alt="img">
+                  <span>twitter</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/linkedin.png" alt="img">
+                  <span>Linked in</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/facebook.png" alt="img">
+                  <span>Facebook</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-style">
+            <a href="#"><img src="images/logo-black.png" alt="img"></a>
+            <p>© 2025 Webilte by Winsfolio. All Rights Reserved.</p>
+            <ul>
+              <li>
+                <a href="#">licence</a>
+                <a href="#">terms and conditions</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <img src="images/shaps-7.png" alt="img" class="shap-3">
+      <img src="images/shap-3.png" alt="img" class="shap-4">
+    </footer>
+
+    <!-- footer end -->
+</div>
+<!-- Progress -->
+<div class="scroll-to-top">
+    <div>
+        <div class="scroll-top-inner visible">
+            <div class="scroll-bar">
+                <div class="bar-inner" style="width: 37.7234%;"></div>
+            </div>
+            <div class="scroll-bar-text">Go To Top</div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap Js -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/gsap.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/splitting.js"></script>
+<script src="js/scroll-out.js"></script>
+<script src="js/jquery.pagepiling.js"></script>
+<script src="js/gsap.js"></script>
+<script src="js/gsap-scroll-smoother.js"></script>
+<script src="js/gsap-scroll-to-plugin.js"></script>
+<script src="js/gsap-scroll-trigger.js"></script>
+<script src="js/gsap-split-text.js"></script>
+<!-- fancybox -->
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/custom.js"></script> 
+<!-- Email Js -->
+  <script src="js/sweetalert.min.js"></script>
+  <script src="js/contact.js"></script>
+
+</body></html>
