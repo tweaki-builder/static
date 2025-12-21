@@ -89,4 +89,5 @@ jobs:
          
           git add "${{ inputs.directory }}"
           git commit -m "Add cloned site: ${{ inputs.directory }} from ${{ inputs.url }}" || echo "No changes to commit"
-          git push origin HEAD:main
+          git pull --rebase origin main
+          git push origin main
