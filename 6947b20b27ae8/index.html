@@ -1,0 +1,2487 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAM OXYGEN - Complete Software Solutions</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="css/css2.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #22d3ee;
+            --secondary-color: #0ea5e9;
+            --dark-bg: #0f0f13;
+            --card-bg: #151515;
+            --text-light: #cbd5e1;
+            --text-lighter: #94a3b8;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav-container {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00FFFF, #FFFFFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-button {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ff7576;
+            background-color: #2B3044;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 24px;
+            position: relative;
+            line-height: 24px;
+            border-radius: 9px;
+            box-shadow: 0px 1px 2px #2B3044,
+                0px 4px 16px #2B3044;
+            transform-style: preserve-3d;
+            transform: scale(var(--s, 1)) perspective(600px)
+                rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+            perspective: 600px;
+            transition: transform 0.1s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-button .button-text {
+            background: linear-gradient(
+                90deg,
+                #866ee7,
+                #ea60da,
+                #ed8f57,
+                #fbd41d,
+                #2cca91
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            display: block;
+        }
+
+        .nav-button:active {
+            transition: 0.3s;
+            transform: scale(0.93);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 4px 20px #2B3044;
+        }
+
+        .download-icon, .login-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #00FFFF;
+            background: none;
+            border: none;
+        }
+
+        /* Enhanced Horizontal Scrolling Section */
+        .scrolling-section {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin: 100px auto 80px;
+            max-width: 1200px;
+        }
+
+        .scrolling-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300%;
+            height: 100%;
+            display: flex;
+            animation: scrollHorizontal 45s linear infinite;
+        }
+
+        .bg-slide {
+            width: 33.333%;
+            height: 100%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg-1 {
+            background-image: url('images/UNLCK.jpg');
+        }
+
+        .bg-2 {
+            background-image: url('images/IREMVL.jpg');
+        }
+
+        .bg-3 {
+            background-image: url('images/Borneo600%20%282%29.jpg');
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .bg-slide:hover .slide-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-content {
+            max-width: 500px;
+        }
+
+        .slide-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #4361ee, #f72585);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .slide-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .slide-description {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .slide-features {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .feature-tag {
+            background: rgba(67, 97, 238, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(67, 97, 238, 0.5);
+        }
+
+        @keyframes scrollHorizontal {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-66.666%);
+            }
+        }
+
+        /* Individual Slide Buttons */
+        .slide-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Navigation Dots */
+        .slide-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #4361ee;
+            transform: scale(1.2);
+        }
+
+        /* About Section */
+        .about-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-logo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-main {
+            width: 120px;
+            height: 120px;
+            background: #000000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 2px solid rgba(34, 211, 238, 0.3);
+            padding: 10px;
+        }
+
+        .logo-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .about-content {
+            flex: 2;
+        }
+
+        .about-badge {
+            display: inline-block;
+            background: rgba(34, 211, 238, 0.2);
+            color: #22d3ee;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid rgba(34, 211, 238, 0.3);
+        }
+
+        .about-heading {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #a5f3fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .about-subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .about-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        /* Services Section */
+        .services-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #22d3ee, #0ea5e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .services-subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        /* Card Styles - Static Blue Theme */
+        .card {
+            --white: hsl(0, 0%, 100%);
+            --black: hsl(240, 15%, 9%);
+            --paragraph: hsl(0, 0%, 83%);
+            --line: hsl(240, 9%, 17%);
+            --primary: hsl(189, 92%, 58%);
+
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1.5rem;
+            width: 19rem;
+            background-color: hsla(240, 15%, 9%, 1);
+            background-image: radial-gradient(
+                    at 88% 40%,
+                    hsla(240, 15%, 9%, 1) 0px,
+                    transparent 85%
+                ),
+                radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+                radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+                radial-gradient(at 0% 64%, hsl(189, 99%, 26%) 0px, transparent 85%),
+                radial-gradient(at 41% 94%, hsl(189, 97%, 36%) 0px, transparent 85%),
+                radial-gradient(at 100% 99%, hsl(188, 94%, 13%) 0px, transparent 85%);
+            border-radius: 1rem;
+            box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(34, 211, 238, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(34, 211, 238, 0.4);
+            box-shadow: 0 15px 40px rgba(34, 211, 238, 0.1);
+        }
+
+        .card_header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card_icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .card_title__container {
+            flex: 1;
+        }
+
+        .card_title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+        }
+
+        .card_category {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card_paragraph {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--paragraph);
+        }
+
+        .line {
+            width: 100%;
+            height: 0.1rem;
+            background-color: var(--line);
+            border: none;
+            margin: 0.5rem 0;
+        }
+
+        .card__list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .card__list_item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .check {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: var(--primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .check_svg {
+            width: 0.75rem;
+            height: 0.75rem;
+            fill: var(--black);
+        }
+
+        .list_text {
+            font-size: 0.85rem;
+            color: var(--white);
+            line-height: 1.4;
+        }
+
+        .button {
+            cursor: pointer;
+            padding: 0.75rem 1.5rem;
+            width: 100%;
+            background-image: linear-gradient(
+                0deg,
+                hsl(189, 92%, 58%),
+                hsl(189, 99%, 26%) 100%
+            );
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--white);
+            border: 0;
+            border-radius: 9999px;
+            box-shadow: inset 0 -2px 25px -4px var(--white);
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4);
+        }
+
+        /* About Button */
+        .about-button {
+            cursor: pointer;
+            padding: 0.75rem 2rem;
+            background-image: linear-gradient(
+                0deg,
+                hsl(189, 92%, 58%),
+                hsl(189, 99%, 26%) 100%
+            );
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            border: 0;
+            border-radius: 9999px;
+            box-shadow: inset 0 -2px 25px -4px white;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4);
+        }
+
+        /* Tools Section */
+        .tools-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .tools-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tools-badge {
+            display: inline-block;
+            background: rgba(34, 211, 238, 0.2);
+            color: #22d3ee;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid rgba(34, 211, 238, 0.3);
+        }
+
+        .tools-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #fff, #a5f3fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tools-subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        /* 3D Flip Card Style */
+        .flip-card {
+            overflow: visible;
+            width: 320px;
+            height: 420px;
+            perspective: 1000px;
+        }
+
+        .flip-content {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 600ms;
+            box-shadow: 0px 0px 20px 2px rgba(34, 211, 238, 0.3);
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .flip-front, .flip-back {
+            background-color: #151515;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(34, 211, 238, 0.2);
+        }
+
+        .flip-back {
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            transform: rotateY(180deg);
+        }
+
+        .flip-back::before {
+            position: absolute;
+            content: ' ';
+            display: block;
+            width: 200px;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, #22d3ee, #22d3ee, #22d3ee, #22d3ee, transparent);
+            animation: rotation_481 5000ms infinite linear;
+        }
+
+        .back-content {
+            position: absolute;
+            width: 98%;
+            height: 98%;
+            background-color: #151515;
+            border-radius: 13px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .flip-card:hover .flip-content {
+            transform: rotateY(180deg);
+        }
+
+        @keyframes rotation_481 {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        .flip-front {
+            color: white;
+        }
+
+        .flip-front .front-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #151515, #1a1a2e);
+        }
+
+        .front-content .badge {
+            background-color: rgba(34, 211, 238, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(2px);
+            width: fit-content;
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #22d3ee;
+        }
+
+        .tool-icon {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .tool-icon img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .tool-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+            color: white;
+        }
+
+        .tool-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #94a3b8;
+            text-align: center;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .tool-price {
+            font-size: 1.9rem;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(45deg, #22d3ee, #0ea5e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 15px 0;
+        }
+
+        /* Back Content Styling */
+        .package-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+            background: linear-gradient(45deg, #22d3ee, #0ea5e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .package-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .package-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .package-option:hover {
+            background: rgba(34, 211, 238, 0.1);
+            border-color: rgba(34, 211, 238, 0.3);
+            transform: translateX(5px);
+        }
+
+        .package-duration {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .package-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #22d3ee;
+        }
+
+        .buy-button {
+            cursor: pointer;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #22d3ee, #0ea5e9);
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            border: 0;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(34, 211, 238, 0.4);
+        }
+
+        /* Floating circles */
+        .circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: #22d3ee;
+            position: absolute;
+            filter: blur(25px);
+            animation: floating 2600ms infinite linear;
+            opacity: 0.3;
+        }
+
+        #bottom {
+            background-color: #0ea5e9;
+            left: 50px;
+            top: 0px;
+            width: 120px;
+            height: 120px;
+            animation-delay: -800ms;
+        }
+
+        #right {
+            background-color: #22d3ee;
+            left: 200px;
+            top: -80px;
+            width: 60px;
+            height: 60px;
+            animation-delay: -1800ms;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Contact Section */
+        .contact-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-heading {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #fff, #a5f3fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .contact-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(34, 211, 238, 0.3);
+            transform: translateX(5px);
+        }
+
+        .method-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .method-text h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .method-text p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #22d3ee;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            cursor: pointer;
+            padding: 0.75rem 2rem;
+            width: 100%;
+            background-image: linear-gradient(
+                0deg,
+                hsl(189, 92%, 58%),
+                hsl(189, 99%, 26%) 100%
+            );
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            border: 0;
+            border-radius: 9999px;
+            box-shadow: inset 0 -2px 25px -4px white;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4);
+        }
+
+        /* Footer Section */
+        .footer-section {
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px 30px;
+            margin: 80px auto 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #22d3ee, #0ea5e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-description {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            color: white;
+            transform: translateY(-3px);
+            border-color: transparent;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 30px;
+            height: 2px;
+            background: #22d3ee;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: #22d3ee;
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            font-size: 0.8rem;
+            width: 16px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Copyright Protection */
+        .copyright-protection {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .copyright-message {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .copyright-button {
+            padding: 10px 20px;
+            background: #22d3ee;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .about-heading {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+            
+            .about-heading {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-actions {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-container {
+                padding: 15px 20px;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .scrolling-section {
+                height: 500px;
+                margin-top: 80px;
+            }
+            
+            .slide-overlay {
+                opacity: 1;
+                transform: translateY(0);
+                background: rgba(0, 0, 0, 0.85);
+                padding: 20px;
+            }
+            
+            .slide-title {
+                font-size: 1.8rem;
+            }
+            
+            .slide-description {
+                font-size: 1rem;
+            }
+            
+            .slide-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tools-title {
+                font-size: 2rem;
+            }
+            
+            .flip-card {
+                width: 300px;
+                height: 400px;
+            }
+            
+            .tool-icon img {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .contact-heading {
+                font-size: 2rem;
+            }
+            
+            .contact-form {
+                padding: 30px 25px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-heading {
+                font-size: 1.8rem;
+            }
+            
+            .tools-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-heading {
+                font-size: 1.8rem;
+            }
+            
+            .scrolling-section {
+                height: 400px;
+            }
+            
+            .slide-content {
+                padding: 10px;
+            }
+            
+            .slide-title {
+                font-size: 1.5rem;
+            }
+            
+            .slide-description {
+                font-size: 0.9rem;
+            }
+            
+            .slide-features {
+                gap: 8px;
+            }
+            
+            .feature-tag {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav-container">
+        <a href="#" class="logo-container">
+            <div class="logo-img">
+                <img src="images/Untitled%20design%20%281%29.png" alt="TEAM OXYGEN Logo">
+            </div>
+            <div class="logo-text">TEAM OXYGEN</div>
+        </a>
+        
+        <div class="nav-actions">
+            <a href="https://gsmoxygenteam.com/drivers" class="nav-button" target="_blank">
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 7V16M12 16L15 13M12 16L9 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M16 17H17C18.865 17 20 15.865 20 14V14C20 12.135 18.865 11 17 11H7C5.135 11 4 12.135 4 14V14C4 15.865 5.135 17 7 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span class="button-text">Download</span>
+            </a>
+            
+            <a href="https://gsmoxygenteam.com/register" class="nav-button">
+                <span class="button-text">Register</span>
+            </a>
+            
+            <a href="https://gsmoxygenteam.com/main" class="nav-button">
+                <svg class="login-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="6" r="4" fill="currentColor"></circle>
+                    <path d="M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z" fill="currentColor"></path>
+                </svg>
+                <span class="button-text">Login</span>
+            </a>
+        </div>
+        
+        <button class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Horizontal Scrolling Section -->
+    <div class="scrolling-section">
+        <div class="scrolling-bg">
+            <!-- Slide 1: UnlockTool -->
+            <div class="bg-slide bg-1">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="slide-icon">
+                            <i class="fas fa-unlock"></i>
+                        </div>
+                        <h2 class="slide-title">UNLOCKTOOL</h2>
+                        <p class="slide-description">Professional unlocking solution with flexible subscription packages. Change your PC every 6 hours with our advanced license system.</p>
+                        
+                        <div class="slide-features">
+                            <span class="feature-tag">3 Month Package</span>
+                            <span class="feature-tag">6 Month Package</span>
+                            <span class="feature-tag">12 Month Package</span>
+                        </div>
+                        
+                        <div class="slide-buttons">
+                            <a href="https://file.unlocktool.net/" class="nav-button" target="_blank">
+                                <i class="fas fa-download"></i>
+                                <span class="button-text">Download</span>
+                            </a>
+                            <a href="https://unlocktool.net/register/" class="nav-button" target="_blank">
+                                <i class="fas fa-user-plus"></i>
+                                <span class="button-text">Register</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2: Iremoval Pro -->
+            <div class="bg-slide bg-2">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="slide-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h2 class="slide-title">Iremoval Pro 5.2</h2>
+                        <p class="slide-description">A12+ No Signal - Untethered. Activate your device and use it without signal.</p>
+                        
+                        <div class="slide-features">
+                            <span class="feature-tag">iPhone XS to 16 Pro Max</span>
+                            <span class="feature-tag">iPad 8 to iPad M3</span>
+                            <span class="feature-tag">iOS 18.7.1 to 26.0.1</span>
+                        </div>
+                        
+                        <div class="slide-buttons">
+                            <a href="https://mega.nz/file/qlVTUAzA#ikpBJeEX86rvKC_eNRLlfQcaUH0i0aAOpSA-eX9PYGU" class="nav-button" target="_blank">
+                                <i class="fas fa-download"></i>
+                                <span class="button-text">Download</span>
+                            </a>
+                            <a href="https://gsmoxygenteam.com" class="nav-button" target="_blank">
+                                <i class="fas fa-key"></i>
+                                <span class="button-text">Submit SN</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3: Borneo Schematics -->
+            <div class="bg-slide bg-3">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="slide-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h2 class="slide-title">Borneo Schematics</h2>
+                        <p class="slide-description">Borneo Schematics: Packed with features for you. Not Just Schematics It's Hardware Solutions.</p>
+                        
+                        <div class="slide-features">
+                            <span class="feature-tag">Phone Hardware Solutions</span>
+                            <span class="feature-tag">Laptop Hardware Solutions</span>
+                            <span class="feature-tag">Part Finder / Part Compatible Database</span>
+                        </div>
+                        
+                        <div class="slide-buttons">
+                            <a href="https://updateborneo.com/" class="nav-button" target="_blank">
+                                <i class="fas fa-download"></i>
+                                <span class="button-text">Download</span>
+                            </a>
+                            <a href="https://borneoschematic.com/signup" class="nav-button" target="_blank">
+                                <i class="fas fa-user-plus"></i>
+                                <span class="button-text">Activate Here</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Dots -->
+        <div class="slide-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+            <div class="indicator" data-slide="2"></div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-logo">
+                <div class="logo-main">
+                    <img src="images/Untitled%20design%20%281%29.png" alt="TEAM OXYGEN Logo">
+                </div>
+                <h3 class="about-subtitle">TEAM OXYGEN</h3>
+            </div>
+            <div class="about-content">
+                <span class="about-badge">About Our Company</span>
+                <h2 class="about-heading">The Complete Software Solutions</h2>
+                <p class="about-description">
+                    TEAM OXYGEN is a leading provider of comprehensive software solutions and unlocking services. 
+                    With years of expertise in mobile device management and software tools, we deliver reliable, 
+                    secure, and efficient solutions for all your device unlocking and software activation needs.
+                </p>
+                <button class="about-button">
+                    <i class="fas fa-rocket"></i>
+                    Learn More About Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="services-header">
+            <h2 class="services-title">Our Services</h2>
+            <p class="services-subtitle">Comprehensive unlocking and software solutions for all your needs</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1: Tool Activations -->
+            <div class="card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="card_header">
+                    <div class="card_icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="card_title__container">
+                        <div class="card_title">Tool Activations</div>
+                        <div class="card_category">Software Solutions</div>
+                    </div>
+                </div>
+                <p class="card_paragraph">
+                    All kinds of login tools &amp; credits available for professional software solutions and device management.
+                </p>
+                <hr class="line">
+                <div class="card__list">
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Professional login tools</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Credit-based solutions</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Multi-platform support</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">24/7 activation service</span>
+                    </div>
+                </div>
+                <button class="button">
+                    <i class="fas fa-key"></i>
+                    Get Tools
+                </button>
+            </div>
+
+            <!-- Service 2: iCloud Unlock -->
+            <div class="card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="card_header">
+                    <div class="card_icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="card_title__container">
+                        <div class="card_title">iCloud Unlock</div>
+                        <div class="card_category">Apple Services</div>
+                    </div>
+                </div>
+                <p class="card_paragraph">
+                    Bypass &amp; permanent unlock solutions for iPhone and iPad devices. Professional iCloud removal services.
+                </p>
+                <hr class="line">
+                <div class="card__list">
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Permanent iCloud bypass</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">iPhone &amp; iPad support</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">All iOS versions</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">High success rate</span>
+                    </div>
+                </div>
+                <button class="button">
+                    <i class="fas fa-mobile-alt"></i>
+                    Unlock iCloud
+                </button>
+            </div>
+
+            <!-- Service 3: Country Unlock -->
+            <div class="card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="card_header">
+                    <div class="card_icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="card_title__container">
+                        <div class="card_title">Country Unlocking</div>
+                        <div class="card_category">Global Services</div>
+                    </div>
+                </div>
+                <p class="card_paragraph">
+                    Complete country unlocking services for iPhone, Samsung, Oppo and all major smartphone models.
+                </p>
+                <hr class="line">
+                <div class="card__list">
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">All phone brands supported</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Worldwide carrier unlock</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Fast processing time</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Permanent solution</span>
+                    </div>
+                </div>
+                <button class="button">
+                    <i class="fas fa-unlock"></i>
+                    Country Unlock
+                </button>
+            </div>
+
+            <!-- Service 4: Remote Unlocking -->
+            <div class="card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="card_header">
+                    <div class="card_icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="card_title__container">
+                        <div class="card_title">Remote Unlocking</div>
+                        <div class="card_category">Remote Services</div>
+                    </div>
+                </div>
+                <p class="card_paragraph">
+                    Comprehensive remote unlocking services including FRP, reset, auth flash, Huawei ID, Mi Account, and more.
+                </p>
+                <hr class="line">
+                <div class="card__list">
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">FRP bypass services</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Huawei ID removal</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Mi Account unlock</span>
+                    </div>
+                    <div class="card__list_item">
+                        <div class="check">
+                            <svg class="check_svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+                            </svg>
+                        </div>
+                        <span class="list_text">Remote authentication</span>
+                    </div>
+                </div>
+                <button class="button">
+                    <i class="fas fa-desktop"></i>
+                    Remote Service
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section">
+        <div class="tools-header">
+            <span class="tools-badge">Premium Tools</span>
+            <h2 class="tools-title">Professional Unlocking Tools</h2>
+            <p class="tools-subtitle">
+                Access our premium suite of professional tools with flexible subscription packages.
+            </p>
+        </div>
+
+        <div class="tools-grid">
+            <!-- Tool 1: Unlock Tool -->
+            <div class="flip-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="flip-content">
+                    <div class="flip-front">
+                        <div class="front-content">
+                            <div class="badge">Unlocking Solution</div>
+                            <div class="tool-icon">
+                                <img src="images/unlocktool.jpg" alt="Unlock Tool">
+                            </div>
+                            <div>
+                                <h3 class="tool-name">Unlock Tool</h3>
+                                <p class="tool-description">
+                                    Professional unlocking solution with flexible subscription packages. Change your PC every 6 hours with our advanced license system.
+                                </p>
+                                <div class="tool-price">$50</div>
+                            </div>
+                        </div>
+                        <div class="circle" id="bottom"></div>
+                        <div class="circle" id="right"></div>
+                    </div>
+                    <div class="flip-back">
+                        <div class="back-content">
+                            <h3 class="package-title">Package Options</h3>
+                            <div class="package-options">
+                                <div class="package-option">
+                                    <span class="package-duration">3 Months</span>
+                                    <span class="package-price">$20</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">6 Months</span>
+                                    <span class="package-price">$30</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">12 Months</span>
+                                    <span class="package-price">$50</span>
+                                </div>
+                            </div>
+                            <button class="buy-button">
+                                <i class="fas fa-shopping-cart"></i>
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 2: Borneo Schematics -->
+            <div class="flip-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s 0.1s, transform 0.6s 0.1s;">
+                <div class="flip-content">
+                    <div class="flip-front">
+                        <div class="front-content">
+                            <div class="badge">Hardware Solutions</div>
+                            <div class="tool-icon">
+                                <img src="images/WhatsApp%20Image%202024-10-25%20at%202.44.06%20AM.jpeg" alt="Borneo Schematics">
+                            </div>
+                            <div>
+                                <h3 class="tool-name">Borneo Schematics</h3>
+                                <p class="tool-description">
+                                    Packed with features for you. Not Just Schematics It's Hardware Solutions.
+                                </p>
+                                <div class="tool-price">$45/$70</div>
+                            </div>
+                        </div>
+                        <div class="circle" id="bottom"></div>
+                        <div class="circle" id="right"></div>
+                    </div>
+                    <div class="flip-back">
+                        <div class="back-content">
+                            <h3 class="package-title">Package Options</h3>
+                            <div class="package-options">
+                                <div class="package-option">
+                                    <span class="package-duration">3 Months</span>
+                                    <span class="package-price">$15</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">6 Months</span>
+                                    <span class="package-price">$25</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">12 Months</span>
+                                    <span class="package-price">$45</span>
+                                </div>
+                            </div>
+                            <button class="buy-button">
+                                <i class="fas fa-shopping-cart"></i>
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 3: Android Multi Tool -->
+            <div class="flip-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s 0.2s, transform 0.6s 0.2s;">
+                <div class="flip-content">
+                    <div class="flip-front">
+                        <div class="front-content">
+                            <div class="badge">Android Services</div>
+                            <div class="tool-icon">
+                                <img src="images/WhatsApp%20Image%202024-10-20%20at%2010.18.46%20PM.jpeg" alt="Android Multi Tool">
+                            </div>
+                            <div>
+                                <h3 class="tool-name">Android Multi Tool</h3>
+                                <p class="tool-description">
+                                    Advanced mobile phones repairing tool designed to work with smart phones. Supports Flash / Unlock / Factory Reset / Reset FRP / Mi Account Remove etc.
+                                </p>
+                                <div class="tool-price">$30</div>
+                            </div>
+                        </div>
+                        <div class="circle" id="bottom"></div>
+                        <div class="circle" id="right"></div>
+                    </div>
+                    <div class="flip-back">
+                        <div class="back-content">
+                            <h3 class="package-title">Package Options</h3>
+                            <div class="package-options">
+                                <div class="package-option">
+                                    <span class="package-duration">3 Months</span>
+                                    <span class="package-price">$10</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">6 Months</span>
+                                    <span class="package-price">$20</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">12 Months</span>
+                                    <span class="package-price">$30</span>
+                                </div>
+                            </div>
+                            <button class="buy-button">
+                                <i class="fas fa-shopping-cart"></i>
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 4: UNI ANDROID TOOL -->
+            <div class="flip-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s 0.3s, transform 0.6s 0.3s;">
+                <div class="flip-content">
+                    <div class="flip-front">
+                        <div class="front-content">
+                            <div class="badge">Universal Android Tool</div>
+                            <div class="tool-icon">
+                                <img src="images/photo_2022-02-20_10-45-12.jpg" alt="UNI ANDROID TOOL">
+                            </div>
+                            <div>
+                                <h3 class="tool-name">UNI ANDROID TOOL</h3>
+                                <p class="tool-description">
+                                    Comprehensive Android tool with multiple functions for device repair and maintenance.
+                                </p>
+                                <div class="tool-price">$50</div>
+                            </div>
+                        </div>
+                        <div class="circle" id="bottom"></div>
+                        <div class="circle" id="right"></div>
+                    </div>
+                    <div class="flip-back">
+                        <div class="back-content">
+                            <h3 class="package-title">Package Options</h3>
+                            <div class="package-options">
+                                <div class="package-option">
+                                    <span class="package-duration">3 Months</span>
+                                    <span class="package-price">$15</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">6 Months</span>
+                                    <span class="package-price">$25</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">12 Months</span>
+                                    <span class="package-price">$50</span>
+                                </div>
+                            </div>
+                            <button class="buy-button">
+                                <i class="fas fa-shopping-cart"></i>
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 5: Cheetah Tool Pro -->
+            <div class="flip-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s 0.4s, transform 0.6s 0.4s;">
+                <div class="flip-content">
+                    <div class="flip-front">
+                        <div class="front-content">
+                            <div class="badge">Easy Phone Repair</div>
+                            <div class="tool-icon">
+                                <img src="images/logo.png" alt="Cheetah Tool Pro">
+                            </div>
+                            <div>
+                                <h3 class="tool-name">Cheetah Tool Pro</h3>
+                                <p class="tool-description">
+                                    Easy-to-fix phone repair tool that requires no professional skills. Most functions are automated with simple clicks.
+                                </p>
+                                <div class="tool-price">$50</div>
+                            </div>
+                        </div>
+                        <div class="circle" id="bottom"></div>
+                        <div class="circle" id="right"></div>
+                    </div>
+                    <div class="flip-back">
+                        <div class="back-content">
+                            <h3 class="package-title">Package Options</h3>
+                            <div class="package-options">
+                                <div class="package-option">
+                                    <span class="package-duration">3 Months</span>
+                                    <span class="package-price">$15</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">6 Months</span>
+                                    <span class="package-price">$25</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">12 Months</span>
+                                    <span class="package-price">$50</span>
+                                </div>
+                            </div>
+                            <button class="buy-button">
+                                <i class="fas fa-shopping-cart"></i>
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 6: Chimera Tool -->
+            <div class="flip-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s 0.5s, transform 0.6s 0.5s;">
+                <div class="flip-content">
+                    <div class="flip-front">
+                        <div class="front-content">
+                            <div class="badge">All-in-One Solution</div>
+                            <div class="tool-icon">
+                                <img src="images/chimera.jpg" alt="Chimera Tool">
+                            </div>
+                            <div>
+                                <h3 class="tool-name">Chimera Tool</h3>
+                                <p class="tool-description">
+                                    User friendly, all-in-one tool that keeps improving to support all your needs. No boxes needed - simply download and use.
+                                </p>
+                                <div class="tool-price">$99.9+</div>
+                            </div>
+                        </div>
+                        <div class="circle" id="bottom"></div>
+                        <div class="circle" id="right"></div>
+                    </div>
+                    <div class="flip-back">
+                        <div class="back-content">
+                            <h3 class="package-title">Package Options</h3>
+                            <div class="package-options">
+                                <div class="package-option">
+                                    <span class="package-duration">Basic</span>
+                                    <span class="package-price">$99.9/year</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">Professional</span>
+                                    <span class="package-price">$149.9/year</span>
+                                </div>
+                                <div class="package-option">
+                                    <span class="package-duration">Premium</span>
+                                    <span class="package-price">$189.9/year</span>
+                                </div>
+                            </div>
+                            <button class="buy-button">
+                                <i class="fas fa-shopping-cart"></i>
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <span class="contact-badge">Get In Touch</span>
+                <h2 class="contact-heading">Ready to Get Started?</h2>
+                <p class="contact-description">
+                    Have questions about our services? Need technical support? Our team is here to help you 
+                    get the most out of TEAM OXYGEN solutions.
+                </p>
+                <p class="contact-description">
+                    Reach out to us through any of the following methods and we'll get back to you promptly.
+                </p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-text">
+                            <h4>Email Us</h4>
+                            <p>info@gsmoxygenteam.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s 0.1s, transform 0.6s 0.1s;">
+                        <div class="method-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="method-text">
+                            <h4>Whatsapp Us</h4>
+                            <p>+91 9746413702</p>
+                        </div>
+                    </div>
+                    <div class="contact-method" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s 0.2s, transform 0.6s 0.2s;">
+                        <div class="method-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="method-text">
+                            <h4>Live Chat</h4>
+                            <p>Available 24/7 for instant support</p>
+                        </div>
+                    </div>
+                    <div class="contact-method" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s 0.3s, transform 0.6s 0.3s;">
+                        <div class="method-icon">
+                            <i class="fab fa-telegram-plane"></i>
+                        </div>
+                        <div class="method-text">
+                            <h4>Telegram Channel</h4>
+                            <p><a href="https://t.me/gsmoxygenteam" style="color: #94a3b8; text-decoration: none;">https://t.me/gsmoxygenteam</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Enter your full name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="service">Service Interested In</label>
+                        <select id="service" class="form-input" required="">
+                            <option value="">Select a service</option>
+                            <option value="tool-activations">Tool Activations</option>
+                            <option value="icloud-unlock">iCloud Unlock</option>
+                            <option value="country-unlock">Country Unlocking</option>
+                            <option value="remote-unlock">Remote Unlocking</option>
+                            <option value="support">Technical Support</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="Tell us about your requirements..." required=""></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/Untitled%20design%20%281%29.png" alt="TEAM OXYGEN Logo" class="footer-logo-img">
+                    <div class="footer-logo-text">TEAM OXYGEN</div>
+                </div>
+                <p class="footer-description">
+                    The Complete Software Solutions provider. Professional unlocking services and 
+                    software tools for all your device management needs.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Tool Activations</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> iCloud Unlock</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Country Unlocking</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Remote Unlocking</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Technical Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> News</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Tutorials</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Status</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 TEAM OXYGEN. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <!-- Copyright Protection Overlay -->
+    <div class="copyright-protection" id="copyrightOverlay">
+        <div class="copyright-message">
+            <h2>Copyright Protection</h2>
+            <p>This content is protected by copyright. Unauthorized copying is prohibited.</p>
+            <p>You will be redirected to the official TEAM OXYGEN website.</p>
+        </div>
+        <button class="copyright-button" id="closeCopyright">Continue</button>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navActions = document.querySelector('.nav-actions');
+            if (navActions.style.display === 'flex') {
+                navActions.style.display = 'none';
+            } else {
+                navActions.style.display = 'flex';
+                navActions.style.flexDirection = 'column';
+                navActions.style.position = 'absolute';
+                navActions.style.top = '100%';
+                navActions.style.right = '20px';
+                navActions.style.background = 'rgba(0, 0, 0, 0.95)';
+                navActions.style.padding = '15px';
+                navActions.style.borderRadius = '10px';
+                navActions.style.boxShadow = '0 5px 15px rgba(0,0,0,0.5)';
+                navActions.style.gap = '10px';
+                navActions.style.zIndex = '1000';
+                navActions.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+            }
+        });
+
+        // Pause animation on hover
+        const scrollingBg = document.querySelector('.scrolling-bg');
+        const scrollingSection = document.querySelector('.scrolling-section');
+        
+        scrollingSection.addEventListener('mouseenter', () => {
+            scrollingBg.style.animationPlayState = 'paused';
+        });
+        
+        scrollingSection.addEventListener('mouseleave', () => {
+            scrollingBg.style.animationPlayState = 'running';
+        });
+
+        // Navigation dots functionality
+        const indicators = document.querySelectorAll('.indicator');
+        const slides = document.querySelectorAll('.bg-slide');
+        
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                // Update active indicator
+                indicators.forEach(ind => ind.classList.remove('active'));
+                indicator.classList.add('active');
+                
+                // Calculate scroll position
+                const scrollPosition = -index * 33.333;
+                scrollingBg.style.transform = `translateX(${scrollPosition}%)`;
+                scrollingBg.style.animation = 'none';
+                
+                // Restart animation after manual navigation
+                setTimeout(() => {
+                    scrollingBg.style.animation = 'scrollHorizontal 45s linear infinite';
+                }, 5000);
+            });
+        });
+
+        // Button click handlers
+        document.querySelectorAll('.button, .about-button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.classList.contains('about-button')) {
+                    alert('Learn more about TEAM OXYGEN!');
+                } else {
+                    const card = this.closest('.card');
+                    const serviceName = card.querySelector('.card_title').textContent;
+                    alert(`Interested in ${serviceName}? Our team will contact you shortly!`);
+                }
+            });
+        });
+
+        // Buy button click handlers
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const toolName = this.closest('.back-content').previousElementSibling
+                    .querySelector('.tool-name').textContent;
+                alert(`Purchasing ${toolName}!`);
+            });
+        });
+
+        // Package option click handlers
+        document.querySelectorAll('.package-option').forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const duration = this.querySelector('.package-duration').textContent;
+                const price = this.querySelector('.package-price').textContent;
+                const toolName = this.closest('.back-content').previousElementSibling
+                    .querySelector('.tool-name').textContent;
+                
+                alert(`Selected ${duration} package for ${toolName} at ${price}`);
+            });
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hello TEAM OXYGEN!%0A%0AName: ${name}%0AEmail: ${email}%0AService Interested In: ${service}%0AMessage: ${message}`;
+            
+            // Redirect to WhatsApp with pre-filled message
+            window.location.href = `https://wa.me/919746413702?text=${whatsappMessage}`;
+        });
+
+        // Smooth scrolling for footer links
+        document.querySelectorAll('.footer-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert(`Navigating to: ${this.textContent}`);
+            });
+        });
+
+        // Social links
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const platform = this.querySelector('i').className.split(' ')[1].split('-')[1];
+                alert(`Opening our ${platform} page`);
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            const flipCards = document.querySelectorAll('.flip-card');
+            const contactMethods = document.querySelectorAll('.contact-method');
+            const contactForm = document.querySelector('.contact-form');
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            flipCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            contactMethods.forEach((method, index) => {
+                method.style.opacity = '0';
+                method.style.transform = 'translateX(-20px)';
+                method.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(method);
+            });
+
+            contactForm.style.opacity = '0';
+            contactForm.style.transform = 'translateY(20px)';
+            contactForm.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(contactForm);
+        });
+
+        // Copyright Protection
+        let copyAttempts = 0;
+        const maxCopyAttempts = 2;
+        
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            copyAttempts++;
+            if (copyAttempts >= maxCopyAttempts) {
+                window.location.href = 'https://gsmoxygenteam.com/copyright.php';
+            } else {
+                document.getElementById('copyrightOverlay').style.display = 'flex';
+            }
+        });
+        
+        // Disable text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            copyAttempts++;
+            if (copyAttempts >= maxCopyAttempts) {
+                window.location.href = 'https://gsmoxygenteam.com/copyright.php';
+            } else {
+                document.getElementById('copyrightOverlay').style.display = 'flex';
+            }
+        });
+        
+        // Disable copy
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            copyAttempts++;
+            if (copyAttempts >= maxCopyAttempts) {
+                window.location.href = 'https://gsmoxygenteam.com/copyright.php';
+            } else {
+                document.getElementById('copyrightOverlay').style.display = 'flex';
+            }
+        });
+        
+        // Disable cut
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            copyAttempts++;
+            if (copyAttempts >= maxCopyAttempts) {
+                window.location.href = 'https://gsmoxygenteam.com/copyright.php';
+            } else {
+                document.getElementById('copyrightOverlay').style.display = 'flex';
+            }
+        });
+        
+        // Disable drag
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+        
+        // Close copyright protection overlay
+        document.getElementById('closeCopyright').addEventListener('click', function() {
+            document.getElementById('copyrightOverlay').style.display = 'none';
+        });
+        
+        // Auto-update indicators based on scroll position
+        function updateIndicators() {
+            const scrollLeft = Math.abs(parseInt(scrollingBg.style.transform?.split('(')[1]?.split('%')[0]) || 0);
+            const activeSlide = Math.floor(scrollLeft / 33.333);
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === activeSlide);
+            });
+        }
+
+        // Update indicators periodically
+        setInterval(updateIndicators, 1000);
+    </script>
+
+</body></html>
