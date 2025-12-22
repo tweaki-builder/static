@@ -11,28 +11,26 @@ on:
         required: true
         type: string
         default: cloned-site
-
 jobs:
   clone-and-push:
     runs-on: ubuntu-latest
+    # Add write permissions for the default GITHUB_TOKEN
     permissions:
       contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          # Fetch full history so we can push safely
           fetch-depth: 0
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-
       - name: Install dependencies
         run: |
           npm init -y
           npm install website-scraper website-scraper-puppeteer
-
       - name: Create cloning script
         run: |
           cat > index.js << 'EOF'
@@ -40,7 +38,6 @@ jobs:
           const PuppeteerPlugin = require('website-scraper-puppeteer').default;
           const path = require('path');
           const fs = require('fs');
-
           (async () => {
             const url = process.argv[2];
             const dirName = process.argv[3];
@@ -48,94 +45,49 @@ jobs:
               console.error('❌ Usage: node index.js <url> <directory>');
               process.exit(1);
             }
-
             const directory = path.resolve(__dirname, dirName);
-
             // Remove existing folder if present
             if (fs.existsSync(directory)) {
-              console.log(`🗑️ Removing existing folder '${dirName}'...`);
+              console.log(🗑️ Removing existing folder '${dirName}'...);
               fs.rmSync(directory, { recursive: true, force: true });
             }
-
-            const maxRetries = 3;
-            let attempt = 1;
-
-            while (attempt <= maxRetries) {
-              try {
-                console.log(`🔄 Attempt ${attempt}/${maxRetries}: Cloning ${url} into '${dirName}'...`);
-
-                await scrape({
-                  urls: [url],
-                  directory: directory,
-                  recursive: false, // Single page only (no subpages/links)
-                  maxDepth: 1,
-                  urlFilter: (u) => u.startsWith(url), // Safety for single page
-                  plugins: [
-                    new PuppeteerPlugin({
-                      launchOptions: {
-                        headless: true,
-                        args: [
-                          '--no-sandbox',
-                          '--disable-setuid-sandbox',
-                          '--disable-dev-shm-usage',
-                          '--disable-accelerated-2d-canvas',
-                          '--no-first-run',
-                          '--no-zygote',
-                          '--single-process',
-                          '--disable-gpu'
-                        ]
-                      },
-                      gotoOptions: { waitUntil: 'networkidle0', timeout: 60000 },
-                      scrollToBottom: { timeout: 20000, viewportN: 20 }
-                    })
-                  ]
-                });
-
-                console.log('✅ Website cloned successfully!');
-                process.exit(0);
-              } catch (err) {
-                console.error(`❌ Cloning failed on attempt ${attempt}:`, err.message || err);
-                if (attempt === maxRetries) {
-                  console.error('❌ All retry attempts failed.');
-                  process.exit(1);
-                }
-                attempt++;
-                // Optional: add delay before retry
-                await new Promise(resolve => setTimeout(resolve, 10000)); // 10s delay
-              }
+            try {
+              console.log(🔄 Cloning ${url} into folder '${dirName}' ...);
+              await scrape({
+                urls: [url],
+                directory: directory,
+                plugins: [
+                  new PuppeteerPlugin({
+                    launchOptions: {
+                      headless: true,
+                      args: ['--no-sandbox', '--disable-setuid-sandbox']
+                    },
+                    scrollToBottom: {
+                      timeout: 10000,
+                      viewportN: 10
+                    }
+                  })
+                ]
+              });
+              console.log('✅ Website cloned successfully!');
+            } catch (err) {
+              console.error('❌ Cloning failed:', err.message || err);
+              process.exit(1);
             }
           })();
           EOF
-
-      - name: Run cloning script (with retries built-in)
+      - name: Run cloning script
         env:
           INPUT_URL: ${{ inputs.url }}
           OUTPUT_DIR: ${{ inputs.directory }}
         run: |
           node index.js "$INPUT_URL" "$OUTPUT_DIR"
-
-      - name: Commit and push cloned folder (with retry on push)
+      - name: Commit and push cloned folder to main branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
+         
           git add "${{ inputs.directory }}"
           git commit -m "Add cloned site: ${{ inputs.directory }} from ${{ inputs.url }}" || echo "No changes to commit"
-
-          max_attempts=3
-          attempt=1
-          while [ $attempt -le $max_attempts ]; do
-            git pull --rebase origin main
-            if git push origin main; then
-              echo "✅ Push successful on attempt $attempt"
-              exit 0
-            else
-              echo "❌ Push failed on attempt $attempt"
-              attempt=$((attempt + 1))
-              if [ $attempt -gt $max_attempts ]; then
-                echo "❌ All push attempts failed"
-                exit 1
-              fi
-              sleep 10
-            fi
-          done
+          git pull --rebase origin main
+          git push origin main
