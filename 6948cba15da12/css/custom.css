@@ -1,0 +1,56 @@
+body::-webkit-scrollbar,
+#de_modal::-webkit-scrollbar {
+  width: 3px;
+}
+
+body::-webkit-scrollbar-track,
+#de_modal::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+
+body::-webkit-scrollbar-thumb,
+#de_modal::-webkit-scrollbar-thumb {
+  background-color: var(--e-global-color-primary);
+  border-radius: 16px;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+}
+
+.navigation.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  font-family: sans-serif;
+}
+
+.navigation .nav-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.navigation .page-numbers {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.navigation .page-numbers:hover {
+  background-color: #f0f0f0;
+  border-color: #aaa;
+  color: #000;
+}
+
+.navigation .page-numbers.current {
+  background-color: var(--e-global-color-primary);
+  color: #fff;
+  border-color: var(--e-global-color-primary);
+  cursor: default;
+}/*# sourceMappingURL=custom.css.map */
