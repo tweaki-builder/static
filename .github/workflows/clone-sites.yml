@@ -1,6 +1,6 @@
 name: Clone Website
 concurrency:
-  group: static-repo-push
+  group: static-repo-push-${{ github.ref }}
   cancel-in-progress: false
 
 on:
