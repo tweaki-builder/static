@@ -1,4 +1,10 @@
 name: Clone Website
+
+# ✅ RECOMMENDED: Serialize pushes to main branch
+concurrency:
+  group: clone-website-main
+  cancel-in-progress: false
+
 on:
   workflow_dispatch:
     inputs:
@@ -11,26 +17,42 @@ on:
         required: true
         type: string
         default: cloned-site
+
 jobs:
   clone-and-push:
     runs-on: ubuntu-latest
-    # Add write permissions for the default GITHUB_TOKEN
+
     permissions:
       contents: write
+
     steps:
+      # ----------------------------------------------------
+      # Checkout repo (full history needed for rebase)
+      # ----------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Fetch full history so we can push safely
           fetch-depth: 0
+
+      # ----------------------------------------------------
+      # Setup Node.js
+      # ----------------------------------------------------
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+
+      # ----------------------------------------------------
+      # Install dependencies
+      # ----------------------------------------------------
       - name: Install dependencies
         run: |
           npm init -y
           npm install website-scraper website-scraper-puppeteer
+
+      # ----------------------------------------------------
+      # Create cloning script
+      # ----------------------------------------------------
       - name: Create cloning script
         run: |
           cat > index.js << 'EOF'
@@ -38,24 +60,29 @@ jobs:
           const PuppeteerPlugin = require('website-scraper-puppeteer').default;
           const path = require('path');
           const fs = require('fs');
+
           (async () => {
             const url = process.argv[2];
             const dirName = process.argv[3];
+
             if (!url || !dirName) {
               console.error('❌ Usage: node index.js <url> <directory>');
               process.exit(1);
             }
+
             const directory = path.resolve(__dirname, dirName);
-            // Remove existing folder if present
+
             if (fs.existsSync(directory)) {
-              console.log(`🗑️ Removing existing folder '${dirName}'...`);
+              console.log(`🗑️ Removing existing folder: ${dirName}`);
               fs.rmSync(directory, { recursive: true, force: true });
             }
+
             try {
-              console.log(`🔄 Cloning ${url} into folder '${dirName}' ...`);
+              console.log(`🔄 Cloning ${url} → ${dirName}`);
+
               await scrape({
                 urls: [url],
-                directory: directory,
+                directory,
                 plugins: [
                   new PuppeteerPlugin({
                     launchOptions: {
@@ -69,25 +96,38 @@ jobs:
                   })
                 ]
               });
-              console.log('✅ Website cloned successfully!');
+
+              console.log('✅ Clone completed');
             } catch (err) {
-              console.error('❌ Cloning failed:', err.message || err);
+              console.error('❌ Clone failed:', err);
               process.exit(1);
             }
           })();
           EOF
+
+      # ----------------------------------------------------
+      # Run cloning script
+      # ----------------------------------------------------
       - name: Run cloning script
-        env:
-          INPUT_URL: ${{ inputs.url }}
-          OUTPUT_DIR: ${{ inputs.directory }}
         run: |
-          node index.js "$INPUT_URL" "$OUTPUT_DIR"
-      - name: Commit and push cloned folder to main branch
+          node index.js "${{ inputs.url }}" "${{ inputs.directory }}"
+
+      # ----------------------------------------------------
+      # ✅ SAFE COMMIT + RETRY PUSH (IMPORTANT)
+      # ----------------------------------------------------
+      - name: Commit and push safely (with retry)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-         
+
           git add "${{ inputs.directory }}"
           git commit -m "Add cloned site: ${{ inputs.directory }} from ${{ inputs.url }}" || echo "No changes to commit"
-          git pull --rebase origin main
-          git push origin main
+
+          echo "🚀 Pushing with retry logic..."
+
+          for attempt in 1 2 3 4 5; do
+            echo "🔁 Attempt $attempt..."
+            git pull --rebase origin main && git push origin main && break
+            echo "⚠️ Push failed, retrying in 5s..."
+            sleep 5
+          done
