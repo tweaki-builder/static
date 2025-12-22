@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "flaticon_bytexbd";
+    src: url("../fonts/flaticon_bytexbd.woff2") format("woff2"),
+        url("../fonts/flaticon_bytexbd.woff") format("woff"),
+        url("../fonts/flaticon_bytexbd.ttf") format("truetype"),
+        url("../fonts/flaticon_bytexbd.svg#flaticon_bytexbd") format("svg")
+}
+
+i[class^="flaticon-"]:before,
+i[class*=" flaticon-"]:before {
+    font-family: flaticon_bytexbd !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-planning:before {
+    content: "\f101";
+}
+
+.flaticon-tax:before {
+    content: "\f102";
+}
+
+.flaticon-risk-management:before {
+    content: "\f103";
+}
+
+.flaticon-return-on-investment:before {
+    content: "\f104";
+}
