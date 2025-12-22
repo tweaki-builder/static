@@ -1,4 +1,7 @@
 name: Clone Website
+concurrency:
+  group: static-repo-push
+  cancel-in-progress: false
 
 on:
   workflow_dispatch:
