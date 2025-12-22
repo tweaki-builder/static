@@ -1,7 +1,4 @@
 name: Clone Website
-concurrency:
-  group: static-repo-push-${{ github.ref }}
-  cancel-in-progress: false
 
 on:
   workflow_dispatch:
@@ -19,6 +16,7 @@ on:
 jobs:
   clone-and-push:
     runs-on: ubuntu-latest
+    environment: static-push
 
     permissions:
       contents: write
