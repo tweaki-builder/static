@@ -68,6 +68,8 @@ jobs:
               await scrape({
                 urls: [url],
                 directory,
+                recursive: true,
+                maxDepth: 10,
                 plugins: [
                   new PuppeteerPlugin({
                     launchOptions: {
@@ -77,9 +79,12 @@ jobs:
                         '--disable-setuid-sandbox'
                       ]
                     },
+                    gotoOptions: {
+                      waitUntil: 'networkidle0'
+                    },
                     scrollToBottom: {
-                      timeout: 10000,
-                      viewportN: 10
+                      timeout: 15000,
+                      viewportN: 15
                     }
                   })
                 ]
