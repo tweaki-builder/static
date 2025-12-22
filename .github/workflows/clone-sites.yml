@@ -68,8 +68,6 @@ jobs:
               await scrape({
                 urls: [url],
                 directory,
-                recursive: true,
-                maxDepth: 10,
                 request: {
                   headers: {
                     'User-Agent':
@@ -87,12 +85,9 @@ jobs:
                         '--disable-setuid-sandbox'
                       ]
                     },
-                    gotoOptions: {
-                      waitUntil: 'networkidle0'
-                    },
                     scrollToBottom: {
-                      timeout: 20000,
-                      viewportN: 20
+                      timeout: 10000,
+                      viewportN: 10
                     }
                   })
                 ]
