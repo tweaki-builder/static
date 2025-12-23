@@ -86,9 +86,11 @@ jobs:
                         '--disable-setuid-sandbox'
                       ]
                     },
+                    waitUntil: 'networkidle0',
+                    delay: 5000,
                     scrollToBottom: {
-                      timeout: 10000,
-                      viewportN: 10
+                      timeout: 15000,
+                      viewportN: 15
                     }
                   })
                 ]
