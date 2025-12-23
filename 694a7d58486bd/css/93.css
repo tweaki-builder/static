@@ -1,0 +1,90 @@
+
+.depicter-93-display .depicter-backdrop{
+	background-color:rgba(0, 0, 0, 0.3);
+	backdrop-filter:blur( 10px );
+}
+.depicter-revert .depicter-93-element-26:not(.depicter-hover-off){
+	transition:all ease 0.5s;
+}
+.depicter-revert .depicter-93-element-26:not(.depicter-hover-off):hover {
+	border-color:#000;
+}
+.depicter-93-element-26 .depicter-symbol-container{
+	fill:#000;
+	transform:scale( 1.3 );
+	transition:all ease 0.5s;
+}
+.depicter-93-element-26:hover .depicter-symbol-container{
+	fill:#0606FF;
+	transform:scale( 1.3 );
+}
+.depicter-revert .depicter-93-element-35{
+	font-size:15px;
+	text-align:center;
+	color:#FFF;
+	font-family:"Inter";
+	font-weight:500;
+	background-color:#EE0606;
+	border-radius:6px;
+}
+.depicter-revert .depicter-93-element-30{
+	padding:10px;
+	background-color:#F5F5F5;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+	gap:15px;
+}
+.depicter-revert .depicter-93-element-30 .depicter-text-input{
+	padding:15px;
+	background-color:#FFF;
+}
+.depicter-revert .depicter-93-element-30 .depicter-text-input:focus{
+	border-width:1px;
+	border-style:solid;
+	border-color:#007BFF;
+}
+.depicter-revert .depicter-93-element-30 .depicter-choice-input::before{
+	background-color:#FFF;
+}
+.depicter-revert .depicter-93-element-30 .depicter-choice-input:checked::before{
+	background-color:#007BFF;
+	border-width:1px;
+	border-style:solid;
+	border-color:#FFF;
+}
+.depicter-revert .depicter-93-element-5{
+	opacity:0.1;
+	background-color:#FFF;
+	border-radius:50%;
+}
+.depicter-revert .depicter-93-element-4{
+	opacity:0.1;
+	background-color:#FFF;
+	border-radius:50%;
+}
+.depicter-revert .depicter-93-element-3{
+	opacity:0.1;
+	background-color:#FFF;
+	border-radius:50%;
+}
+.depicter-revert .depicter-93-element-2{
+	background-color:#0606FF;
+}
+.depicter-revert .depicter-93-section-1 .depicter-section-background{
+	background-color:#FFF;
+}
+
+/***** Mobile *****/
+@media screen and (max-width: 767px){
+
+.depicter-93-element-26 .depicter-symbol-container{
+	fill:#FFF;
+	transform:scale( 1.2 );
+}
+.depicter-93-element-26:hover .depicter-symbol-container{
+	transform:scale( 1.2 );
+}
+
+}
