@@ -1,0 +1,71 @@
+:root {
+  --primary: #000;
+  --primary-light:  #333;
+
+  --secondary: #FC1517;
+  --secondary-theme: #031D3C;
+
+  --light: #fff;
+  --light-1: #F4F4F4;
+}
+
+/* Font size  */
+.h1 {
+  font-size: clamp(2rem, 1.633rem + 1.84vw, 3.125rem);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.h2 {
+  font-size: clamp(1.75rem, 1.587rem + 0.82vw, 2.25rem);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.h3 {
+  font-size: clamp(1.25rem, 1.128rem + 0.61vw, 1.625rem);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.h4 {
+  font-size: clamp(1rem, 0.878rem + 0.61vw, 1.375rem);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.p1 {
+  font-size: clamp(1rem, 0.878rem + 0.61vw, 1.375rem);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.p2 {
+  font-size: clamp(0.875rem, 0.793rem + 0.41vw, 1.125rem);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.small{
+  font-size: clamp(0.813rem, 0.751rem + 0.31vw, 1rem);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.primary{
+  color: var(--primary);
+}
+
+.primary-light{
+  color: var(--primary-light);
+}
+
+.light{
+  color: var(--light);
+}
+.light-1{
+  background-color: var(--light-1);
+}
+.secondary-theme{
+  background-color: var(--secondary-theme);
+}
