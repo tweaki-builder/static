@@ -1,0 +1,157 @@
+name: Clone Website (API → Fallback Scraper)
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Website URL to clone'
+        required: true
+        type: string
+      directory:
+        description: 'Output folder name'
+        required: true
+        default: cloned-site
+      method:
+        description: 'Clone method (api | scraper)'
+        required: false
+        default: api
+
+permissions:
+  contents: write
+
+jobs:
+  # -----------------------------
+  # METHOD 1: SaveWeb2Zip API
+  # -----------------------------
+  api-clone:
+    name: Clone using SaveWeb2Zip (Primary)
+    runs-on: ubuntu-latest
+    environment: static-push
+    if: ${{ inputs.method == 'api' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install jq & unzip
+        run: sudo apt-get install -y jq unzip
+
+      - name: Try API cloning
+        run: |
+          set -e
+
+          PAYLOAD=$(jq -n --arg url "${{ inputs.url }}" '{ url: $url }')
+
+          RESPONSE=$(curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" \
+            https://copier.saveweb2zip.com/api/copySite)
+
+          MD5=$(echo "$RESPONSE" | jq -r '.md5')
+
+          if [[ -z "$MD5" || "$MD5" == "null" ]]; then
+            exit 1
+          fi
+
+          for i in {1..60}; do
+            STATUS=$(curl -s https://copier.saveweb2zip.com/api/getStatus/$MD5)
+            FINISHED=$(echo "$STATUS" | jq -r '.isFinished')
+            SUCCESS=$(echo "$STATUS" | jq -r '.success')
+
+            if [[ "$FINISHED" == "true" ]]; then
+              [[ "$SUCCESS" == "true" ]] || exit 1
+              break
+            fi
+            sleep 10
+          done
+
+          mkdir -p "${{ inputs.directory }}"
+          curl -L https://copier.saveweb2zip.com/api/downloadArchive/$MD5 -o site.zip
+          unzip -oq site.zip -d "${{ inputs.directory }}"
+          rm -f site.zip
+
+      - name: Commit API clone
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add "${{ inputs.directory }}"
+          git commit -m "Clone site via API: ${{ inputs.directory }}" || exit 0
+          git push
+
+  # -----------------------------
+  # METHOD 2: Puppeteer (Fallback or Forced)
+  # -----------------------------
+  scraper-clone:
+    name: Clone using Puppeteer
+    runs-on: ubuntu-latest
+    environment: static-push
+    needs: api-clone
+    if: ${{ inputs.method == 'scraper' || failure() }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: |
+          npm init -y
+          npm install website-scraper website-scraper-puppeteer
+
+      - name: Create scraper script
+        run: |
+          cat > index.js << 'EOF'
+          const scrape = require('website-scraper').default;
+          const PuppeteerPlugin = require('website-scraper-puppeteer').default;
+          const fs = require('fs');
+          const path = require('path');
+
+          (async () => {
+            const url = process.argv[2];
+            const dir = process.argv[3];
+            const out = path.resolve(dir);
+
+            if (fs.existsSync(out)) fs.rmSync(out, { recursive: true });
+
+            await scrape({
+              urls: [url],
+              directory: out,
+              request: {
+                  headers: {
+                    'User-Agent':
+                      'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+                    'Accept-Language': 'en-US,en;q=0.9',
+                    'Referer': url
+                  }
+              },
+              plugins: [
+                new PuppeteerPlugin({
+                  launchOptions: {
+                    headless: true,
+                    args: ['--no-sandbox']
+                  },
+                  waitUntil: 'networkidle0',
+                  delay: 5000
+                })
+              ]
+            });
+          })();
+          EOF
+
+      - name: Run Puppeteer clone
+        run: |
+          node index.js "${{ inputs.url }}" "${{ inputs.directory }}"
+
+      - name: Commit scraper clone
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add "${{ inputs.directory }}"
+          git commit -m "Clone site via Puppeteer" || exit 0
+          git pull --rebase origin main
+          git push origin main
