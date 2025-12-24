@@ -1,0 +1,79 @@
+
+.depicter-98-display .depicter-backdrop{
+	background-color:rgba(158, 158, 158, 0.5);
+	backdrop-filter:blur( 2px );
+}
+.depicter-revert .depicter-98-element-7:not(.depicter-hover-off){
+	transition:all ease 0.5s;
+}
+.depicter-revert .depicter-98-element-7:not(.depicter-hover-off):hover {
+	border-color:#000;
+}
+.depicter-98-element-7 .depicter-symbol-container{
+	fill:#000;
+	transform:scale( 1.2 );
+	transition:all ease 0.5s;
+}
+.depicter-98-element-7:hover .depicter-symbol-container{
+	fill:#4980F5;
+	transform:scale( 1.2 );
+}
+.depicter-98-element-20 *{
+	box-sizing:border-box !important;
+}
+.depicter-98-element-20{
+	overflow:hidden;
+}
+.depicter-revert .depicter-98-section-1 .depicter-section-background{
+	background-color:#FFF;
+}
+
+/***** Mobile *****/
+@media screen and (max-width: 767px){
+
+.depicter-revert .depicter-98-element-20{
+	opacity:0.994;
+}
+
+}
+/*** Custom styles ***/
+.form_control {
+      margin: 20px 0px !important;
+    display: block !important;
+   width:100%!important;
+    resize: none !important;
+    padding: 4px 15px!important;
+    font-size: 14px!important;
+    font-weight: 400!important;
+    line-height: 30px!important;
+    color: var(--secondary-light);
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: 1px solid #c3cedb!important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 3px;
+    -webkit-transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out
+}
+
+.btn_lite {
+    display: inline-block!important;
+    padding: 11px 40px!important;
+    font-size: var(--text-sm) !important;
+    font-weight: 700 !important;
+    color: white !important;
+    background-color: #fc1517!important;
+    text-decoration: none!important;
+    cursor: pointer!important;
+    border-radius: 2px!important;
+    border: none!important;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
