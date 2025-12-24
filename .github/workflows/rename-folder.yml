@@ -1,0 +1,35 @@
+name: Rename Folder (No API)
+
+on:
+  workflow_dispatch:
+    inputs:
+      old_folder:
+        description: "Old folder path"
+        required: true
+      new_folder:
+        description: "New folder path"
+        required: true
+      branch:
+        description: "Branch name"
+        default: "main"
+        required: true
+
+jobs:
+  rename-folder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          fetch-depth: 0
+
+      - name: Rename folder (git mv)
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          git mv "${{ inputs.old_folder }}" "${{ inputs.new_folder }}"
+          git commit -m "Rename folder with all contents"
+          git push origin ${{ inputs.branch }}
