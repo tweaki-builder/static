@@ -63,11 +63,12 @@ jobs:
             fi
             sleep 10
           done
-
+          
+          ZIP_NAME="${{ inputs.directory }}-${{ github.run_id }}.zip"
           mkdir -p "${{ inputs.directory }}"
-          curl -L https://copier.saveweb2zip.com/api/downloadArchive/$MD5 -o site.zip
-          unzip -oq site.zip -d "${{ inputs.directory }}"
-          rm -f site.zip
+          curl -L https://copier.saveweb2zip.com/api/downloadArchive/$MD5 -o "$ZIP_NAME"
+          unzip -oq "$ZIP_NAME" -d "${{ inputs.directory }}"
+          rm -f "$ZIP_NAME"
 
       - name: Commit API clone
         run: |
