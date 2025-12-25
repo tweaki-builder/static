@@ -1,0 +1,1 @@
+if(console){var cookiedomainwarning='Error: The domain WWW.WORKINFINLAND.COM is not authorized to show the cookie banner for domain group ID f68f035c-7edf-41b7-a7d3-9f0b0f96401f. Please add it to the domain group in the Cookiebot Manager to authorize the domain.';if(typeof console.warn === 'function'){console.warn(cookiedomainwarning)}else{console.log(cookiedomainwarning)}};
