@@ -1,0 +1,134 @@
+name: Clone Website
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to clone (e.g., https://html.awaikenthemes.com/inspaire/index.html)'
+        required: true
+        type: string
+      directory:
+        description: 'Output folder name (e.g., inspaire-clone)'
+        required: true
+        type: string
+        default: cloned-site
+
+jobs:
+  clone-and-push:
+    runs-on: ubuntu-latest
+    environment: static-push
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: |
+          npm init -y
+          npm install website-scraper website-scraper-puppeteer
+
+      - name: Create cloning script
+        run: |
+          cat > index.js << 'EOF'
+          const scrape = require('website-scraper').default;
+          const PuppeteerPlugin = require('website-scraper-puppeteer').default;
+          const path = require('path');
+          const fs = require('fs');
+
+          (async () => {
+            const url = process.argv[2];
+            const dirName = process.argv[3];
+
+            if (!url || !dirName) {
+              console.error('❌ Usage: node index.js <url> <directory>');
+              process.exit(1);
+            }
+
+            const directory = path.resolve(__dirname, dirName);
+
+            // Remove existing directory if present
+            if (fs.existsSync(directory)) {
+              console.log(`🗑️ Removing existing folder: ${dirName}`);
+              fs.rmSync(directory, { recursive: true, force: true });
+            }
+
+            try {
+              console.log(`🔄 Cloning ${url}`);
+              console.log(`📁 Output directory: ${dirName}`);
+
+              await scrape({
+                urls: [url],
+                directory,
+                request: {
+                  headers: {
+                    'User-Agent':
+                      'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+                    'Accept-Language': 'en-US,en;q=0.9',
+                    'Referer': url
+                  }
+                },
+                plugins: [
+                  new PuppeteerPlugin({
+                    launchOptions: {
+                      headless: true,
+                      args: [
+                        '--no-sandbox',
+                        '--disable-setuid-sandbox'
+                      ]
+                    },
+                    waitUntil: 'networkidle0',
+                    delay: 5000,
+                    scrollToBottom: {
+                      timeout: 15000,
+                      viewportN: 15
+                    }
+                  })
+                ]
+              });
+
+              console.log('✅ Website cloned successfully!');
+            } catch (error) {
+              console.error('❌ Cloning failed:', error.message || error);
+              process.exit(1);
+            }
+          })();
+          EOF
+
+      - name: Run cloning script
+        run: |
+          node index.js "${{ inputs.url }}" "${{ inputs.directory }}"
+
+      - name: Publish cloned site to npm
+        run: |
+          cd "${{ inputs.directory }}"
+          # Create package.json dynamically
+          cat > package.json <<EOF
+          {
+            "name": "@${{ github.repository_owner }}/${{ inputs.directory }}",
+            "version": "1.0.0",
+            "description": "Cloned website from ${{ inputs.url }}",
+            "main": "index.html",
+            "files": ["**/*"],
+            "publishConfig": {
+              "access": "public"
+            }
+          }
+          EOF
+
+          # Auth with npm
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
+          # Publish
+          npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
