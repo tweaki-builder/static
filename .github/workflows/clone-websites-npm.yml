@@ -1,4 +1,4 @@
-name: Clone Website
+name: Clone Website - NPM
 
 on:
   workflow_dispatch:
