@@ -1,0 +1,82 @@
+<!DOCTYPE html><html class="h-full light" data-theme="true" dir="ltr" lang="en" data-theme-mode="light"><head>
+            <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+            <meta name="csrf-token" content="">
+    
+            <title>
+                Not Found            </title>
+            
+            <link id="favicon-cc" rel="icon" href="../images/7.png" sizes="32x32">
+            <script>
+                function updateFavicon() {
+                    const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                    if (darkMode) {
+                        document.getElementById("favicon-cc").href = "https://tweaki.exportersmm.com/assets/media/logo/6.png";
+                    } else {
+                        document.getElementById("favicon-cc").href = "https://tweaki.exportersmm.com/assets/media/logo/7.png";
+                    }
+                }
+            
+                updateFavicon(); // Run on page load
+                window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicon);
+            </script>
+    
+            <link href="../css/css2.css" rel="stylesheet">
+            <link href="../css/apexcharts.css" rel="stylesheet">
+            <link href="../css/styles.bundle.css" rel="stylesheet">
+            <link href="../css/styles.css" rel="stylesheet">
+            
+        </head>
+     <body class="antialiased flex h-full text-base text-gray-700 [--tw-page-bg:#fefefe] [--tw-page-bg-dark:var(--tw-coal-500)] demo1 sidebar-fixed header-fixed bg-[--tw-page-bg] dark:bg-[--tw-page-bg-dark]">
+      <!-- Theme Mode -->
+      <script>
+       const defaultThemeMode = 'light';
+            let themeMode;
+    
+            if ( document.documentElement ) {
+                if ( localStorage.getItem('theme')) {
+                        themeMode = localStorage.getItem('theme');
+                } else if ( document.documentElement.hasAttribute('data-theme-mode')) {
+                    themeMode = document.documentElement.getAttribute('data-theme-mode');
+                } else {
+                    themeMode = defaultThemeMode;
+                }
+    
+                if (themeMode === 'system') {
+                    themeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+    
+                document.documentElement.classList.add(themeMode);
+            }
+      </script>
+      <!-- End of Theme Mode -->
+      <!-- Page -->
+      <!-- Main -->
+      <div class="flex items-center justify-center grow h-full">
+       <div class="flex flex-col items-center">
+        <div class="mb-16">
+         <img alt="image" class="dark:hidden max-h-[160px]" src="19.svg">
+<img alt="image" class="light:hidden max-h-[160px]" src="19-dark.svg">
+        </div>
+        <span class="badge badge-primary badge-outline mb-3">
+           404        </span>
+        <h3 class="text-2.5xl font-semibold text-gray-900 text-center mb-2">
+          The page you are looking for could not be found.        </h3>
+        <div class="text-md text-center text-gray-700 mb-10">
+            Sorry, the page you are looking for does not exist. It might have been removed, had its name changed or is temporarily unavailable.         
+        </div>
+        <a class="btn btn-primary flex justify-center" href="https://tweaki.exportersmm.com">
+         Back to Home
+        </a>
+       </div>
+      </div>
+      <!-- End of Main -->
+      <!-- End of Page -->
+      <!-- Scripts -->
+      <script src="../js/core.bundle.js"></script>
+      <script src="../js/apexcharts.min.js"></script>
+      <!-- End of Scripts -->
+     <script defer="" src="../js/vcd15cbe7772f49c399c6a5babf22c1241717689176015.js" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;c2e49a0817b54f38a31f939f15a67638&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+    
+    </body></html>
